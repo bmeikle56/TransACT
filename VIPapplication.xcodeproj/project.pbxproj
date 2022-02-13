@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		D25795C227B96A3E007806E6 /* VIPapplicationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795C127B96A3E007806E6 /* VIPapplicationApp.swift */; };
-		D25795C427B96A3E007806E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795C327B96A3E007806E6 /* ContentView.swift */; };
 		D25795C627B96A40007806E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25795C527B96A40007806E6 /* Assets.xcassets */; };
 		D25795C927B96A40007806E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25795C827B96A40007806E6 /* Preview Assets.xcassets */; };
 		D25795D327B96A40007806E6 /* VIPapplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795D227B96A40007806E6 /* VIPapplicationTests.swift */; };
 		D25795DD27B96A40007806E6 /* VIPapplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795DC27B96A40007806E6 /* VIPapplicationUITests.swift */; };
 		D25795DF27B96A41007806E6 /* VIPapplicationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795DE27B96A41007806E6 /* VIPapplicationUITestsLaunchTests.swift */; };
-		D25795EC27B96A72007806E6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795EB27B96A72007806E6 /* MapView.swift */; };
+		D25795F027B96FA6007806E6 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = D25795EF27B96FA6007806E6 /* MapboxMaps */; };
+		D25795F227B97020007806E6 /* MapBoxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F127B97020007806E6 /* MapBoxMapView.swift */; };
+		D25795F427B970B0007806E6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F327B970B0007806E6 /* LoginView.swift */; };
+		D25795F627B970F4007806E6 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F527B970F4007806E6 /* LoginPageView.swift */; };
+		D25795F827B9735A007806E6 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F727B9735A007806E6 /* Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		D25795BE27B96A3E007806E6 /* VIPapplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPapplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25795C127B96A3E007806E6 /* VIPapplicationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPapplicationApp.swift; sourceTree = "<group>"; };
-		D25795C327B96A3E007806E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D25795C527B96A40007806E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D25795C827B96A40007806E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D25795CE27B96A40007806E6 /* VIPapplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPapplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,8 +47,11 @@
 		D25795D827B96A40007806E6 /* VIPapplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPapplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25795DC27B96A40007806E6 /* VIPapplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPapplicationUITests.swift; sourceTree = "<group>"; };
 		D25795DE27B96A41007806E6 /* VIPapplicationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPapplicationUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D25795EB27B96A72007806E6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D25795ED27B96B86007806E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D25795F127B97020007806E6 /* MapBoxMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxMapView.swift; sourceTree = "<group>"; };
+		D25795F327B970B0007806E6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D25795F527B970F4007806E6 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
+		D25795F727B9735A007806E6 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25795F027B96FA6007806E6 /* MapboxMaps in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,8 +105,10 @@
 			children = (
 				D25795ED27B96B86007806E6 /* Info.plist */,
 				D25795C127B96A3E007806E6 /* VIPapplicationApp.swift */,
-				D25795C327B96A3E007806E6 /* ContentView.swift */,
-				D25795EB27B96A72007806E6 /* MapView.swift */,
+				D25795F127B97020007806E6 /* MapBoxMapView.swift */,
+				D25795F327B970B0007806E6 /* LoginView.swift */,
+				D25795F727B9735A007806E6 /* Font.swift */,
+				D25795F527B970F4007806E6 /* LoginPageView.swift */,
 				D25795C527B96A40007806E6 /* Assets.xcassets */,
 				D25795C727B96A40007806E6 /* Preview Content */,
 			);
@@ -148,6 +156,9 @@
 			dependencies = (
 			);
 			name = VIPapplication;
+			packageProductDependencies = (
+				D25795EF27B96FA6007806E6 /* MapboxMaps */,
+			);
 			productName = VIPapplication;
 			productReference = D25795BE27B96A3E007806E6 /* VIPapplication.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +231,9 @@
 				Base,
 			);
 			mainGroup = D25795B527B96A3E007806E6;
+			packageReferences = (
+				D25795EE27B96FA6007806E6 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
+			);
 			productRefGroup = D25795BF27B96A3E007806E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -262,9 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D25795C427B96A3E007806E6 /* ContentView.swift in Sources */,
-				D25795EC27B96A72007806E6 /* MapView.swift in Sources */,
 				D25795C227B96A3E007806E6 /* VIPapplicationApp.swift in Sources */,
+				D25795F427B970B0007806E6 /* LoginView.swift in Sources */,
+				D25795F627B970F4007806E6 /* LoginPageView.swift in Sources */,
+				D25795F827B9735A007806E6 /* Font.swift in Sources */,
+				D25795F227B97020007806E6 /* MapBoxMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +603,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D25795EE27B96FA6007806E6 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D25795EF27B96FA6007806E6 /* MapboxMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D25795EE27B96FA6007806E6 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
+			productName = MapboxMaps;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D25795B627B96A3E007806E6 /* Project object */;
 }

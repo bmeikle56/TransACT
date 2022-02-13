@@ -11,7 +11,7 @@ import SwiftUI
 struct VIPapplicationApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginPageView()
         }
     }
 }

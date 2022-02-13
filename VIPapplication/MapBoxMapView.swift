@@ -8,7 +8,7 @@
 import SwiftUI
 import MapboxMaps
 
-struct MapView: UIViewControllerRepresentable {
+struct MapBoxMapView: UIViewControllerRepresentable {
      
     func makeUIViewController(context: Context) -> MapViewController {
            return MapViewController()
@@ -22,7 +22,7 @@ class MapViewController: UIViewController {
    internal var mapView: MapView!
    override public func viewDidLoad() {
        super.viewDidLoad()
-       let myResourceOptions = ResourceOptions(accessToken: "YOUR-ACCESS-TOKEN")
+       let myResourceOptions = ResourceOptions(accessToken: "sk.eyJ1IjoiYm1laWtsZTMiLCJhIjoiY2t6bGh2cTN4NTJnaDJycDR3Zjlob3pmbiJ9.jvnZBZifWQN4zuApx979Ug")
        let myMapInitOptions = MapInitOptions(resourceOptions: myResourceOptions)
        
        mapView = MapView(frame: view.bounds, mapInitOptions: myMapInitOptions)
@@ -31,8 +31,8 @@ class MapViewController: UIViewController {
    }
 }
 
-struct MapView_Previews: PreviewProvider {
+struct MapBoxMapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapBoxMapView()
     }
 }
