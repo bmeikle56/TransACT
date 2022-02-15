@@ -13,7 +13,7 @@ struct LoginPageView: View {
     @State private var password: String = ""
     
     var body: some View {
-        NavigationView {
+        //NavigationView {
             VStack {
                 Text("LOG IN")
                     .padding(.bottom, 100)
@@ -61,7 +61,7 @@ struct LoginPageView: View {
                             .font(Font.custom("PTMono-Bold", size: 18))
                     }
                 }
-            }
+            //}
         }
     }
 }
