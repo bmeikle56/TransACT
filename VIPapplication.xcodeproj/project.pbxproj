@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D24764A427BB47C10064F1FB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D24764A327BB47C10064F1FB /* FirebaseAnalytics */; };
+		D24764A627BB47C10064F1FB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D24764A527BB47C10064F1FB /* FirebaseAuth */; };
 		D25795C227B96A3E007806E6 /* VIPapplicationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795C127B96A3E007806E6 /* VIPapplicationApp.swift */; };
 		D25795C627B96A40007806E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25795C527B96A40007806E6 /* Assets.xcassets */; };
 		D25795C927B96A40007806E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25795C827B96A40007806E6 /* Preview Assets.xcassets */; };
@@ -59,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D24764A427BB47C10064F1FB /* FirebaseAnalytics in Frameworks */,
+				D24764A627BB47C10064F1FB /* FirebaseAuth in Frameworks */,
 				D25795F027B96FA6007806E6 /* MapboxMaps in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,10 +109,10 @@
 			children = (
 				D25795ED27B96B86007806E6 /* Info.plist */,
 				D25795C127B96A3E007806E6 /* VIPapplicationApp.swift */,
-				D25795F127B97020007806E6 /* MapBoxMapView.swift */,
 				D25795F327B970B0007806E6 /* LoginView.swift */,
-				D25795F727B9735A007806E6 /* Font.swift */,
 				D25795F527B970F4007806E6 /* LoginPageView.swift */,
+				D25795F127B97020007806E6 /* MapBoxMapView.swift */,
+				D25795F727B9735A007806E6 /* Font.swift */,
 				D25795C527B96A40007806E6 /* Assets.xcassets */,
 				D25795C727B96A40007806E6 /* Preview Content */,
 			);
@@ -158,6 +162,8 @@
 			name = VIPapplication;
 			packageProductDependencies = (
 				D25795EF27B96FA6007806E6 /* MapboxMaps */,
+				D24764A327BB47C10064F1FB /* FirebaseAnalytics */,
+				D24764A527BB47C10064F1FB /* FirebaseAuth */,
 			);
 			productName = VIPapplication;
 			productReference = D25795BE27B96A3E007806E6 /* VIPapplication.app */;
@@ -233,6 +239,7 @@
 			mainGroup = D25795B527B96A3E007806E6;
 			packageReferences = (
 				D25795EE27B96FA6007806E6 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
+				D24764A227BB47C10064F1FB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = D25795BF27B96A3E007806E6 /* Products */;
 			projectDirPath = "";
@@ -605,6 +612,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D24764A227BB47C10064F1FB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		D25795EE27B96FA6007806E6 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
@@ -616,6 +631,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D24764A327BB47C10064F1FB /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D24764A227BB47C10064F1FB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		D24764A527BB47C10064F1FB /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D24764A227BB47C10064F1FB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
 		D25795EF27B96FA6007806E6 /* MapboxMaps */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D25795EE27B96FA6007806E6 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
