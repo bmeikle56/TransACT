@@ -15,7 +15,7 @@ struct VIPapplicationApp: App {
     }*/
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            SetupView()
         }
     }
 }

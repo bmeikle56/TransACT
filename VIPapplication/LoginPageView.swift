@@ -6,11 +6,25 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct LoginPageView: View {
     
     @State private var username: String = ""
     @State private var password: String = ""
+    @State private var showAlert = false
+    
+    // login function for Firebase
+    func logIn() {
+        Auth.auth().signIn(withEmail: username, password: password) { (result, error) in
+            if error != nil {
+                // print(error?.localizedDescription ?? "")
+                // throw alert saying incorrect username or password here
+            } else {
+                print("You signed in")
+            }
+        }
+    }
     
     var body: some View {
         //NavigationView {
@@ -18,6 +32,7 @@ struct LoginPageView: View {
                 Text("LOG IN")
                     .padding(.bottom, 100)
                     .font(Font.custom("PTMono-Bold", size: 28))
+                
                 ZStack {
                     Rectangle()
                         .fill(Color.gray)
@@ -25,9 +40,9 @@ struct LoginPageView: View {
                     TextField(
                            "Username",
                            text: $username
-                    )
-                        .multilineTextAlignment(.center)
+                    ).multilineTextAlignment(.center)
                 }
+                
                 ZStack {
                     Rectangle()
                         .fill(Color.gray)
@@ -35,28 +50,31 @@ struct LoginPageView: View {
                     TextField(
                            "Password",
                            text: $password
-                    )
-                        .multilineTextAlignment(.center)
+                    ).multilineTextAlignment(.center)
                 }
+                
                 ZStack {
                     Rectangle()
                         .fill(Color.green)
                         .frame(width: 200, height: 40)
-                    NavigationLink(destination: MapBoxMapView()) {
+                    NavigationLink(destination: HomePageView()) {
                         Text("LOG IN")
                             .font(Font.custom("PTMono-Bold", size: 18))
                     }
-                    /*Button(action: { login() }) {
-                        Text("Sign in")
-                    }*/
-                }.padding(.bottom, 10)
-                NavigationLink(destination: MapBoxMapView()) {
+                    
+                }.navigationBarBackButtonHidden(true)
+                    .padding(.bottom, 10)
+                
+                NavigationLink(destination: ResetPasswordView()) {
                     Text("Forgot password?")
                         .font(Font.custom("PTMono-Bold", size: 18))
-                }.padding(.bottom, 100)
+                }.navigationBarBackButtonHidden(true)
+                    .padding(.bottom, 100)
+                
                 HStack {
                     Text("Don't have an account? ").font(Font.custom("PTMono-Bold", size: 18))
-                    NavigationLink(destination: MapBoxMapView()) {
+                        .padding(-8)
+                    NavigationLink(destination: SignUpView()) {
                         Text("Sign up")
                             .font(Font.custom("PTMono-Bold", size: 18))
                     }
@@ -65,16 +83,6 @@ struct LoginPageView: View {
         }
     }
 }
-
-/*func login() {
-    Auth.auth().signIn(withEmail: username, password: password) { (result, error) in
-        if error != nil {
-            print(error?.localizedDescription ?? "")
-        } else {
-            print("success")
-        }
-    }
-}*/
 
 struct LoginPageView_Previews: PreviewProvider {
     static var previews: some View {

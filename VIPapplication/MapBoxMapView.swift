@@ -34,5 +34,6 @@ class MapViewController: UIViewController {
 struct MapBoxMapView_Previews: PreviewProvider {
     static var previews: some View {
         MapBoxMapView()
+            .navigationBarBackButtonHidden(true)
     }
 }
