@@ -26,18 +26,20 @@ struct SignUpView: View {
                        "Email",
                        text: $email
                 )
-                    .frame(width: 170, height: 20, alignment: .center)
+                    .autocapitalization(.none)
+                    .frame(width: 250, height: 15, alignment: .center)
                     .padding()
                     .background(Color(.systemGray6))
                     .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
             }
             
             ZStack {
-                TextField(
+                SecureField(
                        "Password",
                        text: $password
                 )
-                    .frame(width: 170, height: 20, alignment: .center)
+                    .autocapitalization(.none)
+                    .frame(width: 250, height: 15, alignment: .center)
                     .padding()
                     .background(Color(.systemGray6))
                     .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
@@ -46,7 +48,7 @@ struct SignUpView: View {
             ZStack {
                 Rectangle()
                     .fill(Color.green)
-                    .frame(width: 200, height: 60)
+                    .frame(width: 282, height: 50)
                 NavigationLink(destination: LoginPageView()) {
                     Text("SIGN UP")
                         .font(.custom("PTMono-Regular", size: 18))

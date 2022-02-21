@@ -17,7 +17,7 @@ struct LoginPageView: View {
     @State private var successfulLogin = true
     
     // login function for Firebase
-    func logIn() {
+    func handleLogin() {
         Auth.auth().signIn(withEmail: username, password: password) { (result, error) in
             if error != nil {
                 // show text on screen saying incorrect username or password
@@ -46,18 +46,20 @@ struct LoginPageView: View {
                        "Username",
                        text: $username
                 )
-                    .frame(width: 170, height: 20, alignment: .center)
+                    .autocapitalization(.none)
+                    .frame(width: 250, height: 15, alignment: .center)
                     .padding()
                     .background(Color(.systemGray6))
                     .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
             }
             
             ZStack {
-                TextField(
+                SecureField(
                        "Password",
                        text: $password
                 )
-                    .frame(width: 170, height: 20, alignment: .center)
+                    .autocapitalization(.none)
+                    .frame(width: 250, height: 15, alignment: .center)
                     .padding()
                     .background(Color(.systemGray6))
                     .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
@@ -66,13 +68,13 @@ struct LoginPageView: View {
             ZStack {
                 Rectangle()
                     .fill(Color.green)
-                    .frame(width: 200, height: 60)
+                    .frame(width: 282, height: 50)
                 /*NavigationLink(destination: HomePageView()) {
                     Text("LOG IN")
                         .font(.custom("PTMono-Regular", size: 18))
                         .foregroundColor(.white)*/
                 Button("LOG IN") {
-                    logIn()
+                    handleLogin()
                 }
                     .font(.custom("PTMono-Regular", size: 18))
                     .foregroundColor(.white)

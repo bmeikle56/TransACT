@@ -12,6 +12,9 @@ struct HomePageView: View {
     var body: some View {
         VStack {
             Text("YOU ARE LOGGED IN")
+                .padding()
+                .multilineTextAlignment(.center)
+                .lineSpacing(10)
                 .padding(.bottom, 100)
                 .font(.custom("PTMono-Regular", size: 36))
             
@@ -20,7 +23,7 @@ struct HomePageView: View {
             ZStack {
                 Rectangle()
                     .fill(Color.green)
-                    .frame(width: 200, height: 40)
+                    .frame(width: 282, height: 50)
                 NavigationLink(destination: MapBoxMapView()) {
                     Text("Get started").font(.custom("PTMono-Regular", size: 18))
                         .foregroundColor(.white)

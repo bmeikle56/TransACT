@@ -22,19 +22,21 @@ struct ResetPasswordView: View {
                 .font(.custom("PTMono-Regular", size: 36))
             
             ZStack {
-                Rectangle()
-                    .fill(Color.gray)
-                    .frame(width: 200, height: 40)
                 TextField(
                        "Email",
                        text: $email
-                ).font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
+                )
+                    .autocapitalization(.none)
+                    .frame(width: 250, height: 15, alignment: .center)
+                    .padding()
+                    .background(Color(.systemGray6))
+                    .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
             }
             
             ZStack {
                 Rectangle()
                     .fill(Color.green)
-                    .frame(width: 200, height: 40)
+                    .frame(width: 282, height: 50)
                 
                 Button("GET RESET EMAIL") {
                     showAlert = true
