@@ -19,7 +19,7 @@ struct SignUpView: View {
         VStack {
             Text("SIGN UP")
                 .padding(.bottom, 100)
-                .font(Font.custom("PTMono-Bold", size: 28))
+                .font(.custom("PTMono-Regular", size: 36))
             
             ZStack {
                 Rectangle()
@@ -28,7 +28,7 @@ struct SignUpView: View {
                 TextField(
                        "Email",
                        text: $email
-                ).multilineTextAlignment(.center)
+                ).font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
             }
             
             ZStack {
@@ -38,7 +38,7 @@ struct SignUpView: View {
                 TextField(
                        "Password",
                        text: $password
-                ).multilineTextAlignment(.center)
+                ).font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
             }
             
             ZStack {
@@ -47,18 +47,21 @@ struct SignUpView: View {
                     .frame(width: 200, height: 40)
                 NavigationLink(destination: LoginPageView()) {
                     Text("SIGN UP")
-                        .font(Font.custom("PTMono-Bold", size: 18))
+                        .font(.custom("PTMono-Regular", size: 18))
+                        .foregroundColor(.white)
                 }
                 
             }.navigationBarBackButtonHidden(true)
                 .padding(.bottom, 100)
             
             HStack {
-                Text("Have an account? ").font(Font.custom("PTMono-Bold", size: 18))
+                Text("Have an account? ").font(.custom("PTMono-Regular", size: 18))
                     .padding(-8)
                 Button("Log in") {
                     self.presentationMode.wrappedValue.dismiss()
+                    
                 }
+                .font(.custom("PTMono-Regular", size: 18))
             }
         }
     }

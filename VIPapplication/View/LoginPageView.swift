@@ -27,59 +27,62 @@ struct LoginPageView: View {
     }
     
     var body: some View {
-        //NavigationView {
-            VStack {
-                Text("LOG IN")
-                    .padding(.bottom, 100)
-                    .font(Font.custom("PTMono-Bold", size: 28))
-                
-                ZStack {
-                    Rectangle()
-                        .fill(Color.gray)
-                        .frame(width: 200, height: 40)
-                    TextField(
-                           "Username",
-                           text: $username
-                    ).multilineTextAlignment(.center)
+        VStack {
+            Text("LOG IN")
+                .padding(.bottom, 100)
+                .font(.custom("PTMono-Regular", size: 36))
+            
+            ZStack {
+                Rectangle()
+                    .fill(Color.gray)
+                    .frame(width: 200, height: 40)
+                TextField(
+                       "Username",
+                       text: $username
+                )
+                    .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
+            }
+            
+            ZStack {
+                Rectangle()
+                    .fill(Color.gray)
+                    .frame(width: 200, height: 40)
+                TextField(
+                       "Password",
+                       text: $password
+                ).font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
+            }
+            
+            ZStack {
+                Rectangle()
+                    .fill(Color.green)
+                    .frame(width: 200, height: 40)
+                NavigationLink(destination: HomePageView()) {
+                    Text("LOG IN")
+                        .font(.custom("PTMono-Regular", size: 18))
+                        .foregroundColor(.white)
                 }
                 
-                ZStack {
-                    Rectangle()
-                        .fill(Color.gray)
-                        .frame(width: 200, height: 40)
-                    TextField(
-                           "Password",
-                           text: $password
-                    ).multilineTextAlignment(.center)
+            }.navigationBarBackButtonHidden(true)
+                .padding(.bottom, 10)
+            
+            NavigationLink(destination: ResetPasswordView()) {
+                Text("Forgot password?")
+                    .font(.custom("PTMono-Regular", size: 18))
+                    .foregroundColor(.black)
+            }.navigationBarBackButtonHidden(true)
+                .padding(.bottom, 100)
+            
+            HStack {
+                Text("Don't have an account? ")
+                    .font(.custom("PTMono-Regular", size: 18))
+                    .padding(-8)
+                NavigationLink(destination: SignUpView()) {
+                    Text("Sign up")
+                        .font(.custom("PTMono-Regular", size: 18))
+                        .foregroundColor(.black)
                 }
-                
-                ZStack {
-                    Rectangle()
-                        .fill(Color.green)
-                        .frame(width: 200, height: 40)
-                    NavigationLink(destination: HomePageView()) {
-                        Text("LOG IN")
-                            .font(Font.custom("PTMono-Bold", size: 18))
-                    }
-                    
-                }.navigationBarBackButtonHidden(true)
-                    .padding(.bottom, 10)
-                
-                NavigationLink(destination: ResetPasswordView()) {
-                    Text("Forgot password?")
-                        .font(Font.custom("PTMono-Bold", size: 18))
-                }.navigationBarBackButtonHidden(true)
-                    .padding(.bottom, 100)
-                
-                HStack {
-                    Text("Don't have an account? ").font(Font.custom("PTMono-Bold", size: 18))
-                        .padding(-8)
-                    NavigationLink(destination: SignUpView()) {
-                        Text("Sign up")
-                            .font(Font.custom("PTMono-Bold", size: 18))
-                    }
-                }
-            //}
+            }
         }
     }
 }

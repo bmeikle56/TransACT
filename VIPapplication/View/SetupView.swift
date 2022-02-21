@@ -16,7 +16,7 @@ struct SetupView: View {
             VStack {
                 Text("LOG IN")
                     .padding(.bottom, 250)
-                    .font(Font.custom("PTMono-Bold", size: 32))
+                    .font(.custom("PTMono-Regular", size: 36))
                 
                 // image
                 
@@ -25,7 +25,7 @@ struct SetupView: View {
                         .fill(Color.green)
                         .frame(width: 200, height: 50)
                     NavigationLink(destination: LoginPageView()) {
-                        Text("Google").font(Font.custom("PTMono-Bold", size: 24))
+                        Text("Google").font(.custom("PTMono-Regular", size: 18))
                     }
                             
                 }.navigationBarBackButtonHidden(true)
@@ -36,16 +36,18 @@ struct SetupView: View {
                         .frame(width: 200, height: 50)
                     NavigationLink(destination: LoginPageView()) {
                         Text("Email")
-                            .font(Font.custom("PTMono-Bold", size: 24))
+                            .font(.custom("PTMono-Regular", size: 18))
                     }
                 }.padding(.bottom, 100)
                     .navigationBarBackButtonHidden(true)
                 
                 HStack {
-                    Text("Don't have an account? ").font(Font.custom("PTMono-Bold", size: 18))
+                    Text("Don't have an account? ")
+                        .font(.custom("PTMono-Regular", size: 18))
                     
                     NavigationLink(destination: SignUpView()) {
-                        Text("Sign up").font(Font.custom("PTMono-Bold", size: 18))
+                        Text("Sign up")
+                            .font(.custom("PTMono-Regular", size: 18))
                     }.padding(-8)
                 }
             }

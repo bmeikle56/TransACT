@@ -170,12 +170,12 @@
 		D281245D27C41AE6000C2BC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D25795F127B97020007806E6 /* MapBoxMapView.swift */,
-				D21146F927C2F99A00EDAD4D /* HomePageView.swift */,
+				D25795F327B970B0007806E6 /* SetupView.swift */,
+				D25795F527B970F4007806E6 /* LoginPageView.swift */,
 				D21146F727C2D7D200EDAD4D /* SignUpView.swift */,
 				D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */,
-				D25795F527B970F4007806E6 /* LoginPageView.swift */,
-				D25795F327B970B0007806E6 /* SetupView.swift */,
+				D21146F927C2F99A00EDAD4D /* HomePageView.swift */,
+				D25795F127B97020007806E6 /* MapBoxMapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

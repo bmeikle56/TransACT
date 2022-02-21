@@ -19,7 +19,7 @@ struct ResetPasswordView: View {
         VStack {
             Text("RESET PASSWORD")
                 .padding(.bottom, 100)
-                .font(Font.custom("PTMono-Bold", size: 28))
+                .font(.custom("PTMono-Regular", size: 36))
             
             ZStack {
                 Rectangle()
@@ -28,7 +28,7 @@ struct ResetPasswordView: View {
                 TextField(
                        "Email",
                        text: $email
-                ).multilineTextAlignment(.center)
+                ).font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
             }
             
             ZStack {
@@ -48,7 +48,8 @@ struct ResetPasswordView: View {
                                 self.presentationMode.wrappedValue.dismiss()
                         
                     }))
-                }.font(Font.custom("PTMono-Bold", size: 18))
+                }.font(.custom("PTMono-Regular", size: 18))
+                    .foregroundColor(.white)
                 
             }.navigationBarBackButtonHidden(true)
                 .padding(.bottom, 10)

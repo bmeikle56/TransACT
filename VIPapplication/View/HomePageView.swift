@@ -13,7 +13,7 @@ struct HomePageView: View {
         VStack {
             Text("YOU ARE LOGGED IN")
                 .padding(.bottom, 100)
-                .font(Font.custom("PTMono-Bold", size: 28))
+                .font(.custom("PTMono-Regular", size: 36))
             
             // image
             
@@ -22,7 +22,8 @@ struct HomePageView: View {
                     .fill(Color.green)
                     .frame(width: 200, height: 40)
                 NavigationLink(destination: MapBoxMapView()) {
-                    Text("Get started").font(Font.custom("PTMono-Bold", size: 18))
+                    Text("Get started").font(.custom("PTMono-Regular", size: 18))
+                        .foregroundColor(.white)
                 }
                 
             }.navigationBarBackButtonHidden(true)
