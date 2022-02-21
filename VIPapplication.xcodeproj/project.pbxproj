@@ -22,7 +22,6 @@
 		D25795F227B97020007806E6 /* MapBoxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F127B97020007806E6 /* MapBoxMapView.swift */; };
 		D25795F427B970B0007806E6 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F327B970B0007806E6 /* SetupView.swift */; };
 		D25795F627B970F4007806E6 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F527B970F4007806E6 /* LoginPageView.swift */; };
-		D25795F827B9735A007806E6 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F727B9735A007806E6 /* Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +58,6 @@
 		D25795F127B97020007806E6 /* MapBoxMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxMapView.swift; sourceTree = "<group>"; };
 		D25795F327B970B0007806E6 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		D25795F527B970F4007806E6 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
-		D25795F727B9735A007806E6 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +119,6 @@
 				D21146F727C2D7D200EDAD4D /* SignUpView.swift */,
 				D21146F927C2F99A00EDAD4D /* HomePageView.swift */,
 				D25795F127B97020007806E6 /* MapBoxMapView.swift */,
-				D25795F727B9735A007806E6 /* Font.swift */,
 				D25795C527B96A40007806E6 /* Assets.xcassets */,
 				D25795C727B96A40007806E6 /* Preview Content */,
 			);
@@ -297,7 +294,6 @@
 				D25795F627B970F4007806E6 /* LoginPageView.swift in Sources */,
 				D21146F827C2D7D200EDAD4D /* SignUpView.swift in Sources */,
 				D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */,
-				D25795F827B9735A007806E6 /* Font.swift in Sources */,
 				D21146FA27C2F99A00EDAD4D /* HomePageView.swift in Sources */,
 				D25795F227B97020007806E6 /* MapBoxMapView.swift in Sources */,
 			);
