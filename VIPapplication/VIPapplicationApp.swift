@@ -10,9 +10,9 @@ import Firebase
 
 @main
 struct VIPapplicationApp: App {
-    /*init() {
+    init() {
         FirebaseApp.configure()
-    }*/
+    }
     var body: some Scene {
         WindowGroup {
             SetupView()

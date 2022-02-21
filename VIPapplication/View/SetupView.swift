@@ -26,6 +26,7 @@ struct SetupView: View {
                         .frame(width: 200, height: 50)
                     NavigationLink(destination: LoginPageView()) {
                         Text("Google").font(.custom("PTMono-Regular", size: 18))
+                            .foregroundColor(.black)
                     }
                             
                 }.navigationBarBackButtonHidden(true)
@@ -37,6 +38,7 @@ struct SetupView: View {
                     NavigationLink(destination: LoginPageView()) {
                         Text("Email")
                             .font(.custom("PTMono-Regular", size: 18))
+                            .foregroundColor(.black)
                     }
                 }.padding(.bottom, 100)
                     .navigationBarBackButtonHidden(true)
@@ -48,6 +50,7 @@ struct SetupView: View {
                     NavigationLink(destination: SignUpView()) {
                         Text("Sign up")
                             .font(.custom("PTMono-Regular", size: 18))
+                            .foregroundColor(.black)
                     }.padding(-8)
                 }
             }
