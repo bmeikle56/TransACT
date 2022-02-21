@@ -41,6 +41,7 @@ struct LoginPageView: View {
                        text: $username
                 )
                     .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
+                    .foregroundColor(.black)
             }
             
             ZStack {
@@ -50,7 +51,9 @@ struct LoginPageView: View {
                 TextField(
                        "Password",
                        text: $password
-                ).font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
+                )
+                    .font(.custom("PTMono-Regular", size: 18))
+                    .multilineTextAlignment(.center)
             }
             
             ZStack {
