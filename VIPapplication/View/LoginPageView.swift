@@ -12,7 +12,6 @@ struct LoginPageView: View {
     
     @State private var username: String = ""
     @State private var password: String = ""
-    @State private var showAlert = false
     let incorrectLogin: String = "Incorrect username or password!"
     @State private var successfulLogin = true
     
@@ -25,6 +24,8 @@ struct LoginPageView: View {
             } else {
                 print("You signed in")
                 successfulLogin = true // set it back to false because login was successful
+                
+                // link to the homepageview screen here somehow
             }
         }
     }
@@ -39,6 +40,8 @@ struct LoginPageView: View {
                 Text(incorrectLogin)
                     .font(.custom("PTMono-Regular", size: 18))
                     .foregroundColor(.red)
+            } else {
+                // should display nothing
             }
             
             ZStack {
