@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		460126D727C5378600953846 /* RequestLocationNotif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460126D627C5378600953846 /* RequestLocationNotif.swift */; };
+		460126D727C5378600953846 /* RequestLocationNotifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460126D627C5378600953846 /* RequestLocationNotifView.swift */; };
 		460126D927C5386F00953846 /* Ramaraja-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 460126D827C5386F00953846 /* Ramaraja-Regular.ttf */; };
-		460126DB27C53D6B00953846 /* RequestPushNotif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460126DA27C53D6B00953846 /* RequestPushNotif.swift */; };
+		460126DB27C53D6B00953846 /* RequestPushNotifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460126DA27C53D6B00953846 /* RequestPushNotifView.swift */; };
 		460126E727C54ED000953846 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 460126E627C54ECF00953846 /* GoogleService-Info.plist */; };
 		D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */; };
 		D21146F827C2D7D200EDAD4D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F727C2D7D200EDAD4D /* SignUpView.swift */; };
@@ -47,9 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		460126D627C5378600953846 /* RequestLocationNotif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationNotif.swift; sourceTree = "<group>"; };
+		460126D627C5378600953846 /* RequestLocationNotifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationNotifView.swift; sourceTree = "<group>"; };
 		460126D827C5386F00953846 /* Ramaraja-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ramaraja-Regular.ttf"; sourceTree = "<group>"; };
-		460126DA27C53D6B00953846 /* RequestPushNotif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPushNotif.swift; sourceTree = "<group>"; };
+		460126DA27C53D6B00953846 /* RequestPushNotifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPushNotifView.swift; sourceTree = "<group>"; };
 		460126E627C54ECF00953846 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		460126E827C54EDC00953846 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -175,8 +175,8 @@
 				D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */,
 				D21146F927C2F99A00EDAD4D /* HomePageView.swift */,
 				D25795F127B97020007806E6 /* MapBoxMapView.swift */,
-				460126D627C5378600953846 /* RequestLocationNotif.swift */,
-				460126DA27C53D6B00953846 /* RequestPushNotif.swift */,
+				460126D627C5378600953846 /* RequestLocationNotifView.swift */,
+				460126DA27C53D6B00953846 /* RequestPushNotifView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,7 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				460126DB27C53D6B00953846 /* RequestPushNotif.swift in Sources */,
+				460126DB27C53D6B00953846 /* RequestPushNotifView.swift in Sources */,
 				D25795C227B96A3E007806E6 /* VIPapplicationApp.swift in Sources */,
 				D25795F427B970B0007806E6 /* SetupView.swift in Sources */,
 				D25795F627B970F4007806E6 /* LoginPageView.swift in Sources */,
@@ -331,7 +331,7 @@
 				D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */,
 				D21146FA27C2F99A00EDAD4D /* HomePageView.swift in Sources */,
 				D25795F227B97020007806E6 /* MapBoxMapView.swift in Sources */,
-				460126D727C5378600953846 /* RequestLocationNotif.swift in Sources */,
+				460126D727C5378600953846 /* RequestLocationNotifView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
