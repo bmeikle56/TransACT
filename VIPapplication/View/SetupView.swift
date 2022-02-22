@@ -15,10 +15,9 @@ struct SetupView: View {
         NavigationView {
             VStack {
                 Text("LOG IN")
-                    .padding(.bottom, 250)
                     .font(.custom("PTMono-Regular", size: 36))
                 
-                // image
+                Image("SetupView image").padding(.bottom, 80)
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
@@ -40,7 +39,7 @@ struct SetupView: View {
                             .font(.custom("PTMono-Regular", size: 18))
                             .foregroundColor(.black)
                     }
-                }.padding(.bottom, 100)
+                }.padding(.bottom, 30)
                     .navigationBarBackButtonHidden(true)
                 
                 HStack {

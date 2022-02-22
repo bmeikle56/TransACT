@@ -15,10 +15,9 @@ struct HomePageView: View {
                 .padding()
                 .multilineTextAlignment(.center)
                 .lineSpacing(10)
-                .padding(.bottom, 100)
                 .font(.custom("PTMono-Regular", size: 36))
             
-            // image
+            Image("HomePageView image").padding(.bottom, 100)
             
             ZStack {
                 Rectangle()
