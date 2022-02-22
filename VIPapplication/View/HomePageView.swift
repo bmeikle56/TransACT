@@ -12,15 +12,17 @@ struct HomePageView: View {
     var body: some View {
         VStack {
             Text("YOU ARE LOGGED IN")
-                .padding(.bottom, 100)
+                .padding()
+                .multilineTextAlignment(.center)
+                .lineSpacing(10)
                 .font(.custom("PTMono-Regular", size: 36))
             
-            // image
+            Image("HomePageView image").padding(.bottom, 100)
             
             ZStack {
                 Rectangle()
                     .fill(Color.green)
-                    .frame(width: 200, height: 40)
+                    .frame(width: 282, height: 50)
                 NavigationLink(destination: MapBoxMapView()) {
                     Text("Get started").font(.custom("PTMono-Regular", size: 18))
                         .foregroundColor(.white)

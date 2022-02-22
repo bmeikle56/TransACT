@@ -12,16 +12,20 @@ struct LoginPageView: View {
     
     @State private var username: String = ""
     @State private var password: String = ""
-    @State private var showAlert = false
+    let incorrectLogin: String = "Incorrect username or password!"
+    @State private var successfulLogin = true
     
     // login function for Firebase
-    func logIn() {
+    func handleLogin() {
         Auth.auth().signIn(withEmail: username, password: password) { (result, error) in
             if error != nil {
-                // print(error?.localizedDescription ?? "")
-                // throw alert saying incorrect username or password here
+                // show text on screen saying incorrect username or password
+                successfulLogin = false;
             } else {
                 print("You signed in")
+                successfulLogin = true // set it back to false because login was successful
+                
+                // link to the homepageview screen here somehow
             }
         }
     }
@@ -32,39 +36,51 @@ struct LoginPageView: View {
                 .padding(.bottom, 100)
                 .font(.custom("PTMono-Regular", size: 36))
             
+            if !successfulLogin {
+                Text(incorrectLogin)
+                    .font(.custom("PTMono-Regular", size: 18))
+                    .foregroundColor(.red)
+            } else {
+                // should display nothing
+            }
+            
             ZStack {
-                Rectangle()
-                    .fill(Color.gray)
-                    .frame(width: 200, height: 40)
                 TextField(
                        "Username",
                        text: $username
                 )
+                    .autocapitalization(.none)
+                    .frame(width: 250, height: 15, alignment: .center)
+                    .padding()
+                    .background(Color(.systemGray6))
                     .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
-                    .foregroundColor(.black)
             }
             
             ZStack {
-                Rectangle()
-                    .fill(Color.gray)
-                    .frame(width: 200, height: 40)
-                TextField(
+                SecureField(
                        "Password",
                        text: $password
                 )
-                    .font(.custom("PTMono-Regular", size: 18))
-                    .multilineTextAlignment(.center)
+                    .autocapitalization(.none)
+                    .frame(width: 250, height: 15, alignment: .center)
+                    .padding()
+                    .background(Color(.systemGray6))
+                    .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
             }
             
             ZStack {
                 Rectangle()
                     .fill(Color.green)
-                    .frame(width: 200, height: 40)
-                NavigationLink(destination: HomePageView()) {
+                    .frame(width: 282, height: 50)
+                /*NavigationLink(destination: HomePageView()) {
                     Text("LOG IN")
                         .font(.custom("PTMono-Regular", size: 18))
-                        .foregroundColor(.white)
+                        .foregroundColor(.white)*/
+                Button("LOG IN") {
+                    handleLogin()
                 }
+                    .font(.custom("PTMono-Regular", size: 18))
+                    .foregroundColor(.white)
                 
             }.navigationBarBackButtonHidden(true)
                 .padding(.bottom, 10)

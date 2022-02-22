@@ -15,10 +15,9 @@ struct SetupView: View {
         NavigationView {
             VStack {
                 Text("LOG IN")
-                    .padding(.bottom, 250)
                     .font(.custom("PTMono-Regular", size: 36))
                 
-                // image
+                Image("SetupView image").padding(.bottom, 80)
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
@@ -26,6 +25,7 @@ struct SetupView: View {
                         .frame(width: 200, height: 50)
                     NavigationLink(destination: LoginPageView()) {
                         Text("Google").font(.custom("PTMono-Regular", size: 18))
+                            .foregroundColor(.black)
                     }
                             
                 }.navigationBarBackButtonHidden(true)
@@ -37,8 +37,9 @@ struct SetupView: View {
                     NavigationLink(destination: LoginPageView()) {
                         Text("Email")
                             .font(.custom("PTMono-Regular", size: 18))
+                            .foregroundColor(.black)
                     }
-                }.padding(.bottom, 100)
+                }.padding(.bottom, 30)
                     .navigationBarBackButtonHidden(true)
                 
                 HStack {
@@ -48,6 +49,7 @@ struct SetupView: View {
                     NavigationLink(destination: SignUpView()) {
                         Text("Sign up")
                             .font(.custom("PTMono-Regular", size: 18))
+                            .foregroundColor(.black)
                     }.padding(-8)
                 }
             }
