@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460126D727C5378600953846 /* RequestLocationNotifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460126D627C5378600953846 /* RequestLocationNotifView.swift */; };
+		460126D927C5386F00953846 /* Ramaraja-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 460126D827C5386F00953846 /* Ramaraja-Regular.ttf */; };
+		460126DB27C53D6B00953846 /* RequestPushNotifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460126DA27C53D6B00953846 /* RequestPushNotifView.swift */; };
+		460126E727C54ED000953846 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 460126E627C54ECF00953846 /* GoogleService-Info.plist */; };
 		D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */; };
 		D21146F827C2D7D200EDAD4D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F727C2D7D200EDAD4D /* SignUpView.swift */; };
 		D21146FA27C2F99A00EDAD4D /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F927C2F99A00EDAD4D /* HomePageView.swift */; };
@@ -23,7 +27,6 @@
 		D25795F427B970B0007806E6 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F327B970B0007806E6 /* SetupView.swift */; };
 		D25795F627B970F4007806E6 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F527B970F4007806E6 /* LoginPageView.swift */; };
 		D281245527C419EA000C2BC3 /* PTMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D281245427C419EA000C2BC3 /* PTMono-Regular.ttf */; };
-		D281245A27C41A9D000C2BC3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D281245927C41A9D000C2BC3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		460126D627C5378600953846 /* RequestLocationNotifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationNotifView.swift; sourceTree = "<group>"; };
+		460126D827C5386F00953846 /* Ramaraja-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ramaraja-Regular.ttf"; sourceTree = "<group>"; };
+		460126DA27C53D6B00953846 /* RequestPushNotifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPushNotifView.swift; sourceTree = "<group>"; };
+		460126E627C54ECF00953846 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		460126E827C54EDC00953846 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		D21146F727C2D7D200EDAD4D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D21146F927C2F99A00EDAD4D /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
@@ -56,12 +64,10 @@
 		D25795D827B96A40007806E6 /* VIPapplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPapplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25795DC27B96A40007806E6 /* VIPapplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPapplicationUITests.swift; sourceTree = "<group>"; };
 		D25795DE27B96A41007806E6 /* VIPapplicationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPapplicationUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D25795ED27B96B86007806E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		D25795F127B97020007806E6 /* MapBoxMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxMapView.swift; sourceTree = "<group>"; };
 		D25795F327B970B0007806E6 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		D25795F527B970F4007806E6 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
 		D281245427C419EA000C2BC3 /* PTMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTMono-Regular.ttf"; sourceTree = "<group>"; };
-		D281245927C41A9D000C2BC3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,10 +121,11 @@
 		D25795C027B96A3E007806E6 /* VIPapplication */ = {
 			isa = PBXGroup;
 			children = (
+				460126E827C54EDC00953846 /* Info.plist */,
+				460126E627C54ECF00953846 /* GoogleService-Info.plist */,
 				D25795C127B96A3E007806E6 /* VIPapplicationApp.swift */,
 				D281245D27C41AE6000C2BC3 /* View */,
 				D25795C727B96A40007806E6 /* Preview Content */,
-				D281245C27C41ABB000C2BC3 /* Plist */,
 				D281245B27C41AB0000C2BC3 /* Fonts */,
 				D25795C527B96A40007806E6 /* Assets.xcassets */,
 			);
@@ -153,18 +160,10 @@
 		D281245B27C41AB0000C2BC3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				460126D827C5386F00953846 /* Ramaraja-Regular.ttf */,
 				D281245427C419EA000C2BC3 /* PTMono-Regular.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		D281245C27C41ABB000C2BC3 /* Plist */ = {
-			isa = PBXGroup;
-			children = (
-				D25795ED27B96B86007806E6 /* Info.plist */,
-				D281245927C41A9D000C2BC3 /* GoogleService-Info.plist */,
-			);
-			path = Plist;
 			sourceTree = "<group>";
 		};
 		D281245D27C41AE6000C2BC3 /* View */ = {
@@ -176,6 +175,8 @@
 				D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */,
 				D21146F927C2F99A00EDAD4D /* HomePageView.swift */,
 				D25795F127B97020007806E6 /* MapBoxMapView.swift */,
+				460126D627C5378600953846 /* RequestLocationNotifView.swift */,
+				460126DA27C53D6B00953846 /* RequestPushNotifView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,9 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D25795C927B96A40007806E6 /* Preview Assets.xcassets in Resources */,
-				D281245A27C41A9D000C2BC3 /* GoogleService-Info.plist in Resources */,
 				D281245527C419EA000C2BC3 /* PTMono-Regular.ttf in Resources */,
+				460126E727C54ED000953846 /* GoogleService-Info.plist in Resources */,
 				D25795C627B96A40007806E6 /* Assets.xcassets in Resources */,
+				460126D927C5386F00953846 /* Ramaraja-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460126DB27C53D6B00953846 /* RequestPushNotifView.swift in Sources */,
 				D25795C227B96A3E007806E6 /* VIPapplicationApp.swift in Sources */,
 				D25795F427B970B0007806E6 /* SetupView.swift in Sources */,
 				D25795F627B970F4007806E6 /* LoginPageView.swift in Sources */,
@@ -328,6 +331,7 @@
 				D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */,
 				D21146FA27C2F99A00EDAD4D /* HomePageView.swift in Sources */,
 				D25795F227B97020007806E6 /* MapBoxMapView.swift in Sources */,
+				460126D727C5378600953846 /* RequestLocationNotifView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,7 +23,7 @@ struct HomePageView: View {
                 Rectangle()
                     .fill(Color.green)
                     .frame(width: 282, height: 50)
-                NavigationLink(destination: MapBoxMapView()) {
+                NavigationLink(destination: RequestLocationNotifView()) {
                     Text("Get started").font(.custom("PTMono-Regular", size: 18))
                         .foregroundColor(.white)
                 }
