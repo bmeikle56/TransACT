@@ -27,7 +27,7 @@ struct SignUpView: View {
             }
         }
     }
-
+    
     var body: some View {
         VStack {
             Text("SIGN UP")
@@ -62,12 +62,11 @@ struct SignUpView: View {
                 Rectangle()
                     .fill(Color.green)
                     .frame(width: 282, height: 50)
-                NavigationLink(destination: LoginPageView()) {
-                    Text("SIGN UP")
-                        .font(.custom("PTMono-Regular", size: 18))
-                        .foregroundColor(.white)
-                }
-                
+                Button("SIGN UP") {
+                    handleSignup(email: email, password: password)
+                    
+                }.font(.custom("PTMono-Regular", size: 18))
+                    .foregroundColor(.white)
             }.navigationBarBackButtonHidden(true)
                 .padding(.bottom, 100)
             
@@ -76,7 +75,6 @@ struct SignUpView: View {
                     .font(.custom("PTMono-Regular", size: 18))
                     .padding(-8)
                 Button("Log in") {
-                    handleSignup(email: email, password: password)
                     self.presentationMode.wrappedValue.dismiss()
                 }
                 .font(.custom("PTMono-Regular", size: 18))

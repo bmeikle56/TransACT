@@ -11,10 +11,8 @@ struct RequestPushNotifView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.white.edgesIgnoringSafeArea(.all)
-                
                 VStack {
-                    Image("NotifTop image")
+                    Image("LocationSharing")
                         .resizable()
                         .frame(width: 339.0, height: 241.0)
                     
