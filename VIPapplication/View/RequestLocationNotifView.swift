@@ -15,13 +15,15 @@ struct RequestLocationNotifView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.white.edgesIgnoringSafeArea(.all)
+                
                 VStack {
-                    Image("NotifTop image")
+                    Image("LocationSharing")
                         .resizable()
                         .frame(width: 339.0, height: 241.0)
+                    
                     Spacer()
                         .frame(height: 2.0)
+                    
                     Text("Share Location!")
                         .font(.custom("Ramaraja", size: 30))
                         .multilineTextAlignment(.leading)
@@ -31,6 +33,7 @@ struct RequestLocationNotifView: View {
                         .font(.custom("Ramaraja", size: 19))
                         .multilineTextAlignment(.leading)
                         .frame(width: 300, height: 200, alignment: .topLeading)
+                    
                     Button(action: {
                         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                     }, label: {
@@ -43,13 +46,16 @@ struct RequestLocationNotifView: View {
                                             .frame(width: 300, height: 55))
                     })
                         .padding(2.0)
+                    
                     Spacer()
                         .frame(height: 28.0)
+                    
                     NavigationLink(destination: RequestPushNotifView()) {
                         Text("Skip for now")
                             .font(.custom("Ramaraja", size: 18))
                             .foregroundColor(Color.init(UIColor.gray))
                     }.padding(-8)
+                    
                     HStack(spacing: 140) {
                         Image("PeachTreeCornersLogo")
                             .resizable()
