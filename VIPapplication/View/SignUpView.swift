@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SignUpView: View {
     
@@ -14,7 +15,19 @@ struct SignUpView: View {
     
     // used for returning back to a previous view
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
+    
+    // sign up function for Firebase
+    func handleSignup(email: String, password: String) {
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if error != nil {
+                // failure
+            } else {
+                // success
+                print("You signed up")
+            }
+        }
+    }
+    
     var body: some View {
         VStack {
             Text("SIGN UP")
@@ -49,12 +62,12 @@ struct SignUpView: View {
                 Rectangle()
                     .fill(Color.green)
                     .frame(width: 282, height: 50)
-                NavigationLink(destination: LoginPageView()) {
-                    Text("SIGN UP")
-                        .font(.custom("PTMono-Regular", size: 18))
-                        .foregroundColor(.white)
-                }
-                
+                Button("SIGN UP") {
+                    handleSignup(email: email, password: password)
+                    self.presentationMode.wrappedValue.dismiss()
+                    
+                }.font(.custom("PTMono-Regular", size: 18))
+                    .foregroundColor(.white)
             }.navigationBarBackButtonHidden(true)
                 .padding(.bottom, 100)
             
@@ -64,7 +77,6 @@ struct SignUpView: View {
                     .padding(-8)
                 Button("Log in") {
                     self.presentationMode.wrappedValue.dismiss()
-                    
                 }
                 .font(.custom("PTMono-Regular", size: 18))
                 .foregroundColor(.black)
