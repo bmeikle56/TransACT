@@ -64,6 +64,7 @@ struct SignUpView: View {
                     .frame(width: 282, height: 50)
                 Button("SIGN UP") {
                     handleSignup(email: email, password: password)
+                    self.presentationMode.wrappedValue.dismiss()
                     
                 }.font(.custom("PTMono-Regular", size: 18))
                     .foregroundColor(.white)
