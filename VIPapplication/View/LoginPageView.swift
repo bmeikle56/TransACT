@@ -8,7 +8,10 @@
 import SwiftUI
 import Firebase
 
+
 struct LoginPageView: View {
+    
+    @EnvironmentObject var user: User
     
     @State private var username: String = ""
     @State private var password: String = ""
@@ -24,6 +27,8 @@ struct LoginPageView: View {
                 successfulLogin = false;
             } else {
                 print("You signed in")
+                user.uid = Auth.auth().currentUser?.uid ?? ""
+                print(user.uid)
                 successfulLogin = true// set it back to false because login was successful
                 self.showHomePageView = true
             }
@@ -33,7 +38,7 @@ struct LoginPageView: View {
     var body: some View {
         ZStack {
             // Links to other views
-            NavigationLink(destination: HomePageView(), isActive: $showHomePageView, label: { EmptyView() })
+            NavigationLink(destination: HomePageView(), isActive: $showHomaPageView, label: { EmptyView() }).environmentObject(user)
             
             VStack {
                 Text("LOG IN")
@@ -109,6 +114,6 @@ struct LoginPageView: View {
 
 struct LoginPageView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginPageView()
+        LoginPageView().environmentObject(User())
     }
 }

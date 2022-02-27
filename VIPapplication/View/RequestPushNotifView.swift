@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct RequestPushNotifView: View {
+    
+    @EnvironmentObject var user: User
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -50,11 +53,12 @@ struct RequestPushNotifView: View {
                 }
             }
         }.navigationBarHidden(true)
+            .environmentObject(user)
     }
 }
 
 struct RequestPushNotif_Previews: PreviewProvider {
     static var previews: some View {
-        RequestPushNotifView()
+        RequestPushNotifView().environmentObject(User())
     }
 }

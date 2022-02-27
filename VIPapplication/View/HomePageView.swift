@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomePageView: View {
     
+    @EnvironmentObject var user: User
+    
     var body: some View {
         VStack {
             Text("YOU ARE LOGGED IN")
@@ -36,6 +38,6 @@ struct HomePageView: View {
 
 struct HomePageView_Previews: PreviewProvider {
     static var previews: some View {
-        HomePageView()
+        HomePageView().environmentObject(User())
     }
 }

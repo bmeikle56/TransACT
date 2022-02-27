@@ -7,7 +7,13 @@
 
 import SwiftUI
 
+class User: ObservableObject {
+  @Published var uid = ""
+}
+
 struct SetupView: View {
+
+    var user = User()
     
     @State private var showAlert: Bool = false
     
@@ -54,6 +60,7 @@ struct SetupView: View {
                 }
             }
         }
+        .environmentObject(user)
     }
 }
 

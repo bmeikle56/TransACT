@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct RequestLocationNotifView: View {
+    
+    @EnvironmentObject var user: User
+    
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -63,11 +67,12 @@ struct RequestLocationNotifView: View {
                 }
             }
         }.navigationBarHidden(true)
+            .environmentObject(user)
     }
 }
 
 struct RequestLocationNotif_Previews: PreviewProvider {
     static var previews: some View {
-        RequestLocationNotifView()
+        RequestLocationNotifView().environmentObject(User())
     }
 }
