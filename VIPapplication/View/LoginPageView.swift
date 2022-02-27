@@ -13,11 +13,11 @@ struct LoginPageView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     let incorrectLogin: String = "Incorrect username or password!"
-    @State private var successfulLogin = true
-    @State private var showHomaPageView: Bool = false
+    @State private var successfulLogin: Bool = true
+    @State private var showHomePageView: Bool = false
     
     // login function for Firebase
-    func handleLogin() {
+    func handleLogin(username: String, password: String) {
         Auth.auth().signIn(withEmail: username, password: password) { (result, error) in
             if error != nil {
                 // show text on screen saying incorrect username or password
@@ -25,8 +25,7 @@ struct LoginPageView: View {
             } else {
                 print("You signed in")
                 successfulLogin = true// set it back to false because login was successful
-                self.showHomaPageView = true
-                // link to the homepageview screen here somehow
+                self.showHomePageView = true
             }
         }
     }
@@ -34,7 +33,7 @@ struct LoginPageView: View {
     var body: some View {
         ZStack {
             // Links to other views
-            NavigationLink(destination: HomePageView(), isActive: $showHomaPageView, label: { EmptyView() })
+            NavigationLink(destination: HomePageView(), isActive: $showHomePageView, label: { EmptyView() })
             
             VStack {
                 Text("LOG IN")
@@ -77,12 +76,8 @@ struct LoginPageView: View {
                     Rectangle()
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
-                    /*NavigationLink(destination: HomePageView()) {
-                        Text("LOG IN")
-                            .font(.custom("PTMono-Regular", size: 18))
-                            .foregroundColor(.white)*/
                     Button("LOG IN") {
-                        handleLogin()
+                        handleLogin(username: username, password: password)
                     }
                         .font(.custom("PTMono-Regular", size: 18))
                         .foregroundColor(.white)
