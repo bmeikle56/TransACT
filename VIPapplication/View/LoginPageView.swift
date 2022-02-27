@@ -14,6 +14,7 @@ struct LoginPageView: View {
     @State private var password: String = ""
     let incorrectLogin: String = "Incorrect username or password!"
     @State private var successfulLogin = true
+    @State private var showHomaPageView: Bool = false
     
     // login function for Firebase
     func handleLogin() {
@@ -23,83 +24,88 @@ struct LoginPageView: View {
                 successfulLogin = false;
             } else {
                 print("You signed in")
-                successfulLogin = true // set it back to false because login was successful
-                
+                successfulLogin = true// set it back to false because login was successful
+                self.showHomaPageView = true
                 // link to the homepageview screen here somehow
             }
         }
     }
     
     var body: some View {
-        VStack {
-            Text("LOG IN")
-                .padding(.bottom, 100)
-                .font(.custom("PTMono-Regular", size: 36))
+        ZStack {
+            // Links to other views
+            NavigationLink(destination: HomePageView(), isActive: $showHomaPageView, label: { EmptyView() })
             
-            if !successfulLogin {
-                Text(incorrectLogin)
-                    .font(.custom("PTMono-Regular", size: 18))
-                    .foregroundColor(.red)
-            } else {
-                // should display nothing
-            }
-            
-            ZStack {
-                TextField(
-                       "Username",
-                       text: $username
-                )
-                    .autocapitalization(.none)
-                    .frame(width: 250, height: 15, alignment: .center)
-                    .padding()
-                    .background(Color(.systemGray6))
-                    .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
-            }
-            
-            ZStack {
-                SecureField(
-                       "Password",
-                       text: $password
-                )
-                    .autocapitalization(.none)
-                    .frame(width: 250, height: 15, alignment: .center)
-                    .padding()
-                    .background(Color(.systemGray6))
-                    .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
-            }
-            
-            ZStack {
-                Rectangle()
-                    .fill(Color.green)
-                    .frame(width: 282, height: 50)
-                /*NavigationLink(destination: HomePageView()) {
-                    Text("LOG IN")
-                        .font(.custom("PTMono-Regular", size: 18))
-                        .foregroundColor(.white)*/
-                Button("LOG IN") {
-                    handleLogin()
-                }
-                    .font(.custom("PTMono-Regular", size: 18))
-                    .foregroundColor(.white)
+            VStack {
+                Text("LOG IN")
+                    .padding(.bottom, 100)
+                    .font(.custom("PTMono-Regular", size: 36))
                 
-            }.navigationBarBackButtonHidden(true)
-                .padding(.bottom, 10)
-            
-            NavigationLink(destination: ResetPasswordView()) {
-                Text("Forgot password?")
-                    .font(.custom("PTMono-Regular", size: 18))
-                    .foregroundColor(.black)
-            }.navigationBarBackButtonHidden(true)
-                .padding(.bottom, 100)
-            
-            HStack {
-                Text("Don't have an account? ")
-                    .font(.custom("PTMono-Regular", size: 18))
-                    .padding(-8)
-                NavigationLink(destination: SignUpView()) {
-                    Text("Sign up")
+                if !successfulLogin {
+                    Text(incorrectLogin)
+                        .font(.custom("PTMono-Regular", size: 18))
+                        .foregroundColor(.red)
+                } else {
+                    // should display nothing
+                }
+                
+                ZStack {
+                    TextField(
+                           "Username",
+                           text: $username
+                    )
+                        .autocapitalization(.none)
+                        .frame(width: 250, height: 15, alignment: .center)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
+                }
+                
+                ZStack {
+                    SecureField(
+                           "Password",
+                           text: $password
+                    )
+                        .autocapitalization(.none)
+                        .frame(width: 250, height: 15, alignment: .center)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
+                }
+                
+                ZStack {
+                    Rectangle()
+                        .fill(Color.green)
+                        .frame(width: 282, height: 50)
+                    /*NavigationLink(destination: HomePageView()) {
+                        Text("LOG IN")
+                            .font(.custom("PTMono-Regular", size: 18))
+                            .foregroundColor(.white)*/
+                    Button("LOG IN") {
+                        handleLogin()
+                    }
+                        .font(.custom("PTMono-Regular", size: 18))
+                        .foregroundColor(.white)
+                    
+                }.navigationBarBackButtonHidden(true)
+                    .padding(.bottom, 10)
+                
+                NavigationLink(destination: ResetPasswordView()) {
+                    Text("Forgot password?")
                         .font(.custom("PTMono-Regular", size: 18))
                         .foregroundColor(.black)
+                }.navigationBarBackButtonHidden(true)
+                    .padding(.bottom, 100)
+                
+                HStack {
+                    Text("Don't have an account? ")
+                        .font(.custom("PTMono-Regular", size: 18))
+                        .padding(-8)
+                    NavigationLink(destination: SignUpView()) {
+                        Text("Sign up")
+                            .font(.custom("PTMono-Regular", size: 18))
+                            .foregroundColor(.black)
+                    }
                 }
             }
         }
