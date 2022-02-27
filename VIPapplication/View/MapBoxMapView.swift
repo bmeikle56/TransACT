@@ -146,10 +146,8 @@ class MapViewController: UIViewController {
     internal var mapView: MapView!
     override public func viewDidLoad() {
         super.viewDidLoad()
-        let myResourceOptions = ResourceOptions(accessToken: "sk.eyJ1IjoiYm1laWtsZTMiLCJhIjoiY2t6bGh2cTN4NTJnaDJycDR3Zjlob3pmbiJ9.jvnZBZifWQN4zuApx979Ug")
-        let myMapInitOptions = MapInitOptions(resourceOptions: myResourceOptions)
         
-        mapView = MapView(frame: view.bounds, mapInitOptions: myMapInitOptions)
+        mapView = MapView(frame: view.bounds)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.addSubview(mapView)
         
