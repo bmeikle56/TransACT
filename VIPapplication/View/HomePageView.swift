@@ -17,7 +17,7 @@ struct HomePageView: View {
                 .padding()
                 .multilineTextAlignment(.center)
                 .lineSpacing(10)
-                .font(.custom("PTMono-Regular", size: 36))
+                .font(.custom("PTMono-Regular", size: 28))
             
             Image("HomePageView image").padding(.bottom, 100)
             

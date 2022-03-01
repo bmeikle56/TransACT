@@ -11,6 +11,8 @@
 		460126D927C5386F00953846 /* Ramaraja-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 460126D827C5386F00953846 /* Ramaraja-Regular.ttf */; };
 		460126DB27C53D6B00953846 /* RequestPushNotifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460126DA27C53D6B00953846 /* RequestPushNotifView.swift */; };
 		460126E727C54ED000953846 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 460126E627C54ECF00953846 /* GoogleService-Info.plist */; };
+		46BF48FE27CD5373004A2D6B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF48FD27CD5373004A2D6B /* LocationManager.swift */; };
+		46BF490027CDC67A004A2D6B /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF48FF27CDC67A004A2D6B /* NotificationManager.swift */; };
 		5386038427C9FD5C004A3162 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5386038327C9FD5C004A3162 /* FirebaseAnalytics */; };
 		5386038627C9FD5C004A3162 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5386038527C9FD5C004A3162 /* FirebaseAuth */; };
 		5386038827C9FD5C004A3162 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5386038727C9FD5C004A3162 /* FirebaseDatabase */; };
@@ -57,6 +59,8 @@
 		460126DA27C53D6B00953846 /* RequestPushNotifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPushNotifView.swift; sourceTree = "<group>"; };
 		460126E627C54ECF00953846 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		460126E827C54EDC00953846 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46BF48FD27CD5373004A2D6B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		46BF48FF27CDC67A004A2D6B /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		53BEFFC627CC1E5700974C3C /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
 		D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		D21146F727C2D7D200EDAD4D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46BF48FC27CD5302004A2D6B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				46BF48FD27CD5373004A2D6B /* LocationManager.swift */,
+				46BF48FF27CDC67A004A2D6B /* NotificationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		D25795B527B96A3E007806E6 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +148,7 @@
 				460126E627C54ECF00953846 /* GoogleService-Info.plist */,
 				D25795C127B96A3E007806E6 /* VIPapplicationApp.swift */,
 				D281245D27C41AE6000C2BC3 /* View */,
+				46BF48FC27CD5302004A2D6B /* Managers */,
 				D25795C727B96A40007806E6 /* Preview Content */,
 				D281245B27C41AB0000C2BC3 /* Fonts */,
 				D25795C527B96A40007806E6 /* Assets.xcassets */,
@@ -341,8 +355,10 @@
 				460126DB27C53D6B00953846 /* RequestPushNotifView.swift in Sources */,
 				D25795C227B96A3E007806E6 /* VIPapplicationApp.swift in Sources */,
 				53BEFFC727CC1E5700974C3C /* SurveyListView.swift in Sources */,
+				46BF48FE27CD5373004A2D6B /* LocationManager.swift in Sources */,
 				D25795F427B970B0007806E6 /* SetupView.swift in Sources */,
 				D25795F627B970F4007806E6 /* LoginPageView.swift in Sources */,
+				46BF490027CDC67A004A2D6B /* NotificationManager.swift in Sources */,
 				D21146F827C2D7D200EDAD4D /* SignUpView.swift in Sources */,
 				D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */,
 				D21146FA27C2F99A00EDAD4D /* HomePageView.swift in Sources */,
@@ -511,6 +527,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VIPapplication/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow us to access your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -540,6 +558,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VIPapplication/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow us to access your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
