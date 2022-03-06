@@ -1,15 +1,15 @@
 //
-//  SurveyListView.swift
+//  ProfileView.swift
 //  VIPapplication
 //
-//  Created by Chengkai Yao on 2/27/22.
+//  Created by Braeden Meikle on 3/6/22.
 //
 
 import SwiftUI
 
-struct SurveyListView: View {
+struct ProfileView: View {
     
-    @EnvironmentObject private var user: User
+    //@EnvironmentObject private var user: User
     let buttonSize: CGFloat = 45;
     @State private var isShowingMapBoxMapView: Bool = false
     
@@ -39,8 +39,7 @@ struct SurveyListView: View {
                 }.frame(width: UIScreen.main.bounds.width)
             }
             
-            SurveyList()
-                .frame(width: UIScreen.main.bounds.width)
+            RouteList()
                 
             HStack {
                 Spacer()
@@ -88,24 +87,35 @@ struct SurveyListView: View {
             }.frame(width: UIScreen.main.bounds.width)
                 .padding(2)
         }.navigationBarHidden(true)
-            .environmentObject(user)
+            //.environmentObject(user)
     }
 }
 
-struct SurveyList: View {
+struct Route: View {
     
-    @State private var isShowingDummySurveyPopup: Bool = false
+    let title: String
+    let subTitle: String
     
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                .fill(Color.white)
+                .frame(width: 350, height: 70, alignment: .center)
+                .shadow(radius: 5, x: 0, y: 3)
+            Text("Dummy route")
+        }
+    }
+}
+
+struct RouteList: View {
+        
     var body: some View {
         NavigationView {
             List {
                 VStack {
-                    // we will need to manually add/delete each survey, using the Survey() struct
-                    Survey(title: "Signup survey", subTitle: "Link: ")
+                    Route(title: "Signup survey", subTitle: "Link: ")
                         .padding(.bottom, 10)
-                    Survey(title: "Midterm survey", subTitle: "Link: ")
-                        .padding(.bottom, 10)
-                    Survey(title: "Reduce emissions the easy way", subTitle: "Author: Dr. Srinivas Peeta")
+                    Route(title: "Midterm survey", subTitle: "Link: ")
                         .padding(.bottom, 10)
                 }
             }
@@ -114,70 +124,8 @@ struct SurveyList: View {
     }
 }
 
-struct Survey: View {
-    
-    let title: String
-    let subTitle: String
-    @State private var isShowingDummySurveyPopup: Bool = false
-    
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                .fill(Color.white)
-                .frame(width: 350, height: 70, alignment: .center)
-                .shadow(radius: 5, x: 0, y: 3)
-            
-            VStack {
-                HStack {
-                    Button(title) {
-                        isShowingDummySurveyPopup = true
-                    }.popover(isPresented: $isShowingDummySurveyPopup) {
-                        
-                        //SurveyPopup() -> save for later
-                        Button(action: {
-                                isShowingDummySurveyPopup = false
-                            }, label: {
-                                Image("X")
-                            })
-                                Text("Insert GT survey here")
-                    }.foregroundColor(.black)
-                        .padding(.leading, 10)
-                        .font(.system(size: 24))
-                    
-                    Spacer()
-                }
-                HStack {
-                    Text(subTitle).padding(.leading, 10)
-                    
-                    Spacer()
-                }
-            }
-        }
-    }
-}
-
-struct SurveyPopup: View {
-    
-    let xPadding: CGFloat = 100
-    @State private var isShowingDummySurveyPopup: Bool = true
-    
-    var body: some View {
-        VStack {
-            HStack {
-                Button(action: {
-                        isShowingDummySurveyPopup = false
-                    }, label: {
-                        Image("X")
-                    })
-            }.padding(.trailing, xPadding)
-            
-            Text("Anything else in the survey goes here")
-        }
-    }
-}
-
-struct SurveyListView_Previews: PreviewProvider {
+struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        SurveyListView().environmentObject(User())
+        ProfileView()
     }
 }
