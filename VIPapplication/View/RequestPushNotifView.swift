@@ -11,6 +11,9 @@ struct RequestPushNotifView: View {
     
     @EnvironmentObject var user: User
     @ObservedObject var notificationManager = NotificationManager.shared
+    @AppStorage("NotificationPushInitialRequest")
+    var initialRequest: Bool = false
+    
     
     var body: some View {
         Group {

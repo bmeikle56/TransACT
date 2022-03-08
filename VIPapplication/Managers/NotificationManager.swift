@@ -8,6 +8,9 @@
 import UserNotifications
 
 class NotificationManager: NSObject, ObservableObject {
+    @AppStorage("NotificationPushInitialRequest")
+    var initialRequest: Bool = false
+    
     @Published var requestedAuthorization: Bool?
     // access this notification manager anywhere inside the app
     static let shared = NotificationManager()
@@ -19,8 +22,9 @@ class NotificationManager: NSObject, ObservableObject {
                 print("DEBUG: ERROR: \(error)")
             } else {
                 print("SUCCESS")
-                self.requestedAuthorization = true
             }
         }
+        self.requestedAuthorization = true
+        print(self.requestedAuthorization)
     }
 }
