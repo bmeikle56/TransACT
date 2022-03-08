@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-class User: ObservableObject {
-  @Published var uid = ""
+class User: ObservableObject, Identifiable {
+  @Published var uid = "AI6E6ku3LYLVtEKB7q0E"
 }
 
 struct SetupView: View {

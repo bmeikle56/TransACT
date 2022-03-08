@@ -59,7 +59,7 @@ struct MapBoxMapView: View {
                 
                 RoundedRectangle(cornerRadius: 20, style: .continuous).fill(Color.white)
                     .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 80)
-                    .shadow(radius: 5, x: 0, y: 3)
+                    .shadow(radius: 5, x: 0, y: 1)
                 Rectangle()
                     .fill(Color.white)
                     .frame(width: UIScreen.main.bounds.width, height: 80)

@@ -59,7 +59,8 @@ extension LocationManager: CLLocationManagerDelegate {
         // recieve user location
         guard let location = locations.last else {return}
         self.userLocation = location
-        print(locations)
+        //temporarily commented to test other functions
+        //print(locations)
         
     }
 }
