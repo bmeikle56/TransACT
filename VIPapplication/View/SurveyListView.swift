@@ -8,13 +8,12 @@
 import SwiftUI
 import FirebaseFirestore
 
-
 struct SurveyListView: View {
     
     @EnvironmentObject var user: User
     var buttonSize:CGFloat = 45;
     @State var isShowingMapBoxMapView = false
-    @State var surveys: [Survey] = []
+    @State var surveys: [SurveyItem] = []
     init() {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.shadowColor = .clear
@@ -29,7 +28,8 @@ struct SurveyListView: View {
         VStack {
             ZStack(alignment: .top) {
                 
-                RoundedRectangle(cornerRadius: 20, style: .continuous).fill(Color.white)
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(Color.white)
                     .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 80)
                     .shadow(radius: 5, x: 0, y: 2)
                 Rectangle()
@@ -56,30 +56,8 @@ struct SurveyListView: View {
                 List {
                     
                     ForEach(surveys){survey in
-                        Link(destination: URL(string: survey.url)!) {
-                        ZStack() {
-                            RoundedRectangle(cornerRadius: 20, style: .continuous).fill(Color.white)
-                                .frame(maxWidth: UIScreen.main.bounds.width * 0.9, maxHeight: 80)
-                                .shadow(radius: 5, x: 0, y: 2)
-                            VStack(alignment: .leading) {
-                                Text(survey.name)
-                                    .font(.system(size: 20, weight: .bold, design: .default))
-                                if survey.finished {
-                                    Text("finished")
-                                        .italic()
-                                        .frame(width: UIScreen.main.bounds.width * 0.8, alignment: .leading)
-                                    
-                                }
-                                else {
-                                    Text("")
-                                        .italic()
-                                        .frame(width: UIScreen.main.bounds.width * 0.8, alignment: .leading)
-                                }
-                                
-                            }
-                        }
-                        }.listRowSeparator(.hidden)
-                            .frame(width: UIScreen.main.bounds.width, height: 100)
+                        Survey(survey: survey)
+                            .listRowSeparator(.hidden)
                             .listRowInsets(EdgeInsets())
                     }
                     .navigationTitle("")
@@ -88,8 +66,6 @@ struct SurveyListView: View {
                 }
                 
                 .listStyle(.plain)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                //.navigationBarHidden(true)
                 
             }
             .task {
@@ -102,6 +78,7 @@ struct SurveyListView: View {
             
             HStack {
                 Spacer()
+                
                 Button(action: {
                     // Do something...
                 }, label: {
@@ -114,7 +91,9 @@ struct SurveyListView: View {
                     .padding(8)
                     .background(Color("UiGreen").opacity(0.7))
                     .cornerRadius(20)
+                
                 NavigationLink(destination: MapBoxMapView(), isActive: $isShowingMapBoxMapView) { EmptyView() }
+                
                 Button(action: {
                     isShowingMapBoxMapView = true
                 }, label: {
@@ -127,6 +106,7 @@ struct SurveyListView: View {
                     .padding(8)
                     .background(Color.white)
                     .cornerRadius(20)
+                
                 Button(action: {
                     // Do something...
                 }, label: {
@@ -137,6 +117,7 @@ struct SurveyListView: View {
                     .padding(8)
                     .background(Color.white)
                     .cornerRadius(20)
+                
                 Spacer()
             }.frame(width: UIScreen.main.bounds.width)
                 .padding(2)
@@ -160,19 +141,9 @@ struct SurveyListView: View {
                             
                             for survey in querySnapshot!.documents {
                                 print(survey.data())
-                                if survey_finished.contains(survey.documentID) {
-                                    self.surveys.append(Survey(id: survey.documentID,
+                                self.surveys.append(SurveyItem(id: survey.documentID,
                                                                name: survey.data()["name"] as? String ?? "",
-                                                               url: survey.data()["url"] as? String ?? "https://www.apple.com", finished: true))
-                                }
-                                else {
-                                    self.surveys.append(Survey(id: survey.documentID,
-                                                               name: survey.data()["name"] as? String ?? "",
-                                                               url: survey.data()["url"] as? String ?? "https://www.apple.com", finished: false))
-                                }
-                                
-                                
-                                
+                                                               url: survey.data()["url"] as? String ?? "https://www.apple.com", finished: survey_finished.contains(survey.documentID)))
                             }
                         }
                     }
@@ -181,24 +152,92 @@ struct SurveyListView: View {
                     
                     print(surveys)
                 }
-                
-                
             }
         }
     }
-    
 }
 
-struct Survey: Identifiable, Codable {
+
+struct SurveyItem: Identifiable, Codable {
     var id = UUID().uuidString
     var name: String
     var url: String
     var finished: Bool
 }
 
+struct Survey: View {
+    
+    let survey: SurveyItem
+    @State private var isShowingDummySurveyPopup: Bool = false
+    
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.white)
+                .frame(width: UIScreen.main.bounds.width * 0.9, height: 80)
+                .shadow(radius: 5, x: 0, y: 2)
+            
+            VStack {
+                HStack {
+                    Button(survey.name) {
+                        isShowingDummySurveyPopup = true
+                    }.popover(isPresented: $isShowingDummySurveyPopup) {
+                        
+                        //SurveyPopup() -> save for later
+                        Button(action: {
+                            isShowingDummySurveyPopup = false
+                        }, label: {
+                            Image("X")
+                        })
+                        Text("Insert GT survey here")
+                        Text(survey.url)
+                    }.foregroundColor(.black)
+                        .padding(.leading, 10)
+                        .font(.system(size: 24))
+                    
+                    Spacer()
+                }
+                HStack {
+                    if survey.finished {
+                        Text("finished").padding(.leading, 10)
+                        
+                        Spacer()
+                    }
+                    else {
+                        Text("").padding(.leading, 10)
+                        
+                        Spacer()
+                    }
+                    
+                }
+            }.frame(maxWidth: UIScreen.main.bounds.width * 0.8)
+        }
+        .frame(width: UIScreen.main.bounds.width, height: 100)
+    }
+}
+
+struct SurveyPopup: View {
+    
+    let xPadding: CGFloat = 100
+    @State private var isShowingDummySurveyPopup: Bool = true
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Button(action: {
+                    isShowingDummySurveyPopup = false
+                }, label: {
+                    Image("X")
+                })
+            }.padding(.trailing, xPadding)
+            
+            Text("Anything else in the survey goes here")
+        }
+    }
+}
 
 struct SurveyListView_Previews: PreviewProvider {
     static var previews: some View {
         SurveyListView().environmentObject(User())
     }
 }
+

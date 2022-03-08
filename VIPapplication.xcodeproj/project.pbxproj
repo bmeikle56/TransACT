@@ -23,6 +23,8 @@
 		D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */; };
 		D21146F827C2D7D200EDAD4D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F727C2D7D200EDAD4D /* SignUpView.swift */; };
 		D21146FA27C2F99A00EDAD4D /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F927C2F99A00EDAD4D /* HomePageView.swift */; };
+		D256852027D52D3F009DBC72 /* StartRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256851F27D52D3E009DBC72 /* StartRouteView.swift */; };
+		D256852227D52D4F009DBC72 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256852127D52D4F009DBC72 /* ProfileView.swift */; };
 		D25795C227B96A3E007806E6 /* VIPapplicationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795C127B96A3E007806E6 /* VIPapplicationApp.swift */; };
 		D25795C627B96A40007806E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25795C527B96A40007806E6 /* Assets.xcassets */; };
 		D25795C927B96A40007806E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25795C827B96A40007806E6 /* Preview Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		D21146F727C2D7D200EDAD4D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D21146F927C2F99A00EDAD4D /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		D256851F27D52D3E009DBC72 /* StartRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouteView.swift; sourceTree = "<group>"; };
+		D256852127D52D4F009DBC72 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D25795BE27B96A3E007806E6 /* VIPapplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPapplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25795C127B96A3E007806E6 /* VIPapplicationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPapplicationApp.swift; sourceTree = "<group>"; };
 		D25795C527B96A40007806E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 				460126D627C5378600953846 /* RequestLocationNotifView.swift */,
 				460126DA27C53D6B00953846 /* RequestPushNotifView.swift */,
 				53BEFFC627CC1E5700974C3C /* SurveyListView.swift */,
+				D256851F27D52D3E009DBC72 /* StartRouteView.swift */,
+				D256852127D52D4F009DBC72 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,10 +365,12 @@
 				D25795F427B970B0007806E6 /* SetupView.swift in Sources */,
 				D25795F627B970F4007806E6 /* LoginPageView.swift in Sources */,
 				46BF490027CDC67A004A2D6B /* NotificationManager.swift in Sources */,
+				D256852027D52D3F009DBC72 /* StartRouteView.swift in Sources */,
 				D21146F827C2D7D200EDAD4D /* SignUpView.swift in Sources */,
 				D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */,
 				D21146FA27C2F99A00EDAD4D /* HomePageView.swift in Sources */,
 				D25795F227B97020007806E6 /* MapBoxMapView.swift in Sources */,
+				D256852227D52D4F009DBC72 /* ProfileView.swift in Sources */,
 				460126D727C5378600953846 /* RequestLocationNotifView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
