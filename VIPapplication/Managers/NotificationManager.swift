@@ -6,9 +6,11 @@
 //
 
 import UserNotifications
+import SwiftUI
 
 class NotificationManager: NSObject, ObservableObject {
-    @Published var requestedAuthorization: Bool?
+    
+    //@Published var requestedAuthorization: Bool?
     // access this notification manager anywhere inside the app
     static let shared = NotificationManager()
     
@@ -19,7 +21,6 @@ class NotificationManager: NSObject, ObservableObject {
                 print("DEBUG: ERROR: \(error)")
             } else {
                 print("SUCCESS")
-                self.requestedAuthorization = true
             }
         }
     }
