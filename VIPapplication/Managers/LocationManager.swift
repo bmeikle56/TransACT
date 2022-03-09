@@ -6,6 +6,7 @@
 //
 
 import CoreLocation
+import FirebaseFirestore
 
 class LocationManager: NSObject, ObservableObject {
     private let manager = CLLocationManager()
@@ -61,6 +62,24 @@ extension LocationManager: CLLocationManagerDelegate {
         self.userLocation = location
         //temporarily commented to test other functions
         //print(locations)
+        
+        let altitude = location.altitude
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
+        
+        // get the larger possible error
+        let verticalAccuracy = location.verticalAccuracy
+        let horizontalAccuracy = location.horizontalAccuracy
+        var accuracy = verticalAccuracy
+        if (verticalAccuracy < horizontalAccuracy) {
+            accuracy = horizontalAccuracy
+        }
+        
+        let speed = location.speed
+        let time = location.timestamp
+        
+        let db = Firestore.firestore()
+        db.collection("LocationDataTestIos").document().setData(["altitude":altitude, "latitude":latitude, "longitude":longitude, "accuracy":accuracy, "speed":speed, "time":time])
         
     }
 }
