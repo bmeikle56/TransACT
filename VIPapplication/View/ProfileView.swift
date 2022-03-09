@@ -9,11 +9,19 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    //@EnvironmentObject private var user: User
+    @EnvironmentObject private var user: User
     let buttonSize: CGFloat = 45;
     @State private var isShowingMapBoxMapView: Bool = false
+    @State private var isShowingSurveyListView: Bool = false
     
     var body: some View {
+        
+        
+        // put at the top for easy access
+        NavigationLink(destination: SurveyListView(), isActive: $isShowingSurveyListView) { EmptyView() }
+        NavigationLink(destination: MapBoxMapView(), isActive: $isShowingMapBoxMapView) { EmptyView() }
+        
+        
         VStack {
             ZStack(alignment: .top) {
                 
@@ -45,7 +53,7 @@ struct ProfileView: View {
                 Spacer()
                 
                 Button(action: {
-                    // Do something...
+                    isShowingSurveyListView = true
                 }, label: {
                     Image("Survey icon white")
                         .resizable()
@@ -56,8 +64,6 @@ struct ProfileView: View {
                     .padding(8)
                     .background(Color("UiGreen").opacity(0.7))
                     .cornerRadius(20)
-                
-                NavigationLink(destination: MapBoxMapView(), isActive: $isShowingMapBoxMapView) { EmptyView() }
                 
                 Button(action: {
                     isShowingMapBoxMapView = true
@@ -73,7 +79,7 @@ struct ProfileView: View {
                     .cornerRadius(20)
                 
                 Button(action: {
-                    // Do something...
+                    // does nothing because we are already in this view
                 }, label: {
                     Image("Profile icon")
                         .resizable()
@@ -87,7 +93,7 @@ struct ProfileView: View {
             }.frame(width: UIScreen.main.bounds.width)
                 .padding(2)
         }.navigationBarHidden(true)
-            //.environmentObject(user)
+            .environmentObject(user)
     }
 }
 

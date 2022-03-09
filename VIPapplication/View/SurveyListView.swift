@@ -12,8 +12,12 @@ struct SurveyListView: View {
     
     @EnvironmentObject var user: User
     var buttonSize:CGFloat = 45;
+    
     @State var isShowingMapBoxMapView = false
+    @State var isShowingProfileView = false
+    
     @State var surveys: [SurveyItem] = []
+    
     init() {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.shadowColor = .clear
@@ -25,7 +29,17 @@ struct SurveyListView: View {
     
     
     var body: some View {
+        
+        
+        
+        // put at the top for easy access
+        NavigationLink(destination: MapBoxMapView(), isActive: $isShowingMapBoxMapView) { EmptyView() }
+        NavigationLink(destination: ProfileView(), isActive: $isShowingProfileView) { EmptyView() }
+        
+        
+        
         VStack {
+            
             ZStack(alignment: .top) {
                 
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
@@ -80,7 +94,7 @@ struct SurveyListView: View {
                 Spacer()
                 
                 Button(action: {
-                    // Do something...
+                    // does nothing because we are already in this view
                 }, label: {
                     Image("Survey icon white")
                         .resizable()
@@ -91,8 +105,6 @@ struct SurveyListView: View {
                     .padding(8)
                     .background(Color("UiGreen").opacity(0.7))
                     .cornerRadius(20)
-                
-                NavigationLink(destination: MapBoxMapView(), isActive: $isShowingMapBoxMapView) { EmptyView() }
                 
                 Button(action: {
                     isShowingMapBoxMapView = true
@@ -108,7 +120,7 @@ struct SurveyListView: View {
                     .cornerRadius(20)
                 
                 Button(action: {
-                    // Do something...
+                    isShowingProfileView = true
                 }, label: {
                     Image("Profile icon")
                         .resizable()
@@ -125,7 +137,7 @@ struct SurveyListView: View {
             .environmentObject(user)
     }
     
-    func fetchData()async {
+    func fetchData() async {
         do {
             self.surveys = []
             let db = Firestore.firestore()
