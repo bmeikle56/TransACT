@@ -11,13 +11,14 @@ struct RequestPushNotifView: View {
     
     @EnvironmentObject var user: User
     @ObservedObject var notificationManager = NotificationManager.shared
-    @AppStorage("NotificationPushInitialRequest")
-    var initialRequest: Bool = false
+    @AppStorage("NotificationPushInitialRequest") var initialRequestDone: Bool = false
     
     
     var body: some View {
         Group {
-            if notificationManager.requestedAuthorization != nil {
+            // change to accordingly show the announcement push request based on real settings
+            // settings.alertSetting == .enabled
+            if initialRequestDone {
                 MapBoxMapView()
             } else {
                     NavigationView {
@@ -45,6 +46,7 @@ struct RequestPushNotifView: View {
                                     
                                     Button(action: {
                                         notificationManager.requestAuthorization()
+                                        initialRequestDone = true
                                         // UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                                     }, label: {
                                         Text("Enable Push Notifications")
