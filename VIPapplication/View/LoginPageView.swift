@@ -13,8 +13,8 @@ struct LoginPageView: View {
     
     @EnvironmentObject var user: User
     
-    @State private var username: String = "chengkaiyao825@gmail.com"
-    @State private var password: String = "12a34b56c7"
+    @State private var username: String
+    @State private var password: String
     let incorrectLogin: String = "Incorrect username or password!"
     @State private var successfulLogin: Bool = true
     @State private var showHomePageView: Bool = false
@@ -26,19 +26,19 @@ struct LoginPageView: View {
                 // show text on screen saying incorrect username or password
                 successfulLogin = false;
             } else {
-                print("You signed in")
                 user.uid = Auth.auth().currentUser?.uid ?? ""
                 print(user.uid)
-                successfulLogin = true// set it back to false because login was successful
+                successfulLogin = true
                 self.showHomePageView = true
             }
         }
     }
     
     var body: some View {
+        
+        NavigationLink(destination: HomePageView(), isActive: $showHomePageView, label: { EmptyView() })//.environmentObject(user)
+        
         ZStack {
-            // Links to other views
-            NavigationLink(destination: HomePageView(), isActive: $showHomePageView, label: { EmptyView() }).environmentObject(user)
             
             VStack {
                 Text("LOG IN")

@@ -202,12 +202,12 @@
 				D21146F727C2D7D200EDAD4D /* SignUpView.swift */,
 				D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */,
 				D21146F927C2F99A00EDAD4D /* HomePageView.swift */,
-				D25795F127B97020007806E6 /* MapBoxMapView.swift */,
 				460126D627C5378600953846 /* RequestLocationNotifView.swift */,
 				460126DA27C53D6B00953846 /* RequestPushNotifView.swift */,
 				53BEFFC627CC1E5700974C3C /* SurveyListView.swift */,
-				D256851F27D52D3E009DBC72 /* StartRouteView.swift */,
+				D25795F127B97020007806E6 /* MapBoxMapView.swift */,
 				D256852127D52D4F009DBC72 /* ProfileView.swift */,
+				D256851F27D52D3E009DBC72 /* StartRouteView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

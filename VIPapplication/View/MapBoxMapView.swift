@@ -16,7 +16,9 @@ struct MapBoxMapView: View {
     var buttonSize:CGFloat = 45;
     
     @State var survey_to_finish = [String]()
+    
     @State var isShowingSurveyListView = false
+    @State var isShowingProfileView = false
     
     func checkSurvey() {
         let db = Firestore.firestore()
@@ -52,6 +54,15 @@ struct MapBoxMapView: View {
     }
     
     var body: some View {
+        
+        
+        
+        // put at the top for easy access
+        NavigationLink(destination: SurveyListView(), isActive: $isShowingSurveyListView) { EmptyView() }
+        NavigationLink(destination: ProfileView(), isActive: $isShowingProfileView) { EmptyView() }
+        
+        
+        
         VStack {
             ZStack(alignment: .top) {
                 MapBoxMapViewController()
@@ -79,7 +90,7 @@ struct MapBoxMapView: View {
             
             HStack {
                 Spacer()
-                NavigationLink(destination: SurveyListView(), isActive: $isShowingSurveyListView) { EmptyView() }
+                
                 Button(action: {
                     isShowingSurveyListView = true
                 }, label: {
@@ -93,7 +104,7 @@ struct MapBoxMapView: View {
                     .cornerRadius(20)
                 
                 Button(action: {
-                    // Do something...
+                    // does nothing because we are already in this view
                 }, label: {
                     Image("Location icon white")
                         .resizable()
@@ -104,8 +115,9 @@ struct MapBoxMapView: View {
                     .padding(8)
                     .background(Color("UiGreen").opacity(0.7))
                     .cornerRadius(20)
+                
                 Button(action: {
-                    // Do something...
+                    isShowingProfileView = true
                 }, label: {
                     Image("Profile icon")
                         .resizable()
@@ -114,7 +126,9 @@ struct MapBoxMapView: View {
                     .padding(8)
                     .background(Color.white)
                     .cornerRadius(20)
+                
                 Spacer()
+                
             }.frame(width: UIScreen.main.bounds.width)
                 .padding(2)
         }.navigationBarHidden(true)
