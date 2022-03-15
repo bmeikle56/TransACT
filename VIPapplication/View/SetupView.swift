@@ -13,7 +13,7 @@ class User: ObservableObject, Identifiable {
 
 struct SetupView: View {
 
-    var user = User()
+    @EnvironmentObject var user: User
     
     @State private var showAlert: Bool = false
     
