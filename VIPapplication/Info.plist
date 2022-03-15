@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>MBXAccessToken</key>
+	<string>pk.eyJ1Ijoidmlzd2FzcmlydXBhIiwiYSI6ImNraDN1bWp6dzAwdGkyc3BjcHB3cmhoaWEifQ.CsXNQ579ezo2IrQjKe6PLQ</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>PTMono-Regular.ttf</string>
