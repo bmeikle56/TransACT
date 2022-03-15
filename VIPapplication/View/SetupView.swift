@@ -21,7 +21,7 @@ struct SetupView: View {
         NavigationView {
             VStack {
                 Text("LOG IN")
-                    .font(.custom("PTMono-Regular", size: 36))
+                    .font(.custom("PTMono-Bold", size: 36))
                 
                 Image("SetupView image").padding(.bottom, 80)
                 
@@ -54,7 +54,7 @@ struct SetupView: View {
                     
                     NavigationLink(destination: SignUpView()) {
                         Text("Sign up")
-                            .font(.custom("PTMono-Regular", size: 18))
+                            .font(.custom("PTMono-Bold", size: 18))
                             .foregroundColor(.black)
                     }.padding(-8)
                 }
