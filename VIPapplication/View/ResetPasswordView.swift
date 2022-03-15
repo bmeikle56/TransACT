@@ -19,7 +19,7 @@ struct ResetPasswordView: View {
         VStack {
             Text("RESET PASSWORD")
                 .padding(.bottom, 100)
-                .font(.custom("PTMono-Regular", size: 36))
+                .font(.custom("PTMono-Bold", size: 36))
             
             ZStack {
                 TextField(
@@ -50,7 +50,7 @@ struct ResetPasswordView: View {
                                 self.presentationMode.wrappedValue.dismiss()
                         
                     }))
-                }.font(.custom("PTMono-Regular", size: 18))
+                }.font(.custom("PTMono-Bold", size: 18))
                     .foregroundColor(.white)
                 
             }.navigationBarBackButtonHidden(true)

@@ -43,7 +43,7 @@ struct LoginPageView: View {
             VStack {
                 Text("LOG IN")
                     .padding(.bottom, 100)
-                    .font(.custom("PTMono-Regular", size: 36))
+                    .font(.custom("PTMono-Bold", size: 36))
                 
                 if !successfulLogin {
                     Text(incorrectLogin)
@@ -84,7 +84,7 @@ struct LoginPageView: View {
                     Button("LOG IN") {
                         handleLogin(username: username, password: password)
                     }
-                        .font(.custom("PTMono-Regular", size: 18))
+                        .font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
                     
                 }.navigationBarBackButtonHidden(true)
@@ -103,7 +103,7 @@ struct LoginPageView: View {
                         .padding(-8)
                     NavigationLink(destination: SignUpView()) {
                         Text("Sign up")
-                            .font(.custom("PTMono-Regular", size: 18))
+                            .font(.custom("PTMono-Bold", size: 18))
                             .foregroundColor(.black)
                     }
                 }

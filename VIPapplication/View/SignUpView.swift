@@ -32,7 +32,7 @@ struct SignUpView: View {
         VStack {
             Text("SIGN UP")
                 .padding(.bottom, 100)
-                .font(.custom("PTMono-Regular", size: 36))
+                .font(.custom("PTMono-Bold", size: 36))
             
             ZStack {
                 TextField(
@@ -66,7 +66,7 @@ struct SignUpView: View {
                     handleSignup(email: email, password: password)
                     self.presentationMode.wrappedValue.dismiss()
                     
-                }.font(.custom("PTMono-Regular", size: 18))
+                }.font(.custom("PTMono-Bold", size: 18))
                     .foregroundColor(.white)
             }.navigationBarBackButtonHidden(true)
                 .padding(.bottom, 100)
@@ -78,7 +78,7 @@ struct SignUpView: View {
                 Button("Log in") {
                     self.presentationMode.wrappedValue.dismiss()
                 }
-                .font(.custom("PTMono-Regular", size: 18))
+                .font(.custom("PTMono-Bold", size: 18))
                 .foregroundColor(.black)
             }
         }

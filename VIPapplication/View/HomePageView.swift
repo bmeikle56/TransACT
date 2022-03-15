@@ -13,12 +13,14 @@ struct HomePageView: View {
     
     var body: some View {
         VStack {
-            Text("YOU ARE LOGGED IN")
+            Text("YOU ARE")
                 .padding()
                 .multilineTextAlignment(.center)
                 .lineSpacing(10)
-                .font(.custom("PTMono-Regular", size: 28))
-            
+                .font(.custom("PTMono-Bold", size: 36))
+            Text("LOGGED IN")
+                .multilineTextAlignment(.center)
+                .font(.custom("PTMono-Bold", size: 36))
             Image("HomePageView image").padding(.bottom, 100)
             
             ZStack {
@@ -26,7 +28,7 @@ struct HomePageView: View {
                     .fill(Color.green)
                     .frame(width: 282, height: 50)
                 NavigationLink(destination: RequestLocationNotifView()) {
-                    Text("Get started").font(.custom("PTMono-Regular", size: 18))
+                    Text("Get started").font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
                 }
                 
