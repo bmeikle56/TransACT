@@ -11,6 +11,7 @@ struct RequestLocationNotifView: View {
     
     @EnvironmentObject var user: User
     @ObservedObject var locationManager = LocationManager.shared
+    let passUser = locationManager.setUser(user: self.user)
     
     var body: some View {
         Group {
