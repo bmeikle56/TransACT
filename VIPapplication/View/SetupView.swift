@@ -67,7 +67,7 @@ struct SetupView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SetupView()
+            SetupView().environmentObject(User())
         }
     }
 }
