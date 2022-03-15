@@ -13,8 +13,8 @@ struct LoginPageView: View {
     
     @EnvironmentObject var user: User
     
-    @State private var username: String
-    @State private var password: String
+    @State private var username: String = ""
+    @State private var  : String = ""
     let incorrectLogin: String = "Incorrect username or password!"
     @State private var successfulLogin: Bool = true
     @State private var showHomePageView: Bool = false
