@@ -29,7 +29,7 @@ struct SetupView: View {
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
                         .fill(Color.green)
                         .frame(width: 200, height: 50)
-                    NavigationLink(destination: LoginPageView(username: "b", password: "b")) {
+                    NavigationLink(destination: LoginPageView()) {
                         Text("Google").font(.custom("PTMono-Regular", size: 18))
                             .foregroundColor(.black)
                     }
