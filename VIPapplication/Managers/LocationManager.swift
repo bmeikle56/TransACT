@@ -15,6 +15,7 @@ class LocationManager: NSObject, ObservableObject {
     // access this location manager anywhere inside the app
     static let shared = LocationManager()
     var user = User()
+    let userTestId = "dnrlfKjdcMuqUC9rHdc4"
     
     override init() {
         super.init()
@@ -85,8 +86,16 @@ extension LocationManager: CLLocationManagerDelegate {
         let time = location.timestamp
         
         let db = Firestore.firestore()
+        let currUser = db.collection("users").document(userTestId)
+        currUser.getDocument { (document, error) in
+            if let error = error {
+                print("Error getting user \(self.userTestId) : \(error)")
+            }
+            else {
+                currUser.collection("locations").document().setData(["altitude":altitude, "latitude":latitude, "longitude":longitude, "accuracy":accuracy, "speed":speed, "time":time])
+            }
+        }
+            
 //        db.collection("LocationDataTestIos").document().setData(["altitude":altitude, "latitude":latitude, "longitude":longitude, "accuracy":accuracy, "speed":speed, "time":time])
-        db.collection("locations").document(user.uid).setData(["user_id":user.uid, "altitude":altitude, "latitude":latitude, "longitude":longitude, "accuracy":accuracy, "speed":speed, "time":time])
-        
     }
 }
