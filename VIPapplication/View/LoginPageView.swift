@@ -36,7 +36,7 @@ struct LoginPageView: View {
     
     var body: some View {
         
-        NavigationLink(destination: HomePageView(), isActive: $showHomePageView, label: { EmptyView() })//.environmentObject(user)
+        NavigationLink(destination: HomePageView(), isActive: $showHomePageView, label: { EmptyView() }).environmentObject(user)
         
         ZStack {
             

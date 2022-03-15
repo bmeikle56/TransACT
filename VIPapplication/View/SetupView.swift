@@ -13,7 +13,7 @@ class User: ObservableObject, Identifiable {
 
 struct SetupView: View {
 
-    var user = User()
+    @EnvironmentObject var user: User
     
     @State private var showAlert: Bool = false
     
@@ -29,7 +29,7 @@ struct SetupView: View {
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
                         .fill(Color.green)
                         .frame(width: 200, height: 50)
-                    NavigationLink(destination: LoginPageView()) {
+                    NavigationLink(destination: LoginPageView(username: "b", password: "b")) {
                         Text("Google").font(.custom("PTMono-Regular", size: 18))
                             .foregroundColor(.black)
                     }
