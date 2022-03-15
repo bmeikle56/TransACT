@@ -11,6 +11,7 @@ import SwiftUI
 class NotificationManager: NSObject, ObservableObject {
     
     //@Published var requestedAuthorization: Bool?
+    // change to ensure it stablized
     // access this notification manager anywhere inside the app
     static let shared = NotificationManager()
     

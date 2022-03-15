@@ -12,11 +12,17 @@ struct RequestLocationNotifView: View {
     @EnvironmentObject var user: User
     @ObservedObject var locationManager = LocationManager.shared
     
+    func passUserToLocationManager() {
+        locationManager.setUser(user: user)
+    }
+    
     var body: some View {
         Group {
             if locationManager.userLocation != nil {
                 // if user denied -> userLocation is nil
-                RequestPushNotifView()
+                RequestPushNotifView().task {
+                    passUserToLocationManager()
+                }
             } else {
                     NavigationView {
                         ScrollView(showsIndicators: false) {
@@ -43,6 +49,7 @@ struct RequestLocationNotifView: View {
                                     
                                     Button(action: {
                                         locationManager.requestLocation()
+                                        passUserToLocationManager()
                                         // UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                                     }, label: {
                                         Text("Enable Location Always")

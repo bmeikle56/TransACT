@@ -14,6 +14,7 @@ class LocationManager: NSObject, ObservableObject {
     @Published var userLocation: CLLocation?
     // access this location manager anywhere inside the app
     static let shared = LocationManager()
+    var user = User()
     
     override init() {
         super.init()
@@ -24,8 +25,11 @@ class LocationManager: NSObject, ObservableObject {
     
     func requestLocation() {
         // most common use for better performance and battery
-        // manager.requestWhenInUseAuthorization()
         manager.requestAlwaysAuthorization()
+    }
+    
+    func setUser(user: User) {
+        self.user = user
     }
 }
 
@@ -62,6 +66,7 @@ extension LocationManager: CLLocationManagerDelegate {
         self.userLocation = location
         //temporarily commented to test other functions
         //print(locations)
+        //print(user.uid)
         
         let altitude = location.altitude
         let latitude = location.coordinate.latitude
@@ -79,7 +84,14 @@ extension LocationManager: CLLocationManagerDelegate {
         let time = location.timestamp
         
         let db = Firestore.firestore()
-        db.collection("LocationDataTestIos").document().setData(["altitude":altitude, "latitude":latitude, "longitude":longitude, "accuracy":accuracy, "speed":speed, "time":time])
-        
+        let currUser = db.collection("users").document(user.uid)
+        currUser.getDocument { (document, error) in
+            if let error = error {
+                print("Error getting user \(self.user.uid) : \(error)")
+            }
+            else {
+                currUser.collection("locations").document().setData(["altitude":altitude, "latitude":latitude, "longitude":longitude, "accuracy":accuracy, "speed":speed, "time":time])
+            }
+        }
     }
 }
