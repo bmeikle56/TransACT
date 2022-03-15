@@ -65,8 +65,8 @@ extension LocationManager: CLLocationManagerDelegate {
         guard let location = locations.last else {return}
         self.userLocation = location
         //temporarily commented to test other functions
-        print(locations)
-        print(user.uid)
+        //print(locations)
+        //print(user.uid)
         
         let altitude = location.altitude
         let latitude = location.coordinate.latitude
