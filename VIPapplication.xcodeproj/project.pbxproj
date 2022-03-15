@@ -11,6 +11,7 @@
 		460126D927C5386F00953846 /* Ramaraja-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 460126D827C5386F00953846 /* Ramaraja-Regular.ttf */; };
 		460126DB27C53D6B00953846 /* RequestPushNotifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460126DA27C53D6B00953846 /* RequestPushNotifView.swift */; };
 		460126E727C54ED000953846 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 460126E627C54ECF00953846 /* GoogleService-Info.plist */; };
+		4696A9C227E0E2FA00165C05 /* PTMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4696A9C127E0E2FA00165C05 /* PTMono-Bold.ttf */; };
 		46BF48FE27CD5373004A2D6B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF48FD27CD5373004A2D6B /* LocationManager.swift */; };
 		46BF490027CDC67A004A2D6B /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF48FF27CDC67A004A2D6B /* NotificationManager.swift */; };
 		5386038427C9FD5C004A3162 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5386038327C9FD5C004A3162 /* FirebaseAnalytics */; };
@@ -61,6 +62,7 @@
 		460126DA27C53D6B00953846 /* RequestPushNotifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPushNotifView.swift; sourceTree = "<group>"; };
 		460126E627C54ECF00953846 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		460126E827C54EDC00953846 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4696A9C127E0E2FA00165C05 /* PTMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTMono-Bold.ttf"; sourceTree = "<group>"; };
 		46BF48FD27CD5373004A2D6B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		46BF48FF27CDC67A004A2D6B /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		53BEFFC627CC1E5700974C3C /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		D281245B27C41AB0000C2BC3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				4696A9C127E0E2FA00165C05 /* PTMono-Bold.ttf */,
 				460126D827C5386F00953846 /* Ramaraja-Regular.ttf */,
 				D281245427C419EA000C2BC3 /* PTMono-Regular.ttf */,
 			);
@@ -331,6 +334,7 @@
 			files = (
 				D25795C927B96A40007806E6 /* Preview Assets.xcassets in Resources */,
 				D281245527C419EA000C2BC3 /* PTMono-Regular.ttf in Resources */,
+				4696A9C227E0E2FA00165C05 /* PTMono-Bold.ttf in Resources */,
 				460126E727C54ED000953846 /* GoogleService-Info.plist in Resources */,
 				D25795C627B96A40007806E6 /* Assets.xcassets in Resources */,
 				460126D927C5386F00953846 /* Ramaraja-Regular.ttf in Resources */,
