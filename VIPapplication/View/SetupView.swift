@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-class User: ObservableObject, Identifiable {
-  @Published var uid = "AI6E6ku3LYLVtEKB7q0E"
-}
+
 
 struct SetupView: View {
 
     @EnvironmentObject var user: User
+    
     
     @State private var showAlert: Bool = false
     
@@ -67,7 +66,7 @@ struct SetupView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SetupView()
+            SetupView().environmentObject(User())
         }
     }
 }
