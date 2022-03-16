@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 class User: ObservableObject, Identifiable {
-  @Published var uid = "AI6E6ku3LYLVtEKB7q0E"
+  @Published var uid = "place holder"
 }
 
 @main

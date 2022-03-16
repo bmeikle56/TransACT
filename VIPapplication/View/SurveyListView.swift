@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseFirestore
+import WebKit
 
 struct SurveyListView: View {
     
@@ -16,7 +17,6 @@ struct SurveyListView: View {
     @State var isShowingMapBoxMapView = false
     @State var isShowingProfileView = false
     
-    @State var surveys: [SurveyItem] = []
     
     init() {
         let navBarAppearance = UINavigationBarAppearance()
@@ -66,29 +66,7 @@ struct SurveyListView: View {
             Spacer()
                 .frame(height: 50)
             
-            NavigationView {
-                List {
-                    
-                    ForEach(surveys){survey in
-                        Survey(survey: survey)
-                            .listRowSeparator(.hidden)
-                            .listRowInsets(EdgeInsets())
-                    }
-                    .navigationTitle("")
-                    .navigationBarTitleDisplayMode(.inline)
-                    
-                }
-                
-                .listStyle(.plain)
-                
-            }
-            .task {
-                await fetchData()
-            }
-            .refreshable {
-                await fetchData()
-            }
-            .frame(width: UIScreen.main.bounds.width)
+            SurveyList().environmentObject(user)
             
             HStack {
                 Spacer()
@@ -135,6 +113,40 @@ struct SurveyListView: View {
                 .padding(2)
         }.navigationBarHidden(true)
             .environmentObject(user)
+    }
+    
+    
+}
+
+struct SurveyList: View {
+    
+    @State var surveys: [SurveyItem] = []
+    @EnvironmentObject var user: User
+    
+    var body: some View {
+        NavigationView {
+            List {
+                
+                ForEach(surveys){survey in
+                    Survey(survey: survey)
+                        .listRowSeparator(.hidden)
+                        .listRowInsets(EdgeInsets())
+                }
+                .navigationTitle("")
+                .navigationBarTitleDisplayMode(.inline)
+                
+            }
+            
+            .listStyle(.plain)
+            
+        }
+        .task {
+            await fetchData()
+        }
+        .refreshable {
+            await fetchData()
+        }
+        .frame(width: UIScreen.main.bounds.width)
     }
     
     func fetchData() async {
@@ -195,13 +207,12 @@ struct Survey: View {
                     }.popover(isPresented: $isShowingDummySurveyPopup) {
                         
                         //SurveyPopup() -> save for later
-                        Button(action: {
+                        /*Button(action: {
                             isShowingDummySurveyPopup = false
                         }, label: {
                             Image("X")
-                        })
-                        Text("Insert GT survey here")
-                        Text(survey.url)
+                        })*/
+                        WebView(url: URL(string: survey.url)!)
                     }.foregroundColor(.black)
                         .padding(.leading, 10)
                         .font(.system(size: 24))
@@ -227,6 +238,20 @@ struct Survey: View {
     }
 }
 
+struct WebView: UIViewRepresentable {
+ 
+    var url: URL
+ 
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+ 
+    func updateUIView(_ webView: WKWebView, context: Context) {
+        let request = URLRequest(url: url)
+        webView.load(request)
+    }
+}
+
 struct SurveyPopup: View {
     
     let xPadding: CGFloat = 100
@@ -249,7 +274,9 @@ struct SurveyPopup: View {
 
 struct SurveyListView_Previews: PreviewProvider {
     static var previews: some View {
-        SurveyListView().environmentObject(User())
+        let testUser = User()
+        testUser.uid = "GYZ1sGENlBWkCzkStefFlfA0yO13"
+        return SurveyListView().environmentObject(testUser)
     }
 }
 
