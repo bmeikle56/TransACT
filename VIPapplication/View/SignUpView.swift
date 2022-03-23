@@ -178,6 +178,21 @@ struct SignUpView: View {
         return NSPredicate(format:"SELF MATCHES %@", emailRegex).evaluate(with: email)
     }
     
+    /* returns
+     (email validity, passwords match, password strength)
+     */
+    func errorHierarchy(emailAddressIsValid: Bool, passwordsMatch: Bool, passwordIsStrong: Bool) -> (Bool, Bool, Bool) {
+        /* hierarchy:
+         - invalid email address takes absolute precedence
+         - passwords not match takes precendence over password strength
+         - email validity > passwords match > password strength
+         */
+        if !emailAddressIsValid {return (true, false, false)}
+        else if !passwordsMatch {return (false, true, false)}
+        else if !passwordIsStrong {return (false, false, true)} // password was weak
+        else {return (false, false, false)} // no errors
+    }
+    
     var body: some View {
         VStack {
             Text("SIGN UP")
@@ -185,23 +200,23 @@ struct SignUpView: View {
                 .font(.custom("PTMono-Bold", size: 36))
                         
             VStack {
-                if !passwordsMatch { // confirm password != password
-                    Text("Passwords do not match!")
-                        .font(.custom("PTMono-Regular", size: 18))
+                if errorHierarchy(emailAddressIsValid: emailAddressIsValid, passwordsMatch: passwordsMatch, passwordIsStrong: passwordIsStrong).0 { // invalid email address
+                    Text("Please enter a valid email address!")
+                        .font(.custom("PTMono-Regular", size: 14))
                         .foregroundColor(.red)
                 }
                 
-                if !passwordIsStrong { // weak password
+                if errorHierarchy(emailAddressIsValid: emailAddressIsValid, passwordsMatch: passwordsMatch, passwordIsStrong: passwordIsStrong).1 { // confirm password != password
+                    Text("Passwords do not match!")
+                        .font(.custom("PTMono-Regular", size: 14))
+                        .foregroundColor(.red)
+                }
+                
+                if errorHierarchy(emailAddressIsValid: emailAddressIsValid, passwordsMatch: passwordsMatch, passwordIsStrong: passwordIsStrong).2 { // weak password
                     Text(strongPassword(password: password).1)
-                        .font(.custom("PTMono-Regular", size: 18))
+                        .font(.custom("PTMono-Regular", size: 14))
                         .foregroundColor(.red)
                         .multilineTextAlignment(.center)
-                }
-                
-                if !emailAddressIsValid { // invalid email address
-                    Text("Please enter a valid email address!")
-                        .font(.custom("PTMono-Regular", size: 18))
-                        .foregroundColor(.red)
                 }
                 
                 TextField(
