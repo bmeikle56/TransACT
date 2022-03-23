@@ -265,19 +265,18 @@ struct SignUpView: View {
                         if password != confirmPassword {
                             passwordsMatch = false
                         } else {
-                            // passwords matched
                             passwordsMatch = true
-                                                
-                            handleSignup(email: email, password: password)
-                            self.presentationMode.wrappedValue.dismiss()
                         }
                         
                         if !SignUpView.isValidEmailAddress(email: email) {
-                            // invalid email address
                             emailAddressIsValid = false
                         } else {
-                            // valid email address
                             emailAddressIsValid = true
+                        }
+                        
+                        if emailAddressIsValid && passwordsMatch && passwordIsStrong {
+                            handleSignup(email: email, password: password)
+                            self.presentationMode.wrappedValue.dismiss()
                         }
                     }.font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
