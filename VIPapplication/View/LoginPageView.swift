@@ -13,17 +13,14 @@ struct LoginPageView: View {
     
     @EnvironmentObject var user: User
     
-    @State private var username: String = ""
+    @State private var email: String = ""
     @State private var password: String = ""
-    //@State private var username: String = "chengkaiyao825@gmail.com"
-    //@State private var password: String = "12a34b56c7"
-    let incorrectLogin: String = "Incorrect username or password!"
     @State private var successfulLogin: Bool = true
     @State private var showHomePageView: Bool = false
     
     // login function for Firebase
-    func handleLogin(username: String, password: String) {
-        Auth.auth().signIn(withEmail: username, password: password) { (result, error) in
+    func handleLogin(email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil {
                 // show text on screen saying incorrect username or password
                 successfulLogin = false;
@@ -48,7 +45,7 @@ struct LoginPageView: View {
                     .font(.custom("PTMono-Bold", size: 36))
                 
                 if !successfulLogin {
-                    Text(incorrectLogin)
+                    Text("Incorrect email or password!")
                         .font(.custom("PTMono-Regular", size: 18))
                         .foregroundColor(.red)
                 } else {
@@ -57,8 +54,8 @@ struct LoginPageView: View {
                 
                 ZStack {
                     TextField(
-                           "Username",
-                           text: $username
+                           "Email",
+                           text: $email
                     )
                         .autocapitalization(.none)
                         .frame(width: 250, height: 15, alignment: .center)
@@ -84,7 +81,7 @@ struct LoginPageView: View {
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
                     Button("LOG IN") {
-                        handleLogin(username: username, password: password)
+                        handleLogin(email: email, password: password)
                     }
                         .font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
