@@ -152,7 +152,7 @@ struct SignUpView: View {
         return message
     }
     
-    func isValidEmailAddress(email: String) -> Bool {
+    static func isValidEmailAddress(email: String) -> Bool {
         // used this for the code -> https://regexr.com/
         
         /* prefix:
@@ -272,7 +272,7 @@ struct SignUpView: View {
                             self.presentationMode.wrappedValue.dismiss()
                         }
                         
-                        if !isValidEmailAddress(email: email) {
+                        if !SignUpView.isValidEmailAddress(email: email) {
                             // invalid email address
                             emailAddressIsValid = false
                         } else {
