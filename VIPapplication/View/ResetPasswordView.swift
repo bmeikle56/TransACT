@@ -16,6 +16,34 @@ struct ResetPasswordView: View {
     // used for returning back to a previous view
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // clear fields function: set textfield.text = "" when button is pressed
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     var body: some View {
         VStack {
             Text("RESET PASSWORD")
