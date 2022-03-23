@@ -11,15 +11,50 @@ struct ResetPasswordView: View {
     
     @State private var email: String = ""
     @State private var showAlert: Bool = false
+    @State private var emailIsValid: Bool = true
     
     // used for returning back to a previous view
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // clear fields function: set textfield.text = "" when button is pressed
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     var body: some View {
         VStack {
             Text("RESET PASSWORD")
                 .padding(.bottom, 100)
                 .font(.custom("PTMono-Bold", size: 36))
+            
+            if !emailIsValid {
+                Text("Please enter a valid email address!")
+                    .font(.custom("PTMono-Regular", size: 14))
+                    .foregroundColor(.red)
+            }
             
             ZStack {
                 TextField(
@@ -39,7 +74,13 @@ struct ResetPasswordView: View {
                     .frame(width: 282, height: 50)
                 
                 Button("GET RESET EMAIL") {
-                    showAlert = true
+                    if SignUpView.isValidEmailAddress(email: email) {
+                        // valid address, show alert
+                        emailIsValid = true
+                        showAlert = true
+                    } else {
+                        emailIsValid = false
+                    }
                 }.alert(isPresented: $showAlert) {
                     // alert user an email was sent and send them back to the login page to try again
                     Alert (title: Text("Email was sent!"),
