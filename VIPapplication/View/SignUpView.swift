@@ -14,6 +14,7 @@ struct SignUpView: View {
     @State private var password: String = ""
     @State private var confirmPassword: String = ""
     @State private var passwordsMatch: Bool = true
+    @State private var emailAddressIsValid: Bool = true
     
     // used for returning back to a previous view
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -58,20 +59,24 @@ struct SignUpView: View {
         /* see NSRegularExpression and NSPredicate packages
          helpful links:
          https://stackoverflow.com/questions/35957696/nspredicate-for-regex-pattern-matching-crashes
-         https://developer.apple.com/documentation/foundation/nspredicate
          https://stackoverflow.com/questions/29535792/check-if-a-string-contains-at-least-a-uppercase-letter-a-digit-or-a-special-ch
          https://code.tutsplus.com/tutorials/swift-and-regular-expressions-syntax--cms-26387
+         https://regexr.com/
          
          * = 0 or more
          + = at least 1
          ? = 0 or 1
          [] signifies a set
+         () are used for grouping
          - indicates a range
+         | indicates or
          . matches any character except line breaks
+         {} is a length quantifier {1,3} = 1,2,3 {3,} = 3,4,... {3} = 3
+         \ means literal
         */
         
         /* all requirements in 1 line:
-         let requirement: String = ".*[a-z]+[A-Z]+[0-9]+[!@#$%^&*]+.*"
+         let requirement: String = ".*[a-z]+[A-Z]+[0-9]+[!@#$%^&*]+.*{8,}"
          let result: Bool = NSPredicate(format:"SELF MATCHES %@", requirement).evaluate(with: password)
          return result && password.count >= 8
          */
@@ -79,7 +84,7 @@ struct SignUpView: View {
         // updated: split up the requirements so the bad password message can be more helpful:
         let upCaseReq: String = ".*[A-Z]+.*"
         let lowCaseReq: String = ".*[a-z]+.*"
-        let numReq: String = ".*[0-9]+.*"
+        let numReq: String = ".*[0-9]+.*"              // or "\d" -> any digit
         let specialCharReq: String = ".*[!@#$%^&*]+.*"
         let lengthReq: Bool = password.count >= 8
         
@@ -147,6 +152,32 @@ struct SignUpView: View {
         return message
     }
     
+    func isValidEmailAddress(email: String) -> Bool {
+        // used this for the code -> https://regexr.com/
+        
+        /* prefix:
+         technically any special character is allowed but we will restrict only to _ . - and / for brevity
+         special character must be followed by a number/digit
+         max 64 characters
+         upper and lowercase are both fine
+         "([a-zA-Z0-9]|([\_\.\-\/][a-zA-Z0-9])*){1,64}"
+         
+         the _ . - / symbols must be followed by at least one number or letter
+         
+         the @ symbol
+         
+         domain:
+         max 253 characters
+         A-Za-z0-9 or - or . -> only allowing 0, 1 - or . for brevity
+         "([A-Za-z0-9]|([\-\.][a-zA-Z0-9])?){2,253}\.[a-z]{2,5}"
+         
+         .com ; .org ; .edu ; .mil ; .int ; .gov ; .uk ; should be nothing longer than 5 or shorter than 2
+         
+         */
+        let emailRegex: String = #"([a-zA-Z0-9]|([\_\.\-\/][a-zA-Z0-9])*){1,64}@([A-Za-z0-9]|([\-\.][a-zA-Z0-9])?){2,253}\.[a-z]{2,5}"# // the #...# are needed in Swift to avoid double escape (\\) and keep the \
+        return NSPredicate(format:"SELF MATCHES %@", emailRegex).evaluate(with: email)
+    }
+    
     var body: some View {
         VStack {
             Text("SIGN UP")
@@ -154,17 +185,23 @@ struct SignUpView: View {
                 .font(.custom("PTMono-Bold", size: 36))
                         
             VStack {
-                if !passwordsMatch {
+                if !passwordsMatch { // confirm password != password
                     Text("Passwords do not match!")
                         .font(.custom("PTMono-Regular", size: 18))
                         .foregroundColor(.red)
                 }
                 
-                if !passwordIsStrong {
-                    Text(strongPassword(password: password).1) //badPasswordMessage
+                if !passwordIsStrong { // weak password
+                    Text(strongPassword(password: password).1)
                         .font(.custom("PTMono-Regular", size: 18))
                         .foregroundColor(.red)
                         .multilineTextAlignment(.center)
+                }
+                
+                if !emailAddressIsValid { // invalid email address
+                    Text("Please enter a valid email address!")
+                        .font(.custom("PTMono-Regular", size: 18))
+                        .foregroundColor(.red)
                 }
                 
                 TextField(
@@ -218,6 +255,14 @@ struct SignUpView: View {
                                                 
                             handleSignup(email: email, password: password)
                             self.presentationMode.wrappedValue.dismiss()
+                        }
+                        
+                        if !isValidEmailAddress(email: email) {
+                            // invalid email address
+                            emailAddressIsValid = false
+                        } else {
+                            // valid email address
+                            emailAddressIsValid = true
                         }
                     }.font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
