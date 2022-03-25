@@ -94,7 +94,7 @@ struct ResetPasswordView: View {
                 
                 Button("GET RESET EMAIL") {
                     if SignUpView.isValidEmailAddress(email: email) {
-                        // valid address, proceed to reset password in firebase
+                        // valid address, proceed to verification in firebase
                         emailIsValid = true
                         // reset password in firebase
                         resetPassword(email: email) { (result) in

@@ -83,15 +83,15 @@ extension LocationManager: CLLocationManagerDelegate {
         let speed = location.speed
         let time = location.timestamp
         
-//        let db = Firestore.firestore()
-//        let currUser = db.collection("users").document(user.uid)
-//        currUser.getDocument { (document, error) in
-//            if let error = error {
-//                print("Error getting user \(self.user.uid) : \(error)")
-//            }
-//            else {
-//                currUser.collection("locations").document().setData(["altitude":altitude, "latitude":latitude, "longitude":longitude, "accuracy":accuracy, "speed":speed, "time":time])
-//            }
-//        }
+        let db = Firestore.firestore()
+        let currUser = db.collection("users").document(user.uid)
+        currUser.getDocument { (document, error) in
+            if let error = error {
+                print("Error getting user \(self.user.uid) : \(error)")
+            }
+            else {
+                currUser.collection("locations").document().setData(["altitude":altitude, "latitude":latitude, "longitude":longitude, "accuracy":accuracy, "speed":speed, "time":time])
+            }
+        }
     }
 }
