@@ -14,7 +14,7 @@ struct ResetPasswordView: View {
     @State private var email: String = ""
     @State private var showAlert: Bool = false
     @State private var emailIsValid: Bool = true
-    @State private var errString: String?
+    @State private var errString: String = ""
     
     // used for returning back to a previous view
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -67,7 +67,7 @@ struct ResetPasswordView: View {
                     .foregroundColor(.red)
             }
             
-            if errString != nil {
+            if errString != "" {
                 Text("No user with this email address has been found")
                     .font(.custom("PTMono-Regular", size: 14))
                     .foregroundColor(.red)
@@ -93,6 +93,8 @@ struct ResetPasswordView: View {
                     .frame(width: 282, height: 50)
                 
                 Button("GET RESET EMAIL") {
+                    // clean previous errString
+                    errString = ""
                     if SignUpView.isValidEmailAddress(email: email) {
                         // valid address, proceed to verification in firebase
                         emailIsValid = true
