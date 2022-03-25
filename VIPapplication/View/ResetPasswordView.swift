@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import AuthenticationServices
 
 struct ResetPasswordView: View {
     
     @State private var email: String = ""
     @State private var showAlert: Bool = false
     @State private var emailIsValid: Bool = true
+    @State private var errString: String?
     
     // used for returning back to a previous view
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -42,7 +45,15 @@ struct ResetPasswordView: View {
     
     
     
-    
+    func resetPassword(email:String, resetCompletion:@escaping (Result<Bool, Error>) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
+            if let error = error {
+                resetCompletion(.failure(error))
+            } else {
+                resetCompletion(.success(true))
+            }
+        }
+    )}
     
     var body: some View {
         VStack {
@@ -54,6 +65,14 @@ struct ResetPasswordView: View {
                 Text("Please enter a valid email address!")
                     .font(.custom("PTMono-Regular", size: 14))
                     .foregroundColor(.red)
+            }
+            
+            if errString != nil {
+                Text("No user with this email address has been found")
+                    .font(.custom("PTMono-Regular", size: 14))
+                    .foregroundColor(.red)
+                    .lineLimit(nil)
+                    .frame(width: 282)
             }
             
             ZStack {
@@ -75,12 +94,22 @@ struct ResetPasswordView: View {
                 
                 Button("GET RESET EMAIL") {
                     if SignUpView.isValidEmailAddress(email: email) {
-                        // valid address, show alert
+                        // valid address, proceed to reset password in firebase
                         emailIsValid = true
-                        showAlert = true
+                        // reset password in firebase
+                        resetPassword(email: email) { (result) in
+                            switch result {
+                            case .failure(let error):
+                                self.errString = error.localizedDescription
+                            case .success( _):
+                                showAlert = true
+                                break
+                            }
+                        }
                     } else {
                         emailIsValid = false
                     }
+                    
                 }.alert(isPresented: $showAlert) {
                     // alert user an email was sent and send them back to the login page to try again
                     Alert (title: Text("Email was sent!"),
