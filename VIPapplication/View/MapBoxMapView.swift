@@ -133,9 +133,6 @@ struct MapBoxMapView: View {
                 .padding(2)
         }.navigationBarHidden(true)
             .environmentObject(user)
-            
-        
-        
     }
 }
 
@@ -154,9 +151,6 @@ struct MapBoxMapViewController: UIViewControllerRepresentable {
 
 
 class MapViewController: UIViewController {
-    
-    
-    
     internal var mapView: MapView!
     override public func viewDidLoad() {
         super.viewDidLoad()

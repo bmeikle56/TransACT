@@ -19,14 +19,9 @@ class FirebaseManager {
             if error != nil {
                 // error
                 // show text on screen saying incorrect username or password
-                successfulLogin = false;
                 retVal = false
             } else {
                 // no error
-                user.uid = Auth.auth().currentUser?.uid ?? ""
-                print(user.uid)
-                successfulLogin = true
-                self.showHomePageView = true
             }
         }
         return retVal

@@ -14,7 +14,7 @@ struct LoginPageView: View {
     
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var successfulLogin: Bool
+    @State private var successfulLogin: Bool = true
     @State private var showHomePageView: Bool = false
     
     
@@ -66,7 +66,9 @@ struct LoginPageView: View {
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
                     Button("LOG IN") {
-                        FirebaseManager.handleLogin(email: email, password: password)
+                        let result = FirebaseManager.handleLogin(email: email, password: password)
+                        showHomePageView = result
+                        successfulLogin = result
                     }
                         .font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
