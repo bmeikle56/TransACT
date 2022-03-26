@@ -19,32 +19,6 @@ struct ResetPasswordView: View {
     // used for returning back to a previous view
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // clear fields function: set textfield.text = "" when button is pressed
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     func resetPassword(email:String, resetCompletion:@escaping (Result<Bool, Error>) -> Void) {
         Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
             if let error = error {
