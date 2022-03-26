@@ -37,6 +37,8 @@
 		D25795F427B970B0007806E6 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F327B970B0007806E6 /* SetupView.swift */; };
 		D25795F627B970F4007806E6 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F527B970F4007806E6 /* LoginPageView.swift */; };
 		D281245527C419EA000C2BC3 /* PTMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D281245427C419EA000C2BC3 /* PTMono-Regular.ttf */; };
+		D2B622EA27EF64C600298489 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B622E927EF64C600298489 /* LoginManager.swift */; };
+		D2B622EC27EF66DD00298489 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B622EB27EF66DD00298489 /* FirebaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		D25795F327B970B0007806E6 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		D25795F527B970F4007806E6 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
 		D281245427C419EA000C2BC3 /* PTMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTMono-Regular.ttf"; sourceTree = "<group>"; };
+		D2B622E927EF64C600298489 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		D2B622EB27EF66DD00298489 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 			children = (
 				46BF48FD27CD5373004A2D6B /* LocationManager.swift */,
 				46BF48FF27CDC67A004A2D6B /* NotificationManager.swift */,
+				D2B622E927EF64C600298489 /* LoginManager.swift */,
+				D2B622EB27EF66DD00298489 /* FirebaseManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -367,12 +373,14 @@
 				53BEFFC727CC1E5700974C3C /* SurveyListView.swift in Sources */,
 				46BF48FE27CD5373004A2D6B /* LocationManager.swift in Sources */,
 				D25795F427B970B0007806E6 /* SetupView.swift in Sources */,
+				D2B622EA27EF64C600298489 /* LoginManager.swift in Sources */,
 				D25795F627B970F4007806E6 /* LoginPageView.swift in Sources */,
 				46BF490027CDC67A004A2D6B /* NotificationManager.swift in Sources */,
 				D256852027D52D3F009DBC72 /* StartRouteView.swift in Sources */,
 				D21146F827C2D7D200EDAD4D /* SignUpView.swift in Sources */,
 				D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */,
 				D21146FA27C2F99A00EDAD4D /* HomePageView.swift in Sources */,
+				D2B622EC27EF66DD00298489 /* FirebaseManager.swift in Sources */,
 				D25795F227B97020007806E6 /* MapBoxMapView.swift in Sources */,
 				D256852227D52D4F009DBC72 /* ProfileView.swift in Sources */,
 				460126D727C5378600953846 /* RequestLocationNotifView.swift in Sources */,

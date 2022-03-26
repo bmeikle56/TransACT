@@ -19,16 +19,6 @@ struct ResetPasswordView: View {
     // used for returning back to a previous view
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    func resetPassword(email:String, resetCompletion:@escaping (Result<Bool, Error>) -> Void) {
-        Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
-            if let error = error {
-                resetCompletion(.failure(error))
-            } else {
-                resetCompletion(.success(true))
-            }
-        }
-    )}
-    
     var body: some View {
         VStack {
             Text("RESET PASSWORD")
@@ -42,7 +32,7 @@ struct ResetPasswordView: View {
             }
             
             if errString != "" {
-                Text("No user with this email address has been found")
+                Text("No user with this email address has been found!")
                     .font(.custom("PTMono-Regular", size: 14))
                     .foregroundColor(.red)
                     .lineLimit(nil)
@@ -69,11 +59,11 @@ struct ResetPasswordView: View {
                 Button("GET RESET EMAIL") {
                     // clean previous errString
                     errString = ""
-                    if SignUpView.isValidEmailAddress(email: email) {
+                    if LoginManager.isValidEmailAddress(email: email) {
                         // valid address, proceed to verification in firebase
                         emailIsValid = true
                         // reset password in firebase
-                        resetPassword(email: email) { (result) in
+                        FirebaseManager.handleResetPassword(email: email) { (result) in
                             switch result {
                             case .failure(let error):
                                 self.errString = error.localizedDescription

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Firebase
 
 
 struct LoginPageView: View {
@@ -15,23 +14,9 @@ struct LoginPageView: View {
     
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var successfulLogin: Bool = true
+    @State private var successfulLogin: Bool
     @State private var showHomePageView: Bool = false
     
-    // login function for Firebase
-    func handleLogin(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            if error != nil {
-                // show text on screen saying incorrect username or password
-                successfulLogin = false;
-            } else {
-                user.uid = Auth.auth().currentUser?.uid ?? ""
-                print(user.uid)
-                successfulLogin = true
-                self.showHomePageView = true
-            }
-        }
-    }
     
     var body: some View {
         
@@ -81,7 +66,7 @@ struct LoginPageView: View {
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
                     Button("LOG IN") {
-                        handleLogin(email: email, password: password)
+                        FirebaseManager.handleLogin(email: email, password: password)
                     }
                         .font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
