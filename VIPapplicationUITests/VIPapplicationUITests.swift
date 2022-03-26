@@ -31,59 +31,69 @@ class VIPapplicationUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func test() throws {
+    func testResetPassword() throws {
         let formatInvalidEmail1 = "abc123"
-        
+        let notExistEmail1 = "abc123@act.com"
+        let formatInvalidEmail2 = "foo"
+        let notExistEmail2 = "foo@act.com"
+        let validAndExistEmail = "actdrivingsim@gmail.com"
         
         let app = XCUIApplication()
         app.launch()
-//        app.windows.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.tap()
         app.buttons["Email"].tap()
-        app.buttons["Forgot password?"].tap()
-        let getResetEmailButton = app.buttons["GET RESET EMAIL"]
-        getResetEmailButton.tap()
+        let loginButtons = app.buttons
+        XCTAssertTrue(loginButtons["Forgot password?"].waitForExistence(timeout: 2))
+        sleep(1)
+        loginButtons["Forgot password?"].doubleTap()
         
         // type first format invalid email
-//        let emailTextField = app.textFields["Email"]
-//        emailTextField.tap()
-//        emailTextField.typeText(formatInvalidEmail1)
-//
-//        let getResetEmailButton = app.buttons["GET RESET EMAIL"]
-//        getResetEmailButton.tap()
-//
-//        let pleaseEnterAValidEmailAddressStaticText = app.staticTexts["Please enter a valid email address!"]
-//        pleaseEnterAValidEmailAddressStaticText.tap()
-//        pleaseEnterAValidEmailAddressStaticText.swipeLeft()
-//        pleaseEnterAValidEmailAddressStaticText.tap()
-//        emailTextField.tap()
-//        getResetEmailButton.tap()
-//        app.staticTexts["No user with this email address has been found"].tap()
-//        emailTextField.tap()
-//        emailTextField.tap()
-//        getResetEmailButton.tap()
-//        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.swipeLeft()
-//        getResetEmailButton.tap()
-//        app.alerts["Email was sent!"].scrollViews.otherElements.buttons["Return to login"].tap()
-                
+        let emailTextField = app.textFields["Email"]
+        emailTextField.tap()
+        emailTextField.typeText(formatInvalidEmail1)
+        let getResetEmailButton = app.buttons["GET RESET EMAIL"]
+        getResetEmailButton.tap()
+        let pleaseEnterAValidEmailAddressStaticText = app.staticTexts["Please enter a valid email address!"]
+        XCTAssertTrue(pleaseEnterAValidEmailAddressStaticText.exists)
+        
+        // type first notExist email
+        emailTextField.tap()
+        emailTextField.doubleTap()
+        emailTextField.typeText(notExistEmail1)
+        getResetEmailButton.tap()
+        let noUserWithThisEmailAddressHasBeenFoundStaticText = app.staticTexts["No user with this email address has been found"]
+        XCTAssertTrue(noUserWithThisEmailAddressHasBeenFoundStaticText.waitForExistence(timeout: 2))
+        XCTAssertTrue(noUserWithThisEmailAddressHasBeenFoundStaticText.exists)
+        XCTAssertFalse(pleaseEnterAValidEmailAddressStaticText.exists)
+        
+        // type second format invalid email
+        emailTextField.tap()
+        emailTextField.doubleTap()
+        emailTextField.typeText(formatInvalidEmail2)
+        getResetEmailButton.tap()
+        sleep(1)
+        XCTAssertTrue(pleaseEnterAValidEmailAddressStaticText.exists)
+        XCTAssertFalse(noUserWithThisEmailAddressHasBeenFoundStaticText.exists)
+        
+        // type second notExist email
+        emailTextField.tap()
+        emailTextField.doubleTap()
+        emailTextField.typeText(notExistEmail2)
+        getResetEmailButton.tap()
+        sleep(1)
+        XCTAssertTrue(noUserWithThisEmailAddressHasBeenFoundStaticText.exists)
+        XCTAssertFalse(pleaseEnterAValidEmailAddressStaticText.exists)
+        
+        // type valid and exist email
+        emailTextField.tap()
+        emailTextField.doubleTap()
+        emailTextField.typeText(validAndExistEmail)
+        getResetEmailButton.tap()
+        let successAlert = app.alerts["Email was sent!"]
+        XCTAssertTrue(successAlert.waitForExistence(timeout: 2))
+        XCTAssertFalse(noUserWithThisEmailAddressHasBeenFoundStaticText.exists)
+        XCTAssertFalse(pleaseEnterAValidEmailAddressStaticText.exists)
     }
 
-    func testResetPassword() throws {
-        let formatInvalidEmail1 = "abc123"
-//        let formatInvalidEmail2 = "foo"
-//        let notExistEmail1 = "abc123@act.com"
-//        let notExistEmail2 = "foo@act.com"
-//        let validAndExistEmail = "actdrivingsim@gmail.com"
-        
-        let app = XCUIApplication()
-        app.buttons["Forgot password?"].tap()
-        let emailTextField = app.textFields["Email"]
-        //XCTAssert(emailTextField.exists)
-        emailTextField.tap()
-        // type a format invalid email address
-        emailTextField.typeText(formatInvalidEmail1)
-        app.buttons["GET RESET EMAIL"].tap()
-        
-    }
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.
