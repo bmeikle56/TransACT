@@ -4,6 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>TitilliumWeb-Regular.ttf</string>
+		<string>TitilliumWeb-Black.ttf</string>
+		<string>TitilliumWeb-Bold.ttf</string>
+		<string>TitilliumWeb-SemiBold.ttf</string>
 		<string>PTMono-Regular.ttf</string>
 		<string>PTMono-Bold.ttf</string>
 		<string>Ramaraja-Regular.ttf</string>
