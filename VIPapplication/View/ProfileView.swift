@@ -17,12 +17,10 @@ struct ProfileView: View {
 
     var body: some View {
         
-        
         // put at the top for easy access
         NavigationLink(destination: SurveyListView(), isActive: $isShowingSurveyListView) { EmptyView() }
         NavigationLink(destination: MapBoxMapView(), isActive: $isShowingMapBoxMapView) { EmptyView() }
 
-        
         VStack {
             ZStack(alignment: .top) {
                 
@@ -157,8 +155,7 @@ struct Profile: View {
                         
                         Text("Me")
                             .foregroundColor(Color("Profile Name Color"))
-                            .font(.custom("TitilliumWeb-Black", size: 24))
-                        
+                            .font(.custom("TitilliumWeb-Black", size: 24))                        
 
                         ZStack {
                             RoundedRectangle(cornerRadius: 20, style: .continuous)
@@ -185,7 +182,6 @@ struct Profile: View {
                                             Text("Personal Vehicle")
                                                 .foregroundColor(Color.gray)
                                                 .font(.custom("TitilliumWeb-SemiBold", size: 12))
-                                            
                                         }
                                     }
                                     Spacer().frame(width: UIScreen.main.bounds.width / 6)
@@ -203,7 +199,6 @@ struct Profile: View {
                                             Text("Residence")
                                                 .foregroundColor(Color.gray)
                                                 .font(.custom("TitilliumWeb-SemiBold", size: 12))
-                                            
                                         }
                                     }
                                 }
@@ -216,10 +211,6 @@ struct Profile: View {
                                 .frame(width: 282, height: 50)
                             Button("LOG OUT") {
                                 self.handleLogout()
-                                print("hey")
-                                
-                                
-                                
                             }
                                 .font(.custom("PTMono-Bold", size: 18))
                                 .foregroundColor(.white)
@@ -227,11 +218,9 @@ struct Profile: View {
                         }.navigationBarBackButtonHidden(true)
                             .padding(.bottom, 10)
                         Spacer()
-                        
                     }
-                    
-                    
                 }
+                
                 /*
                 // left for temporary survey list reference
                 // They were originally in this struct
