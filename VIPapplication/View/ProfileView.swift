@@ -55,14 +55,14 @@ struct ProfileView: View {
                 Button(action: {
                     isShowingSurveyListView = true
                 }, label: {
-                    Image("Survey icon white")
+                    Image("Survey icon")
                         .resizable()
                         .frame(width: buttonSize, height: buttonSize)
                     
                     
                 }).frame(maxWidth: .infinity, maxHeight: buttonSize)
                     .padding(8)
-                    .background(Color("UiGreen").opacity(0.7))
+                    .background(Color.white)
                     .cornerRadius(20)
                 
                 Button(action: {
@@ -81,12 +81,12 @@ struct ProfileView: View {
                 Button(action: {
                     // does nothing because we are already in this view
                 }, label: {
-                    Image("Profile icon")
+                    Image("Profile icon white")
                         .resizable()
                         .frame(width: buttonSize, height: buttonSize)
                 }).frame(maxWidth: .infinity, maxHeight: buttonSize)
                     .padding(8)
-                    .background(Color.white)
+                    .background(Color("UiGreen").opacity(0.7))
                     .cornerRadius(20)
                 
                 Spacer()
