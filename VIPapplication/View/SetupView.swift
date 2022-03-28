@@ -57,8 +57,8 @@ struct SetupView: View {
                             .foregroundColor(.black)
                     }.padding(-8)
                 }
-            }
-        }
+            }.navigationBarHidden(true)
+        }.navigationBarHidden(true)
         .environmentObject(user)
     }
 }

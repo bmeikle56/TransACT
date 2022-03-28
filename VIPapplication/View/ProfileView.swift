@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ProfileView: View {
     
@@ -13,15 +14,13 @@ struct ProfileView: View {
     let buttonSize: CGFloat = 45;
     @State private var isShowingMapBoxMapView: Bool = false
     @State private var isShowingSurveyListView: Bool = false
-    
+
     var body: some View {
-        
         
         // put at the top for easy access
         NavigationLink(destination: SurveyListView(), isActive: $isShowingSurveyListView) { EmptyView() }
         NavigationLink(destination: MapBoxMapView(), isActive: $isShowingMapBoxMapView) { EmptyView() }
-        
-        
+
         VStack {
             ZStack(alignment: .top) {
                 
@@ -47,7 +46,7 @@ struct ProfileView: View {
                 }.frame(width: UIScreen.main.bounds.width)
             }
             
-            RouteList()
+            Profile()
                 
             HStack {
                 Spacer()
@@ -55,14 +54,14 @@ struct ProfileView: View {
                 Button(action: {
                     isShowingSurveyListView = true
                 }, label: {
-                    Image("Survey icon white")
+                    Image("Survey icon")
                         .resizable()
                         .frame(width: buttonSize, height: buttonSize)
                     
                     
                 }).frame(maxWidth: .infinity, maxHeight: buttonSize)
                     .padding(8)
-                    .background(Color("UiGreen").opacity(0.7))
+                    .background(Color.white)
                     .cornerRadius(20)
                 
                 Button(action: {
@@ -81,12 +80,12 @@ struct ProfileView: View {
                 Button(action: {
                     // does nothing because we are already in this view
                 }, label: {
-                    Image("Profile icon")
+                    Image("Profile icon white")
                         .resizable()
                         .frame(width: buttonSize, height: buttonSize)
                 }).frame(maxWidth: .infinity, maxHeight: buttonSize)
                     .padding(8)
-                    .background(Color.white)
+                    .background(Color("UiGreen").opacity(0.7))
                     .cornerRadius(20)
                 
                 Spacer()
@@ -97,6 +96,8 @@ struct ProfileView: View {
     }
 }
 
+// They were originally here
+// left for survey list temporary reference if needed
 struct Route: View {
     
     let title: String
@@ -113,19 +114,128 @@ struct Route: View {
     }
 }
 
-struct RouteList: View {
-        
+struct Profile: View {
+    @State private var isLoggedOut: Bool = false
+    
+    // login function for Firebase
+    func handleLogout() {
+        do {
+            try Auth.auth().signOut()
+            self.isLoggedOut = true
+        } catch let err {
+            print(err)
+        }
+    }
+    
     var body: some View {
+        NavigationLink(destination: SetupView(), isActive: $isLoggedOut, label: { EmptyView() })
+        
         NavigationView {
-            List {
-                VStack {
-                    Route(title: "Signup survey", subTitle: "Link: ")
-                        .padding(.bottom, 10)
-                    Route(title: "Midterm survey", subTitle: "Link: ")
-                        .padding(.bottom, 10)
+            ScrollView(showsIndicators: false) {
+                ZStack {
+                    Rectangle()
+                        .fill(Color("Profile Grey"))
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                    
+                    VStack(alignment: .leading) {
+                        RoundedRectangle(cornerRadius: 45, style: .continuous)
+                            .fill(Color("UiGreen").opacity(0.5))
+                        .frame(width: UIScreen.main.bounds.width, height: 260)
+                        .ignoresSafeArea()
+                        Spacer()
+                    }
+                   
+                    VStack {
+                        Spacer()
+                            .frame(height: 20.0)
+                        Image("Profile Photo")
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .clipShape(RoundedRectangle(cornerRadius: 27.0))
+                        
+                        Text("Me")
+                            .foregroundColor(Color("Profile Name Color"))
+                            .font(.custom("TitilliumWeb-Black", size: 24))                        
+
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                .fill(Color.white)
+                                .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width / 5, height: 130)
+                            .shadow(color: Color.gray.opacity(0.3), radius: 3, x: 0, y: 0.5)
+                            VStack(alignment: .leading) {
+                                Text("Travel information")
+                                    .foregroundColor(Color.black)
+                                    .font(.custom("TitilliumWeb-Bold", size: 14))
+                                Spacer().frame(height: 10)
+                                HStack {
+                                    HStack {
+                                        VStack {
+                                            Image("Personal Vehicle")
+                                                .resizable()
+                                            .frame(width: 18, height: 16)
+                                            Text("")
+                                        }
+                                        Spacer().frame(width: 10)
+                                        VStack(alignment: .leading) {
+                                            Text("Add Car")
+                                                .font(.custom("TitilliumWeb-SemiBold", size: 18))
+                                            Text("Personal Vehicle")
+                                                .foregroundColor(Color.gray)
+                                                .font(.custom("TitilliumWeb-SemiBold", size: 12))
+                                        }
+                                    }
+                                    Spacer().frame(width: UIScreen.main.bounds.width / 6)
+                                    HStack {
+                                        VStack {
+                                            Image("Residence")
+                                                .resizable()
+                                            .frame(width: 20, height: 17)
+                                            Text("")
+                                        }
+                                        Spacer().frame(width: 10)
+                                        VStack(alignment: .leading) {
+                                            Text("Home")
+                                                .font(.custom("TitilliumWeb-SemiBold", size: 18))
+                                            Text("Residence")
+                                                .foregroundColor(Color.gray)
+                                                .font(.custom("TitilliumWeb-SemiBold", size: 12))
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        Spacer()
+                        ZStack {
+                            Rectangle()
+                                .fill(Color("UiGreen").opacity(0.7))
+                                .frame(width: 282, height: 50)
+                            Button("LOG OUT") {
+                                self.handleLogout()
+                            }
+                                .font(.custom("PTMono-Bold", size: 18))
+                                .foregroundColor(.white)
+                            
+                        }.navigationBarBackButtonHidden(true)
+                            .padding(.bottom, 10)
+                        Spacer()
+                    }
                 }
-            }
-            .listStyle(GroupedListStyle())
+                
+                /*
+                // left for temporary survey list reference
+                // They were originally in this struct
+                List {
+                    VStack {
+                        Route(title: "Signup survey", subTitle: "Link: ")
+                            .padding(.bottom, 10)
+                        Route(title: "Midterm survey", subTitle: "Link: ")
+                            .padding(.bottom, 10)
+                    }
+                }
+                .listStyle(GroupedListStyle())
+                 */
+                
+            }.navigationBarHidden(true)
         }
     }
 }
