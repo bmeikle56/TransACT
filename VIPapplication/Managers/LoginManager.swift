@@ -52,7 +52,7 @@ class LoginManager {
      0 -> boolean whether the password was sufficiently strong
      1 -> personalized message of how to fix the password if it is not, "" if it is proper
      */
-    static func strongPassword(password: String) -> (Bool, String) {
+    static func isStrongPassword(password: String) -> (Bool, String) {
         /* see NSRegularExpression and NSPredicate packages
          helpful links:
          https://stackoverflow.com/questions/35957696/nspredicate-for-regex-pattern-matching-crashes

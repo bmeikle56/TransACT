@@ -57,7 +57,7 @@ struct SignUpView: View {
                 }
                 
                 if errorHierarchy(emailAddressIsValid: emailAddressIsValid, passwordsMatch: passwordsMatch, passwordIsStrong: passwordIsStrong).2 { // weak password
-                    Text(LoginManager.strongPassword(password: password).1)
+                    Text(LoginManager.isStrongPassword(password: password).1)
                         .font(.custom("PTMono-Regular", size: 14))
                         .foregroundColor(.red)
                         .multilineTextAlignment(.center)
@@ -98,7 +98,7 @@ struct SignUpView: View {
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
                     Button("SIGN UP") {
-                        let result = LoginManager.strongPassword(password: password)
+                        let result = LoginManager.isStrongPassword(password: password)
                         if !result.0 {
                             passwordIsStrong = false
                             badPasswordMessage = result.1

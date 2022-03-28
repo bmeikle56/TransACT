@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Firebase
 
 struct ProfileView: View {
     
@@ -117,16 +116,6 @@ struct Route: View {
 struct Profile: View {
     @State private var isLoggedOut: Bool = false
     
-    // login function for Firebase
-    func handleLogout() {
-        do {
-            try Auth.auth().signOut()
-            self.isLoggedOut = true
-        } catch let err {
-            print(err)
-        }
-    }
-    
     var body: some View {
         NavigationLink(destination: SetupView(), isActive: $isLoggedOut, label: { EmptyView() })
         
@@ -210,7 +199,7 @@ struct Profile: View {
                                 .fill(Color("UiGreen").opacity(0.7))
                                 .frame(width: 282, height: 50)
                             Button("LOG OUT") {
-                                self.handleLogout()
+                                isLoggedOut = FirebaseManager.handleLogout()
                             }
                                 .font(.custom("PTMono-Bold", size: 18))
                                 .foregroundColor(.white)

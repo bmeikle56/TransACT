@@ -48,4 +48,15 @@ class FirebaseManager {
             }
         }
     )}
+    
+    // login function for Firebase
+    static func handleLogout() -> Bool {
+        do {
+            try Auth.auth().signOut()
+        } catch let err {
+            print(err)
+            return false
+        }
+        return true
+    }
 }
