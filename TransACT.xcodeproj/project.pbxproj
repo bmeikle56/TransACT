@@ -30,12 +30,12 @@
 		D21A8BB527EA3E91004CCA21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D21A8BB427EA3E91004CCA21 /* GoogleService-Info.plist */; };
 		D256852027D52D3F009DBC72 /* StartRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256851F27D52D3E009DBC72 /* StartRouteView.swift */; };
 		D256852227D52D4F009DBC72 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256852127D52D4F009DBC72 /* ProfileView.swift */; };
-		D25795C227B96A3E007806E6 /* TransACTswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795C127B96A3E007806E6 /* TransACTswift.swift */; };
+		D25795C227B96A3E007806E6 /* TransACTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795C127B96A3E007806E6 /* TransACTApp.swift */; };
 		D25795C627B96A40007806E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25795C527B96A40007806E6 /* Assets.xcassets */; };
 		D25795C927B96A40007806E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25795C827B96A40007806E6 /* Preview Assets.xcassets */; };
-		D25795D327B96A40007806E6 /* VIPapplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795D227B96A40007806E6 /* VIPapplicationTests.swift */; };
-		D25795DD27B96A40007806E6 /* VIPapplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795DC27B96A40007806E6 /* VIPapplicationUITests.swift */; };
-		D25795DF27B96A41007806E6 /* VIPapplicationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795DE27B96A41007806E6 /* VIPapplicationUITestsLaunchTests.swift */; };
+		D25795D327B96A40007806E6 /* TransACTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795D227B96A40007806E6 /* TransACTTests.swift */; };
+		D25795DD27B96A40007806E6 /* TransACTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795DC27B96A40007806E6 /* TransACTUITests.swift */; };
+		D25795DF27B96A41007806E6 /* TransACTUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795DE27B96A41007806E6 /* TransACTUITestsLaunchTests.swift */; };
 		D25795F027B96FA6007806E6 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = D25795EF27B96FA6007806E6 /* MapboxMaps */; };
 		D25795F227B97020007806E6 /* MapBoxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F127B97020007806E6 /* MapBoxMapView.swift */; };
 		D25795F427B970B0007806E6 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F327B970B0007806E6 /* SetupView.swift */; };
@@ -82,14 +82,14 @@
 		D256851F27D52D3E009DBC72 /* StartRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouteView.swift; sourceTree = "<group>"; };
 		D256852127D52D4F009DBC72 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D25795BE27B96A3E007806E6 /* TransACT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransACT.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D25795C127B96A3E007806E6 /* TransACTswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransACTswift.swift; sourceTree = "<group>"; };
+		D25795C127B96A3E007806E6 /* TransACTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransACTApp.swift; sourceTree = "<group>"; };
 		D25795C527B96A40007806E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D25795C827B96A40007806E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D25795CE27B96A40007806E6 /* TransACTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransACTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D25795D227B96A40007806E6 /* VIPapplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPapplicationTests.swift; sourceTree = "<group>"; };
+		D25795D227B96A40007806E6 /* TransACTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransACTTests.swift; sourceTree = "<group>"; };
 		D25795D827B96A40007806E6 /* TransACTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransACTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D25795DC27B96A40007806E6 /* VIPapplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPapplicationUITests.swift; sourceTree = "<group>"; };
-		D25795DE27B96A41007806E6 /* VIPapplicationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPapplicationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D25795DC27B96A40007806E6 /* TransACTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransACTUITests.swift; sourceTree = "<group>"; };
+		D25795DE27B96A41007806E6 /* TransACTUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransACTUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D25795F127B97020007806E6 /* MapBoxMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxMapView.swift; sourceTree = "<group>"; };
 		D25795F327B970B0007806E6 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		D25795F527B970F4007806E6 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 			children = (
 				D21A8BB427EA3E91004CCA21 /* GoogleService-Info.plist */,
 				460126E827C54EDC00953846 /* Info.plist */,
-				D25795C127B96A3E007806E6 /* TransACTswift.swift */,
+				D25795C127B96A3E007806E6 /* TransACTApp.swift */,
 				D281245D27C41AE6000C2BC3 /* View */,
 				46BF48FC27CD5302004A2D6B /* Managers */,
 				D25795C727B96A40007806E6 /* Preview Content */,
@@ -187,7 +187,7 @@
 		D25795D127B96A40007806E6 /* TransACTTests */ = {
 			isa = PBXGroup;
 			children = (
-				D25795D227B96A40007806E6 /* VIPapplicationTests.swift */,
+				D25795D227B96A40007806E6 /* TransACTTests.swift */,
 			);
 			path = TransACTTests;
 			sourceTree = "<group>";
@@ -195,8 +195,8 @@
 		D25795DB27B96A40007806E6 /* TransACTUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D25795DC27B96A40007806E6 /* VIPapplicationUITests.swift */,
-				D25795DE27B96A41007806E6 /* VIPapplicationUITestsLaunchTests.swift */,
+				D25795DC27B96A40007806E6 /* TransACTUITests.swift */,
+				D25795DE27B96A41007806E6 /* TransACTUITestsLaunchTests.swift */,
 			);
 			path = TransACTUITests;
 			sourceTree = "<group>";
@@ -385,7 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				460126DB27C53D6B00953846 /* RequestPushNotifView.swift in Sources */,
-				D25795C227B96A3E007806E6 /* TransACTswift.swift in Sources */,
+				D25795C227B96A3E007806E6 /* TransACTApp.swift in Sources */,
 				53BEFFC727CC1E5700974C3C /* SurveyListView.swift in Sources */,
 				46BF48FE27CD5373004A2D6B /* LocationManager.swift in Sources */,
 				D25795F427B970B0007806E6 /* SetupView.swift in Sources */,
@@ -407,7 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D25795D327B96A40007806E6 /* VIPapplicationTests.swift in Sources */,
+				D25795D327B96A40007806E6 /* TransACTTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,8 +415,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D25795DD27B96A40007806E6 /* VIPapplicationUITests.swift in Sources */,
-				D25795DF27B96A41007806E6 /* VIPapplicationUITestsLaunchTests.swift in Sources */,
+				D25795DD27B96A40007806E6 /* TransACTUITests.swift in Sources */,
+				D25795DF27B96A41007806E6 /* TransACTUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

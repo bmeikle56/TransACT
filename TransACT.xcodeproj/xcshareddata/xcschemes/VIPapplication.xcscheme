@@ -15,7 +15,11 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D25795BD27B96A3E007806E6"
+<<<<<<< Updated upstream
                BuildableName = "TransACT2.app"
+=======
+               BuildableName = "TransACT.app"
+>>>>>>> Stashed changes
                BlueprintName = "TransACT"
                ReferencedContainer = "container:TransACT.xcodeproj">
             </BuildableReference>
@@ -33,7 +37,11 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D25795CD27B96A40007806E6"
+<<<<<<< Updated upstream
                BuildableName = "TransACT2Tests.xctest"
+=======
+               BuildableName = "TransACTTests.xctest"
+>>>>>>> Stashed changes
                BlueprintName = "TransACTTests"
                ReferencedContainer = "container:TransACT.xcodeproj">
             </BuildableReference>
@@ -43,7 +51,11 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D25795D727B96A40007806E6"
+<<<<<<< Updated upstream
                BuildableName = "TransACT2UITests.xctest"
+=======
+               BuildableName = "TransACTUITests.xctest"
+>>>>>>> Stashed changes
                BlueprintName = "TransACTUITests"
                ReferencedContainer = "container:TransACT.xcodeproj">
             </BuildableReference>
@@ -65,7 +77,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D25795BD27B96A3E007806E6"
+<<<<<<< Updated upstream
             BuildableName = "TransACT2.app"
+=======
+            BuildableName = "TransACT.app"
+>>>>>>> Stashed changes
             BlueprintName = "TransACT"
             ReferencedContainer = "container:TransACT.xcodeproj">
          </BuildableReference>
@@ -82,7 +98,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D25795BD27B96A3E007806E6"
+<<<<<<< Updated upstream
             BuildableName = "TransACT2.app"
+=======
+            BuildableName = "TransACT.app"
+>>>>>>> Stashed changes
             BlueprintName = "TransACT"
             ReferencedContainer = "container:TransACT.xcodeproj">
          </BuildableReference>
