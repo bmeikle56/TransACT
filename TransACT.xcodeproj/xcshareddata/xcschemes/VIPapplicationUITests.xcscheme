@@ -17,9 +17,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D25795D727B96A40007806E6"
-               BuildableName = "VIPapplicationUITests.xctest"
-               BlueprintName = "VIPapplicationUITests"
-               ReferencedContainer = "container:VIPapplication.xcodeproj">
+               BuildableName = "TransACT2UITests.xctest"
+               BlueprintName = "TransACTUITests"
+               ReferencedContainer = "container:TransACT.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -39,9 +39,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D25795BD27B96A3E007806E6"
-            BuildableName = "VIPapplication.app"
-            BlueprintName = "VIPapplication"
-            ReferencedContainer = "container:VIPapplication.xcodeproj">
+            BuildableName = "TransACT2.app"
+            BlueprintName = "TransACT"
+            ReferencedContainer = "container:TransACT.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D25795BD27B96A3E007806E6"
-            BuildableName = "VIPapplication.app"
-            BlueprintName = "VIPapplication"
-            ReferencedContainer = "container:VIPapplication.xcodeproj">
+            BuildableName = "TransACT2.app"
+            BlueprintName = "TransACT"
+            ReferencedContainer = "container:TransACT.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

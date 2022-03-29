@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D25795BD27B96A3E007806E6"
-               BuildableName = "VIPapplication.app"
-               BlueprintName = "VIPapplication"
-               ReferencedContainer = "container:VIPapplication.xcodeproj">
+               BuildableName = "TransACT2.app"
+               BlueprintName = "TransACT"
+               ReferencedContainer = "container:TransACT.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D25795CD27B96A40007806E6"
-               BuildableName = "VIPapplicationTests.xctest"
-               BlueprintName = "VIPapplicationTests"
-               ReferencedContainer = "container:VIPapplication.xcodeproj">
+               BuildableName = "TransACT2Tests.xctest"
+               BlueprintName = "TransACTTests"
+               ReferencedContainer = "container:TransACT.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D25795D727B96A40007806E6"
-               BuildableName = "VIPapplicationUITests.xctest"
-               BlueprintName = "VIPapplicationUITests"
-               ReferencedContainer = "container:VIPapplication.xcodeproj">
+               BuildableName = "TransACT2UITests.xctest"
+               BlueprintName = "TransACTUITests"
+               ReferencedContainer = "container:TransACT.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D25795BD27B96A3E007806E6"
-            BuildableName = "VIPapplication.app"
-            BlueprintName = "VIPapplication"
-            ReferencedContainer = "container:VIPapplication.xcodeproj">
+            BuildableName = "TransACT2.app"
+            BlueprintName = "TransACT"
+            ReferencedContainer = "container:TransACT.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D25795BD27B96A3E007806E6"
-            BuildableName = "VIPapplication.app"
-            BlueprintName = "VIPapplication"
-            ReferencedContainer = "container:VIPapplication.xcodeproj">
+            BuildableName = "TransACT2.app"
+            BlueprintName = "TransACT"
+            ReferencedContainer = "container:TransACT.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

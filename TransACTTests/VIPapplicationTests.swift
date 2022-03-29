@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import VIPapplication
+@testable import TransACT
 
 class VIPapplicationTests: XCTestCase {
 
