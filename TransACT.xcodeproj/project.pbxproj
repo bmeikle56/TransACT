@@ -23,6 +23,7 @@
 		5386038A27C9FD5C004A3162 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5386038927C9FD5C004A3162 /* FirebaseFirestore */; };
 		5386038C27C9FD5C004A3162 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 5386038B27C9FD5C004A3162 /* FirebaseFunctions */; };
 		5386038E27C9FD5C004A3162 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5386038D27C9FD5C004A3162 /* FirebaseStorage */; };
+		53B0845C27F6D91900E98792 /* SurveyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B0845B27F6D91900E98792 /* SurveyManager.swift */; };
 		53BEFFC727CC1E5700974C3C /* SurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BEFFC627CC1E5700974C3C /* SurveyListView.swift */; };
 		D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */; };
 		D21146F827C2D7D200EDAD4D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F727C2D7D200EDAD4D /* SignUpView.swift */; };
@@ -74,6 +75,7 @@
 		46EB2B1327F00F89008354D7 /* TitilliumWeb-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Black.ttf"; sourceTree = "<group>"; };
 		46EB2B1527F01186008354D7 /* TitilliumWeb-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Bold.ttf"; sourceTree = "<group>"; };
 		46EB2B1727F0136A008354D7 /* TitilliumWeb-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-SemiBold.ttf"; sourceTree = "<group>"; };
+		53B0845B27F6D91900E98792 /* SurveyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyManager.swift; sourceTree = "<group>"; };
 		53BEFFC627CC1E5700974C3C /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
 		D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		D21146F727C2D7D200EDAD4D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				46BF48FF27CDC67A004A2D6B /* NotificationManager.swift */,
 				D2B622E927EF64C600298489 /* LoginManager.swift */,
 				D2B622EB27EF66DD00298489 /* FirebaseManager.swift */,
+				53B0845B27F6D91900E98792 /* SurveyManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				D25795F227B97020007806E6 /* MapBoxMapView.swift in Sources */,
 				D256852227D52D4F009DBC72 /* ProfileView.swift in Sources */,
 				460126D727C5378600953846 /* RequestLocationNotifView.swift in Sources */,
+				53B0845C27F6D91900E98792 /* SurveyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

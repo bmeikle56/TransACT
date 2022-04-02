@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseFirestore
 import WebKit
 
 struct SurveyListView: View {
@@ -16,6 +15,7 @@ struct SurveyListView: View {
     
     @State var isShowingMapBoxMapView = false
     @State var isShowingProfileView = false
+    
     
     
     init() {
@@ -35,6 +35,7 @@ struct SurveyListView: View {
         // put at the top for easy access
         NavigationLink(destination: MapBoxMapView(), isActive: $isShowingMapBoxMapView) { EmptyView() }
         NavigationLink(destination: ProfileView(), isActive: $isShowingProfileView) { EmptyView() }
+        
         
         
         
@@ -124,114 +125,93 @@ struct SurveyList: View {
     @EnvironmentObject var user: User
     
     var body: some View {
+        
         NavigationView {
-            List {
-                
-                ForEach(surveys){survey in
-                    Survey(survey: survey)
-                        .listRowSeparator(.hidden)
-                        .listRowInsets(EdgeInsets())
+            List(self.surveys) {survey in
+                Survey(survey: survey)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                    
                 }
                 .navigationTitle("")
                 .navigationBarTitleDisplayMode(.inline)
-                
-            }
-            
-            .listStyle(.plain)
+                .listStyle(.plain)
             
         }
         .task {
-            await fetchData()
+            await SurveyManager.fetchSurveys(user: user) { (response) in
+                switch response {
+                case .success(let surveys):
+                    self.surveys = surveys
+                case .failure(let error):
+                    print(error)
+                }
+            }
         }
         .refreshable {
-            await fetchData()
+            await SurveyManager.fetchSurveys(user: user) { (response) in
+                switch response {
+                case .success(let surveys):
+                    self.surveys = surveys
+                case .failure(let error):
+                    print(error)
+                }
+            }
         }
         .frame(width: UIScreen.main.bounds.width)
     }
     
-    func fetchData() async {
-        do {
-            self.surveys = []
-            let db = Firestore.firestore()
-            let _ = db.collection("surveys").getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting surveys: \(err)")
-                } else {
-                    db.collection("users").document(user.uid).getDocument() { (document, erro) in
-                        if let erro = erro {
-                            print("Error getting user surveys: \(erro)")
-                        } else {
-                            let survey_finished = Set<String>((document?.data()?["survey_finished"] ?? "nil") as! [String])
-                            
-                            for survey in querySnapshot!.documents {
-                                print(survey.data())
-                                self.surveys.append(SurveyItem(id: survey.documentID,
-                                                               name: survey.data()["name"] as? String ?? "",
-                                                               url: survey.data()["url"] as? String ?? "https://www.apple.com", finished: survey_finished.contains(survey.documentID)))
-                            }
-                        }
-                    }
-                    
-                    
-                    
-                    print(surveys)
-                }
-            }
-        }
-    }
-}
-
-
-struct SurveyItem: Identifiable, Codable {
-    var id = UUID().uuidString
-    var name: String
-    var url: String
-    var finished: Bool
+    
 }
 
 struct Survey: View {
     
+    @State var isShowingSurveyView = false
     let survey: SurveyItem
-    @State private var isShowingDummySurveyPopup: Bool = false
-    
+
     var body: some View {
+        
         ZStack {
             RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.white)
                 .frame(width: UIScreen.main.bounds.width * 0.9, height: 80)
                 .shadow(radius: 5, x: 0, y: 2)
             
             VStack {
-                HStack {
-                    Button(survey.name) {
-                        isShowingDummySurveyPopup = true
-                    }.popover(isPresented: $isShowingDummySurveyPopup) {
-                        
-                        //SurveyPopup() -> save for later
-                        /*Button(action: {
-                            isShowingDummySurveyPopup = false
-                        }, label: {
-                            Image("X")
-                        })*/
-                        WebView(url: URL(string: survey.url)!)
-                    }.foregroundColor(.black)
-                        .padding(.leading, 10)
-                        .font(.system(size: 24))
-                    
-                    Spacer()
-                }
-                HStack {
-                    if survey.finished {
-                        Text("finished").padding(.leading, 10)
-                        
+                if survey.finished {
+                    HStack {
+                        Button(survey.name) {
+                            isShowingSurveyView = true
+                        }
                         Spacer()
-                    }
-                    else {
-                        Text("").padding(.leading, 10)
+                        Text("✓")
                         
-                        Spacer()
-                    }
-                    
+                    }.font(.system(size: 26, weight: .regular, design: .default))
+                        .foregroundColor(.gray)
                 }
+                else {
+                    HStack {
+                        Button(survey.name) {
+                            isShowingSurveyView = true
+                        }.popover(isPresented: $isShowingSurveyView) {
+                            NavigationView {
+                                WebView(url: URL(string: survey.url)!)
+                                    .toolbar {
+                                        ToolbarItem(placement: .navigationBarLeading) {
+                                            Button(action: {
+                                                isShowingSurveyView = false
+                                            }, label: {
+                                                Label("Back", systemImage: "chevron.down")
+                                                Text("Back")
+                                            })
+                                        }
+                                    }
+                            }
+                        }
+                        Spacer()
+                        
+                    }.font(.system(size: 26, weight: .regular, design: .default))
+                }
+                
             }.frame(maxWidth: UIScreen.main.bounds.width * 0.8)
         }
         .frame(width: UIScreen.main.bounds.width, height: 100)
@@ -252,31 +232,15 @@ struct WebView: UIViewRepresentable {
     }
 }
 
-struct SurveyPopup: View {
-    
-    let xPadding: CGFloat = 100
-    @State private var isShowingDummySurveyPopup: Bool = true
-    
-    var body: some View {
-        VStack {
-            HStack {
-                Button(action: {
-                    isShowingDummySurveyPopup = false
-                }, label: {
-                    Image("X")
-                })
-            }.padding(.trailing, xPadding)
-            
-            Text("Anything else in the survey goes here")
-        }
-    }
-}
-
 struct SurveyListView_Previews: PreviewProvider {
     static var previews: some View {
         let testUser = User()
         testUser.uid = "GYZ1sGENlBWkCzkStefFlfA0yO13"
-        return SurveyListView().environmentObject(testUser)
+        return Group {
+            SurveyListView().environmentObject(testUser)
+            SurveyListView().environmentObject(testUser)
+            SurveyListView().environmentObject(testUser).previewInterfaceOrientation(.landscapeLeft)
+        }
     }
 }
 
