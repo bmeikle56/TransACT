@@ -13,7 +13,7 @@ import Firebase
 class FirebaseManager {
     
     // login function for Firebase
-    static func handleLogin(email: String, password: String) -> Bool {
+    static func handleLogin(email: String, password: String, user: User) -> Bool {
         var retVal: Bool = true
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil {
@@ -22,6 +22,8 @@ class FirebaseManager {
                 retVal = false
             } else {
                 // no error
+                user.uid = Auth.auth().currentUser?.uid ?? ""
+                print("User \(user.uid) Logged in.")
             }
         }
         return retVal
@@ -58,5 +60,10 @@ class FirebaseManager {
             return false
         }
         return true
+    }
+    
+    // Getter method for Firestore
+    static func getFirestore() -> Firestore {
+        return Firestore.firestore()
     }
 }

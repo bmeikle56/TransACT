@@ -23,6 +23,7 @@
 		5386038A27C9FD5C004A3162 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5386038927C9FD5C004A3162 /* FirebaseFirestore */; };
 		5386038C27C9FD5C004A3162 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 5386038B27C9FD5C004A3162 /* FirebaseFunctions */; };
 		5386038E27C9FD5C004A3162 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5386038D27C9FD5C004A3162 /* FirebaseStorage */; };
+		53B0845C27F6D91900E98792 /* SurveyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B0845B27F6D91900E98792 /* SurveyManager.swift */; };
 		53BEFFC727CC1E5700974C3C /* SurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BEFFC627CC1E5700974C3C /* SurveyListView.swift */; };
 		D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */; };
 		D21146F827C2D7D200EDAD4D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F727C2D7D200EDAD4D /* SignUpView.swift */; };
@@ -30,12 +31,12 @@
 		D21A8BB527EA3E91004CCA21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D21A8BB427EA3E91004CCA21 /* GoogleService-Info.plist */; };
 		D256852027D52D3F009DBC72 /* StartRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256851F27D52D3E009DBC72 /* StartRouteView.swift */; };
 		D256852227D52D4F009DBC72 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D256852127D52D4F009DBC72 /* ProfileView.swift */; };
-		D25795C227B96A3E007806E6 /* VIPapplicationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795C127B96A3E007806E6 /* VIPapplicationApp.swift */; };
+		D25795C227B96A3E007806E6 /* TransACTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795C127B96A3E007806E6 /* TransACTApp.swift */; };
 		D25795C627B96A40007806E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25795C527B96A40007806E6 /* Assets.xcassets */; };
 		D25795C927B96A40007806E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25795C827B96A40007806E6 /* Preview Assets.xcassets */; };
-		D25795D327B96A40007806E6 /* VIPapplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795D227B96A40007806E6 /* VIPapplicationTests.swift */; };
-		D25795DD27B96A40007806E6 /* VIPapplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795DC27B96A40007806E6 /* VIPapplicationUITests.swift */; };
-		D25795DF27B96A41007806E6 /* VIPapplicationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795DE27B96A41007806E6 /* VIPapplicationUITestsLaunchTests.swift */; };
+		D25795D327B96A40007806E6 /* TransACTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795D227B96A40007806E6 /* TransACTTests.swift */; };
+		D25795DD27B96A40007806E6 /* TransACTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795DC27B96A40007806E6 /* TransACTUITests.swift */; };
+		D25795DF27B96A41007806E6 /* TransACTUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795DE27B96A41007806E6 /* TransACTUITestsLaunchTests.swift */; };
 		D25795F027B96FA6007806E6 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = D25795EF27B96FA6007806E6 /* MapboxMaps */; };
 		D25795F227B97020007806E6 /* MapBoxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F127B97020007806E6 /* MapBoxMapView.swift */; };
 		D25795F427B970B0007806E6 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F327B970B0007806E6 /* SetupView.swift */; };
@@ -74,6 +75,7 @@
 		46EB2B1327F00F89008354D7 /* TitilliumWeb-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Black.ttf"; sourceTree = "<group>"; };
 		46EB2B1527F01186008354D7 /* TitilliumWeb-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Bold.ttf"; sourceTree = "<group>"; };
 		46EB2B1727F0136A008354D7 /* TitilliumWeb-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-SemiBold.ttf"; sourceTree = "<group>"; };
+		53B0845B27F6D91900E98792 /* SurveyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyManager.swift; sourceTree = "<group>"; };
 		53BEFFC627CC1E5700974C3C /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
 		D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		D21146F727C2D7D200EDAD4D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -81,15 +83,15 @@
 		D21A8BB427EA3E91004CCA21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D256851F27D52D3E009DBC72 /* StartRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouteView.swift; sourceTree = "<group>"; };
 		D256852127D52D4F009DBC72 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		D25795BE27B96A3E007806E6 /* VIPapplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPapplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D25795C127B96A3E007806E6 /* VIPapplicationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPapplicationApp.swift; sourceTree = "<group>"; };
+		D25795BE27B96A3E007806E6 /* TransACT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransACT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25795C127B96A3E007806E6 /* TransACTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransACTApp.swift; sourceTree = "<group>"; };
 		D25795C527B96A40007806E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D25795C827B96A40007806E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D25795CE27B96A40007806E6 /* VIPapplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPapplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D25795D227B96A40007806E6 /* VIPapplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPapplicationTests.swift; sourceTree = "<group>"; };
-		D25795D827B96A40007806E6 /* VIPapplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPapplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D25795DC27B96A40007806E6 /* VIPapplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPapplicationUITests.swift; sourceTree = "<group>"; };
-		D25795DE27B96A41007806E6 /* VIPapplicationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPapplicationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D25795CE27B96A40007806E6 /* TransACTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransACTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25795D227B96A40007806E6 /* TransACTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransACTTests.swift; sourceTree = "<group>"; };
+		D25795D827B96A40007806E6 /* TransACTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransACTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25795DC27B96A40007806E6 /* TransACTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransACTUITests.swift; sourceTree = "<group>"; };
+		D25795DE27B96A41007806E6 /* TransACTUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransACTUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D25795F127B97020007806E6 /* MapBoxMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxMapView.swift; sourceTree = "<group>"; };
 		D25795F327B970B0007806E6 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		D25795F527B970F4007806E6 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				46BF48FF27CDC67A004A2D6B /* NotificationManager.swift */,
 				D2B622E927EF64C600298489 /* LoginManager.swift */,
 				D2B622EB27EF66DD00298489 /* FirebaseManager.swift */,
+				53B0845B27F6D91900E98792 /* SurveyManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -144,9 +147,9 @@
 		D25795B527B96A3E007806E6 = {
 			isa = PBXGroup;
 			children = (
-				D25795C027B96A3E007806E6 /* VIPapplication */,
-				D25795D127B96A40007806E6 /* VIPapplicationTests */,
-				D25795DB27B96A40007806E6 /* VIPapplicationUITests */,
+				D25795C027B96A3E007806E6 /* TransACT */,
+				D25795D127B96A40007806E6 /* TransACTTests */,
+				D25795DB27B96A40007806E6 /* TransACTUITests */,
 				D25795BF27B96A3E007806E6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -154,26 +157,26 @@
 		D25795BF27B96A3E007806E6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D25795BE27B96A3E007806E6 /* VIPapplication.app */,
-				D25795CE27B96A40007806E6 /* VIPapplicationTests.xctest */,
-				D25795D827B96A40007806E6 /* VIPapplicationUITests.xctest */,
+				D25795BE27B96A3E007806E6 /* TransACT.app */,
+				D25795CE27B96A40007806E6 /* TransACTTests.xctest */,
+				D25795D827B96A40007806E6 /* TransACTUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D25795C027B96A3E007806E6 /* VIPapplication */ = {
+		D25795C027B96A3E007806E6 /* TransACT */ = {
 			isa = PBXGroup;
 			children = (
 				D21A8BB427EA3E91004CCA21 /* GoogleService-Info.plist */,
 				460126E827C54EDC00953846 /* Info.plist */,
-				D25795C127B96A3E007806E6 /* VIPapplicationApp.swift */,
+				D25795C127B96A3E007806E6 /* TransACTApp.swift */,
 				D281245D27C41AE6000C2BC3 /* View */,
 				46BF48FC27CD5302004A2D6B /* Managers */,
 				D25795C727B96A40007806E6 /* Preview Content */,
 				D281245B27C41AB0000C2BC3 /* Fonts */,
 				D25795C527B96A40007806E6 /* Assets.xcassets */,
 			);
-			path = VIPapplication;
+			path = TransACT;
 			sourceTree = "<group>";
 		};
 		D25795C727B96A40007806E6 /* Preview Content */ = {
@@ -184,21 +187,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		D25795D127B96A40007806E6 /* VIPapplicationTests */ = {
+		D25795D127B96A40007806E6 /* TransACTTests */ = {
 			isa = PBXGroup;
 			children = (
-				D25795D227B96A40007806E6 /* VIPapplicationTests.swift */,
+				D25795D227B96A40007806E6 /* TransACTTests.swift */,
 			);
-			path = VIPapplicationTests;
+			path = TransACTTests;
 			sourceTree = "<group>";
 		};
-		D25795DB27B96A40007806E6 /* VIPapplicationUITests */ = {
+		D25795DB27B96A40007806E6 /* TransACTUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D25795DC27B96A40007806E6 /* VIPapplicationUITests.swift */,
-				D25795DE27B96A41007806E6 /* VIPapplicationUITestsLaunchTests.swift */,
+				D25795DC27B96A40007806E6 /* TransACTUITests.swift */,
+				D25795DE27B96A41007806E6 /* TransACTUITestsLaunchTests.swift */,
 			);
-			path = VIPapplicationUITests;
+			path = TransACTUITests;
 			sourceTree = "<group>";
 		};
 		D281245B27C41AB0000C2BC3 /* Fonts */ = {
@@ -236,9 +239,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D25795BD27B96A3E007806E6 /* VIPapplication */ = {
+		D25795BD27B96A3E007806E6 /* TransACT */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D25795E227B96A41007806E6 /* Build configuration list for PBXNativeTarget "VIPapplication" */;
+			buildConfigurationList = D25795E227B96A41007806E6 /* Build configuration list for PBXNativeTarget "TransACT" */;
 			buildPhases = (
 				D25795BA27B96A3E007806E6 /* Sources */,
 				D25795BB27B96A3E007806E6 /* Frameworks */,
@@ -248,7 +251,7 @@
 			);
 			dependencies = (
 			);
-			name = VIPapplication;
+			name = TransACT;
 			packageProductDependencies = (
 				D25795EF27B96FA6007806E6 /* MapboxMaps */,
 				5386038327C9FD5C004A3162 /* FirebaseAnalytics */,
@@ -259,12 +262,12 @@
 				5386038D27C9FD5C004A3162 /* FirebaseStorage */,
 			);
 			productName = VIPapplication;
-			productReference = D25795BE27B96A3E007806E6 /* VIPapplication.app */;
+			productReference = D25795BE27B96A3E007806E6 /* TransACT.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D25795CD27B96A40007806E6 /* VIPapplicationTests */ = {
+		D25795CD27B96A40007806E6 /* TransACTTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D25795E527B96A41007806E6 /* Build configuration list for PBXNativeTarget "VIPapplicationTests" */;
+			buildConfigurationList = D25795E527B96A41007806E6 /* Build configuration list for PBXNativeTarget "TransACTTests" */;
 			buildPhases = (
 				D25795CA27B96A40007806E6 /* Sources */,
 				D25795CB27B96A40007806E6 /* Frameworks */,
@@ -275,14 +278,14 @@
 			dependencies = (
 				D25795D027B96A40007806E6 /* PBXTargetDependency */,
 			);
-			name = VIPapplicationTests;
+			name = TransACTTests;
 			productName = VIPapplicationTests;
-			productReference = D25795CE27B96A40007806E6 /* VIPapplicationTests.xctest */;
+			productReference = D25795CE27B96A40007806E6 /* TransACTTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D25795D727B96A40007806E6 /* VIPapplicationUITests */ = {
+		D25795D727B96A40007806E6 /* TransACTUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D25795E827B96A41007806E6 /* Build configuration list for PBXNativeTarget "VIPapplicationUITests" */;
+			buildConfigurationList = D25795E827B96A41007806E6 /* Build configuration list for PBXNativeTarget "TransACTUITests" */;
 			buildPhases = (
 				D25795D427B96A40007806E6 /* Sources */,
 				D25795D527B96A40007806E6 /* Frameworks */,
@@ -293,9 +296,9 @@
 			dependencies = (
 				D25795DA27B96A40007806E6 /* PBXTargetDependency */,
 			);
-			name = VIPapplicationUITests;
+			name = TransACTUITests;
 			productName = VIPapplicationUITests;
-			productReference = D25795D827B96A40007806E6 /* VIPapplicationUITests.xctest */;
+			productReference = D25795D827B96A40007806E6 /* TransACTUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -321,7 +324,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D25795B927B96A3E007806E6 /* Build configuration list for PBXProject "VIPapplication" */;
+			buildConfigurationList = D25795B927B96A3E007806E6 /* Build configuration list for PBXProject "TransACT" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -338,9 +341,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D25795BD27B96A3E007806E6 /* VIPapplication */,
-				D25795CD27B96A40007806E6 /* VIPapplicationTests */,
-				D25795D727B96A40007806E6 /* VIPapplicationUITests */,
+				D25795BD27B96A3E007806E6 /* TransACT */,
+				D25795CD27B96A40007806E6 /* TransACTTests */,
+				D25795D727B96A40007806E6 /* TransACTUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -385,7 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				460126DB27C53D6B00953846 /* RequestPushNotifView.swift in Sources */,
-				D25795C227B96A3E007806E6 /* VIPapplicationApp.swift in Sources */,
+				D25795C227B96A3E007806E6 /* TransACTApp.swift in Sources */,
 				53BEFFC727CC1E5700974C3C /* SurveyListView.swift in Sources */,
 				46BF48FE27CD5373004A2D6B /* LocationManager.swift in Sources */,
 				D25795F427B970B0007806E6 /* SetupView.swift in Sources */,
@@ -400,6 +403,7 @@
 				D25795F227B97020007806E6 /* MapBoxMapView.swift in Sources */,
 				D256852227D52D4F009DBC72 /* ProfileView.swift in Sources */,
 				460126D727C5378600953846 /* RequestLocationNotifView.swift in Sources */,
+				53B0845C27F6D91900E98792 /* SurveyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D25795D327B96A40007806E6 /* VIPapplicationTests.swift in Sources */,
+				D25795D327B96A40007806E6 /* TransACTTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,8 +419,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D25795DD27B96A40007806E6 /* VIPapplicationUITests.swift in Sources */,
-				D25795DF27B96A41007806E6 /* VIPapplicationUITestsLaunchTests.swift in Sources */,
+				D25795DD27B96A40007806E6 /* TransACTUITests.swift in Sources */,
+				D25795DF27B96A41007806E6 /* TransACTUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,12 +429,12 @@
 /* Begin PBXTargetDependency section */
 		D25795D027B96A40007806E6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D25795BD27B96A3E007806E6 /* VIPapplication */;
+			target = D25795BD27B96A3E007806E6 /* TransACT */;
 			targetProxy = D25795CF27B96A40007806E6 /* PBXContainerItemProxy */;
 		};
 		D25795DA27B96A40007806E6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D25795BD27B96A3E007806E6 /* VIPapplication */;
+			target = D25795BD27B96A3E007806E6 /* TransACT */;
 			targetProxy = D25795D927B96A40007806E6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -559,10 +563,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"VIPapplication/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TransACT/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VIPapplication/Info.plist;
+				INFOPLIST_FILE = TransACT/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow us to access your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -575,7 +579,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.braedenmeikle.VIPapplication;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.braedenmeikle.TransACT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -590,10 +595,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"VIPapplication/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TransACT/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VIPapplication/Info.plist;
+				INFOPLIST_FILE = TransACT/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow us to access your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -606,7 +611,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.braedenmeikle.VIPapplication;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.braedenmeikle.TransACT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -629,7 +635,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VIPapplication.app/VIPapplication";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TransACT.app/TransACT";
 			};
 			name = Debug;
 		};
@@ -648,7 +654,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VIPapplication.app/VIPapplication";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TransACT.app/TransACT";
 			};
 			name = Release;
 		};
@@ -689,7 +695,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D25795B927B96A3E007806E6 /* Build configuration list for PBXProject "VIPapplication" */ = {
+		D25795B927B96A3E007806E6 /* Build configuration list for PBXProject "TransACT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D25795E027B96A41007806E6 /* Debug */,
@@ -698,7 +704,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D25795E227B96A41007806E6 /* Build configuration list for PBXNativeTarget "VIPapplication" */ = {
+		D25795E227B96A41007806E6 /* Build configuration list for PBXNativeTarget "TransACT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D25795E327B96A41007806E6 /* Debug */,
@@ -707,7 +713,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D25795E527B96A41007806E6 /* Build configuration list for PBXNativeTarget "VIPapplicationTests" */ = {
+		D25795E527B96A41007806E6 /* Build configuration list for PBXNativeTarget "TransACTTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D25795E627B96A41007806E6 /* Debug */,
@@ -716,7 +722,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D25795E827B96A41007806E6 /* Build configuration list for PBXNativeTarget "VIPapplicationUITests" */ = {
+		D25795E827B96A41007806E6 /* Build configuration list for PBXNativeTarget "TransACTUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D25795E927B96A41007806E6 /* Debug */,
