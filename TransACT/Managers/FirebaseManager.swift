@@ -61,4 +61,9 @@ class FirebaseManager {
         }
         return true
     }
+    
+    // Getter method for Firestore
+    static func getFirestore() -> Firestore {
+        return Firestore.firestore()
+    }
 }

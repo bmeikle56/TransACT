@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import Firebase
-
 
 /**
  All of the functions for Survey display and notification are contained in this class.
@@ -16,7 +14,7 @@ class SurveyManager {
     static func fetchSurveys(user: User, completion: @escaping (Result<[SurveyItem], Error>) -> Void) async {
         
         var surveys: [SurveyItem] = []
-        let db = Firestore.firestore()
+        let db = FirebaseManager.getFirestore()
         let _ = db.collection("surveys").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 //print("Error getting surveys: \(err)")
