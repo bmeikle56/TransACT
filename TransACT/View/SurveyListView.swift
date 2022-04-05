@@ -11,21 +11,21 @@ import WebKit
 struct SurveyListView: View {
     
     @EnvironmentObject var user: User
-    var buttonSize:CGFloat = 45;
+    var buttonSize: CGFloat = 45;
     
     @State var isShowingMapBoxMapView = false
     @State var isShowingProfileView = false
     
     
     
-    init() {
+    /*init() {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.shadowColor = .clear
         navBarAppearance.backgroundColor = UIColor.white
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         UINavigationBar.appearance().compactAppearance = navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-    }
+    }*/
     
     
     var body: some View {
@@ -64,7 +64,7 @@ struct SurveyListView: View {
             
             SurveyList().environmentObject(user)
             
-            HStack {
+            /*HStack {
                 Spacer()
                 
                 Button(action: {
@@ -106,12 +106,10 @@ struct SurveyListView: View {
                 
                 Spacer()
             }.frame(width: UIScreen.main.bounds.width)
-                .padding(2)
+                .padding(2)*/
         }.navigationBarHidden(true)
             .environmentObject(user)
     }
-    
-    
 }
 
 struct SurveyList: View {
@@ -155,8 +153,6 @@ struct SurveyList: View {
         }
         .frame(width: UIScreen.main.bounds.width)
     }
-    
-    
 }
 
 struct Survey: View {

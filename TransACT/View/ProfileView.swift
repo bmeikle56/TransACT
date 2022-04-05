@@ -16,78 +16,74 @@ struct ProfileView: View {
 
     var body: some View {
 
-            VStack {
+        VStack {
+            
+            ZStack(alignment: .top) {
                 
-                // put at the top for easy access
-                NavigationLink(destination: SurveyListView(), isActive: $isShowingSurveyListView) { EmptyView() }
-                NavigationLink(destination: MapBoxMapView(), isActive: $isShowingMapBoxMapView) { EmptyView() }
+                Rectangle()
+                    .fill(Color.white)
+                    .frame(width: UIScreen.main.bounds.width, height: 80)
+                    .ignoresSafeArea()
                 
-                ZStack(alignment: .top) {
-                    
-                    Rectangle()
-                        .fill(Color.white)
-                        .frame(width: UIScreen.main.bounds.width, height: 80)
-                        .ignoresSafeArea()
-                    
-                    HStack() {
-                        Image("SetupView image")
-                            .resizable()
-                            .frame(width: 70, height: 70)
-                            .padding(.leading, 30)
-                        Spacer()
-                        Text("TranSACT")
-                            .padding(.trailing, 30)
-                            .font(.system(size: 32, weight: .bold, design: .default))
-                    }.frame(width: UIScreen.main.bounds.width)
-                }
-                
-                Profile()
-                    
-                HStack {
+                HStack() {
+                    Image("SetupView image")
+                        .resizable()
+                        .frame(width: 70, height: 70)
+                        .padding(.leading, 30)
                     Spacer()
-                    
-                    Button(action: {
-                        isShowingSurveyListView = true
-                    }, label: {
-                        Image("Survey icon")
-                            .resizable()
-                            .frame(width: buttonSize, height: buttonSize)
-                        
-                        
-                    }).frame(maxWidth: .infinity, maxHeight: buttonSize)
-                        .padding(8)
-                        .background(Color.white)
-                        .cornerRadius(20)
-                    
-                    Button(action: {
-                        isShowingMapBoxMapView = true
-                    }, label: {
-                        Image("Location icon")
-                            .resizable()
-                            .frame(maxWidth: buttonSize)
-                            .aspectRatio(contentMode: .fit)
-                        
-                    }).frame(maxWidth: .infinity, maxHeight: buttonSize)
-                        .padding(8)
-                        .background(Color.white)
-                        .cornerRadius(20)
-                    
-                    Button(action: {
-                        // does nothing because we are already in this view
-                    }, label: {
-                        Image("Profile icon white")
-                            .resizable()
-                            .frame(width: buttonSize, height: buttonSize)
-                    }).frame(maxWidth: .infinity, maxHeight: buttonSize)
-                        .padding(8)
-                        .background(Color("UiGreen").opacity(0.7))
-                        .cornerRadius(20)
-                    
-                    Spacer()
+                    Text("TranSACT")
+                        .padding(.trailing, 30)
+                        .font(.system(size: 32, weight: .bold, design: .default))
                 }.frame(width: UIScreen.main.bounds.width)
-                    .padding(2)
-            }.navigationBarHidden(true)
-                .environmentObject(user)
+            }
+            
+            Profile()
+            
+            /*HStack {
+                Spacer()
+                
+                Button(action: {
+                    isShowingSurveyListView = true
+                }, label: {
+                    Image("Survey icon")
+                        .resizable()
+                        .frame(width: buttonSize, height: buttonSize)
+                    
+                    
+                }).frame(maxWidth: .infinity, maxHeight: buttonSize)
+                    .padding(8)
+                    .background(Color.white)
+                    .cornerRadius(20)
+                
+                Button(action: {
+                    isShowingMapBoxMapView = true
+                }, label: {
+                    Image("Location icon")
+                        .resizable()
+                        .frame(maxWidth: buttonSize)
+                        .aspectRatio(contentMode: .fit)
+                    
+                }).frame(maxWidth: .infinity, maxHeight: buttonSize)
+                    .padding(8)
+                    .background(Color.white)
+                    .cornerRadius(20)
+                
+                Button(action: {
+                    // does nothing because we are already in this view
+                }, label: {
+                    Image("Profile icon white")
+                        .resizable()
+                        .frame(width: buttonSize, height: buttonSize)
+                }).frame(maxWidth: .infinity, maxHeight: buttonSize)
+                    .padding(8)
+                    .background(Color("UiGreen").opacity(0.7))
+                    .cornerRadius(20)
+                
+                Spacer()
+            }.frame(width: UIScreen.main.bounds.width)
+                .padding(2)*/
+        }.navigationBarHidden(true)
+            .environmentObject(user)
     }
 }
 
@@ -115,7 +111,7 @@ struct Profile: View {
     var body: some View {
         NavigationLink(destination: SetupView(), isActive: $isLoggedOut, label: { EmptyView() })
         
-        // show indicators is the gray scroll bar on the right
+        // show indicators is the gray scroll bar on the right -> hide
         ScrollView(showsIndicators: false) {
             ZStack {
                 Rectangle()

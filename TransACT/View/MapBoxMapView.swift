@@ -85,7 +85,7 @@ struct MapBoxMapView: View {
                 }.frame(width: UIScreen.main.bounds.width)
             }
             
-            HStack {
+            /*HStack {
                 Spacer()
                 
                 Button(action: {
@@ -127,7 +127,7 @@ struct MapBoxMapView: View {
                 Spacer()
                 
             }.frame(width: UIScreen.main.bounds.width)
-                .padding(2)
+                .padding(2)*/
         }.navigationBarHidden(true)
             .environmentObject(user)
     }
