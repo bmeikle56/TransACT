@@ -64,9 +64,6 @@ extension LocationManager: CLLocationManagerDelegate {
         // recieve user location
         guard let location = locations.last else {return}
         self.userLocation = location
-        //temporarily commented to test other functions
-        //print(locations)
-        //print(user.uid)
         
         let altitude = location.altitude
         let latitude = location.coordinate.latitude
@@ -81,6 +78,7 @@ extension LocationManager: CLLocationManagerDelegate {
         }
         
         let speed = location.speed
+        let speedAccuracy = location.speedAccuracy
         let time = location.timestamp
         
         let db = Firestore.firestore()
@@ -90,7 +88,7 @@ extension LocationManager: CLLocationManagerDelegate {
                 print("Error getting user \(self.user.uid) : \(error)")
             }
             else {
-                currUser.collection("locations").document().setData(["altitude":altitude, "latitude":latitude, "longitude":longitude, "accuracy":accuracy, "speed":speed, "time":time])
+                currUser.collection("locations").document().setData(["altitude":altitude, "latitude":latitude, "longitude":longitude, "accuracy":accuracy, "speed":speed, "speedAccuracy":speedAccuracy, "time":time])
             }
         }
     }
