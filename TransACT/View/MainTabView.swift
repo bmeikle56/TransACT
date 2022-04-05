@@ -10,27 +10,57 @@ import SwiftUI
 struct MainTabView: View {
     
     let buttonSize: CGFloat = 45;
+    @State var isShowingSurveyListView: Bool = false
+    @State var isShowingMapBoxMapView: Bool = false
+    @State var isShowingProfileView: Bool = false
     
     var body: some View {
         TabView {
             SurveyListView()
                 .tabItem {
-                    Image("Survey icon")
-                        .resizable()
-                        .frame(maxWidth: buttonSize)
-                        .aspectRatio(contentMode: .fit)
+                    Button(action: {
+                        isShowingSurveyListView = true
+                        isShowingMapBoxMapView = false
+                        isShowingProfileView = false
+                    }, label: {
+                        Image("Survey icon")
+                            .resizable()
+                            .frame(width: buttonSize, height: buttonSize)
+                    }).frame(maxWidth: .infinity, maxHeight: buttonSize)
+                        .padding(8)
+                        .background(Color.white)
+                        .cornerRadius(20)
                 }
             MapBoxMapView()
                 .tabItem {
-                    Image("Location icon")
-                        .resizable()
-                        .frame(width: buttonSize, height: buttonSize)
+                    Button(action: {
+                        isShowingSurveyListView = false
+                        isShowingMapBoxMapView = true
+                        isShowingProfileView = false
+                    }, label: {
+                        Image("Location icon")
+                            .resizable()
+                            .frame(width: buttonSize, height: buttonSize)
+                    }).frame(maxWidth: .infinity, maxHeight: buttonSize)
+                        .padding(8)
+                        //.background(Color("UiGreen").opacity(0.7))
+                        .background(Color.white)
+                        .cornerRadius(20)
                 }
             ProfileView()
                 .tabItem {
-                    Image("Profile icon white")
-                        .resizable()
-                        .frame(width: buttonSize, height: buttonSize)
+                    Button(action: {
+                        isShowingSurveyListView = false
+                        isShowingMapBoxMapView = false
+                        isShowingProfileView = true
+                    }, label: {
+                        Image("Profile icon")
+                            .resizable()
+                            .frame(width: buttonSize, height: buttonSize)
+                    }).frame(maxWidth: .infinity, maxHeight: buttonSize)
+                        .padding(8)
+                        .background(Color.white)
+                        .cornerRadius(20)
                 }
         }
     }
