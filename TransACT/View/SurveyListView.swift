@@ -30,16 +30,11 @@ struct SurveyListView: View {
     
     var body: some View {
         
-        
-        
-        // put at the top for easy access
-        NavigationLink(destination: MapBoxMapView(), isActive: $isShowingMapBoxMapView) { EmptyView() }
-        NavigationLink(destination: ProfileView(), isActive: $isShowingProfileView) { EmptyView() }
-        
-        
-        
-        
         VStack {
+            
+            // put at the top for easy access
+            NavigationLink(destination: MapBoxMapView(), isActive: $isShowingMapBoxMapView) { EmptyView() }
+            NavigationLink(destination: ProfileView(), isActive: $isShowingProfileView) { EmptyView() }
             
             ZStack(alignment: .top) {
                 
@@ -234,13 +229,7 @@ struct WebView: UIViewRepresentable {
 
 struct SurveyListView_Previews: PreviewProvider {
     static var previews: some View {
-        let testUser = User()
-        testUser.uid = "GYZ1sGENlBWkCzkStefFlfA0yO13"
-        return Group {
-            SurveyListView().environmentObject(testUser)
-            SurveyListView().environmentObject(testUser)
-            SurveyListView().environmentObject(testUser).previewInterfaceOrientation(.landscapeLeft)
-        }
+        SurveyListView().environmentObject(User())
     }
 }
 

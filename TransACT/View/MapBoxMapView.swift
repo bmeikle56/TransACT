@@ -55,15 +55,12 @@ struct MapBoxMapView: View {
     
     var body: some View {
         
-        
-        
-        // put at the top for easy access
-        NavigationLink(destination: SurveyListView(), isActive: $isShowingSurveyListView) { EmptyView() }
-        NavigationLink(destination: ProfileView(), isActive: $isShowingProfileView) { EmptyView() }
-        
-        
-        
         VStack {
+            
+            // put at the top for easy access
+            NavigationLink(destination: SurveyListView(), isActive: $isShowingSurveyListView) { EmptyView() }
+            NavigationLink(destination: ProfileView(), isActive: $isShowingProfileView) { EmptyView() }
+            
             ZStack(alignment: .top) {
                 MapBoxMapViewController()
                     .scaledToFill()
@@ -163,6 +160,6 @@ class MapViewController: UIViewController {
 
 struct MapBoxMapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapBoxMapView().environmentObject(User())//.previewInterfaceOrientation(.portrait)
+        MapBoxMapView().environmentObject(User())
     }
 }
