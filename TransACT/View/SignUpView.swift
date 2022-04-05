@@ -98,6 +98,10 @@ struct SignUpView: View {
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
                     Button("SIGN UP") {
+                        email = ""
+                        password = ""
+                        confirmPassword = ""
+                        
                         let result = LoginManager.isStrongPassword(password: password)
                         if !result.0 {
                             passwordIsStrong = false

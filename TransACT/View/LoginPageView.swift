@@ -66,6 +66,9 @@ struct LoginPageView: View {
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
                     Button("LOG IN") {
+                        email = ""
+                        password = ""
+                        
                         let result = FirebaseManager.handleLogin(email: email, password: password, user: user)
                         showHomePageView = result
                         successfulLogin = result
