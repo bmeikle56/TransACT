@@ -23,10 +23,10 @@ struct ProfileView: View {
         VStack {
             ZStack(alignment: .top) {
                 
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                /*RoundedRectangle(cornerRadius: 20, style: .continuous)
                     .fill(Color.white)
                     .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 80)
-                    .shadow(radius: 5, x: 0, y: 3)
+                    .shadow(radius: 5, x: 0, y: 3)*/
                 
                 Rectangle()
                     .fill(Color.white)

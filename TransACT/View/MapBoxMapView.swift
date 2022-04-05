@@ -163,6 +163,6 @@ class MapViewController: UIViewController {
 
 struct MapBoxMapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapBoxMapView().environmentObject(User()).previewInterfaceOrientation(.portrait)
+        MapBoxMapView().environmentObject(User())//.previewInterfaceOrientation(.portrait)
     }
 }
