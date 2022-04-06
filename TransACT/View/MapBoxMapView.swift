@@ -147,7 +147,15 @@ class MapViewController: UIViewController {
     internal var mapView: MapView!
     override public func viewDidLoad() {
         super.viewDidLoad()
-        mapView = MapView(frame: view.bounds)
+        
+        /* Add in info Plist:
+         MGLMapboxAccessToken      String      THE-ACCESS-TOKEN-CODE
+         
+         replace the line below with the access token code */
+        
+        let myResourceOptions = ResourceOptions(accessToken: "THE-ACCESS-TOKEN-CODE")
+        let myMapInitOptions = MapInitOptions(resourceOptions: myResourceOptions)
+        mapView = MapView(frame: view.bounds, mapInitOptions: myMapInitOptions)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.addSubview(mapView)
         
