@@ -57,10 +57,6 @@ struct MapBoxMapView: View {
         
         VStack {
             
-            // put at the top for easy access
-            NavigationLink(destination: SurveyListView(), isActive: $isShowingSurveyListView) { EmptyView() }
-            NavigationLink(destination: ProfileView(), isActive: $isShowingProfileView) { EmptyView() }
-            
             ZStack(alignment: .top) {
                 MapBoxMapViewController()
                     .scaledToFill()
