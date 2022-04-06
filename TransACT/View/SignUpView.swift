@@ -128,7 +128,7 @@ struct SignUpView: View {
                         }
                     }.font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
-                }.navigationBarBackButtonHidden(true)
+                }.navigationBarBackButtonHidden(false)
                     .padding(.bottom, 100)
                 
                 HStack {
