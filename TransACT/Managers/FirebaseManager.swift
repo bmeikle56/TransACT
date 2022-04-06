@@ -13,20 +13,19 @@ import Firebase
 class FirebaseManager {
     
     // login function for Firebase
-    static func handleLogin(email: String, password: String, user: User) -> Bool {
-        var retVal: Bool = true
+    static func handleLogin(email: String, password: String, user: User, completion: @escaping (Result<User, Error>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil {
                 // error
                 // show text on screen saying incorrect username or password
-                retVal = false
+                completion(.failure(error!))
             } else {
                 // no error
                 user.uid = Auth.auth().currentUser?.uid ?? ""
-                print("User \(user.uid) Logged in.")
+                
+                completion(.success(user))
             }
         }
-        return retVal
     }
     
     // sign up function for Firebase

@@ -66,9 +66,19 @@ struct LoginPageView: View {
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
                     Button("LOG IN") {
-                        let result = FirebaseManager.handleLogin(email: email, password: password, user: user)
-                        showHomePageView = result
-                        successfulLogin = result
+                        FirebaseManager.handleLogin(email: email, password: password, user: user) { (response) in
+                            switch response {
+                            case .success(let user):
+                                print("User \(user.uid) Logged in.")
+                                showHomePageView = true
+                                successfulLogin = true
+                            case .failure(let error):
+                                print("Error Logining in \(error)")
+                                successfulLogin = false
+                                showHomePageView = false
+                            }
+                        }
+                        
                     }
                         .font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
