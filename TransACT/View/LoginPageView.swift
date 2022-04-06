@@ -78,6 +78,8 @@ struct LoginPageView: View {
                                 showHomePageView = false
                             }
                         }
+                        email = ""
+                        password = ""
                         
                     }
                         .font(.custom("PTMono-Bold", size: 18))
