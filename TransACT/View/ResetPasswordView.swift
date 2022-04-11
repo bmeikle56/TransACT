@@ -57,6 +57,8 @@ struct ResetPasswordView: View {
                     .frame(width: 282, height: 50)
                 
                 Button("GET RESET EMAIL") {
+                    email = ""
+                    
                     // clean previous errString
                     errString = ""
                     if LoginManager.isValidEmailAddress(email: email) {
@@ -89,7 +91,7 @@ struct ResetPasswordView: View {
                 }.font(.custom("PTMono-Bold", size: 18))
                     .foregroundColor(.white)
                 
-            }.navigationBarBackButtonHidden(true)
+            }.navigationBarBackButtonHidden(false)
                 .padding(.bottom, 10)
         }
     }

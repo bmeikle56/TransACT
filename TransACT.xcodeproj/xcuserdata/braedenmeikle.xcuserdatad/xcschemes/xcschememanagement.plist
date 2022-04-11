@@ -28,7 +28,11 @@
 		<key>TransACT.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>1</integer>
+=======
+			<integer>0</integer>
+>>>>>>> e0659e6f49b379be91c7bd2ebaa613998736b658
 		</dict>
 		<key>VIPapplication.xcscheme_^#shared#^_</key>
 		<dict>

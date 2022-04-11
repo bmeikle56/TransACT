@@ -49,6 +49,14 @@ class VIPapplicationTests: XCTestCase {
         XCTAssertFalse(LoginManager.isValidEmailAddress(email: "upperCASEworksTOO@ABCDHSS.ABDBSSS.com"))
         XCTAssertFalse(LoginManager.isValidEmailAddress(email: "werexow661@jo6s.com"))
     }
+    
+    /* creates a new user and verifies that this user can then sign in right after */
+    func testCreateNewUserSignIn() throws {
+        FirebaseManager.handleSignup(email: "testemail1@gmail.com", password: "12345")
+        
+        // how should i input a user to fix this
+        //FirebaseManager.handleLogin(email: "testemail1@gmail.com", password: "12345", user: <#T##User#>)
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
