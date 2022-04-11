@@ -17,71 +17,20 @@ struct ProfileView: View {
     var body: some View {
 
         VStack {
-            
-            ZStack(alignment: .top) {
-                
-                Rectangle()
-                    .fill(Color.white)
-                    .frame(width: UIScreen.main.bounds.width, height: 80)
-                    .ignoresSafeArea()
-                
-                HStack() {
-                    Image("SetupView image")
-                        .resizable()
-                        .frame(width: 70, height: 70)
-                        .padding(.leading, 30)
-                    Spacer()
-                    Text("TranSACT")
-                        .padding(.trailing, 30)
-                        .font(.system(size: 32, weight: .bold, design: .default))
-                }.frame(width: UIScreen.main.bounds.width)
-            }
+        
+            HStack() {
+                Image("SetupView image")
+                    .resizable()
+                    .frame(width: 70, height: 70)
+                    .padding(.leading, 30)
+                Spacer()
+                Text("TranSACT")
+                    .padding(.trailing, 30)
+                    .font(.system(size: 32, weight: .bold, design: .default))
+            }.frame(width: UIScreen.main.bounds.width)
+                .padding([.bottom], 20)
             
             Profile()
-            
-            /*HStack {
-                Spacer()
-                
-                Button(action: {
-                    isShowingSurveyListView = true
-                }, label: {
-                    Image("Survey icon")
-                        .resizable()
-                        .frame(width: buttonSize, height: buttonSize)
-                    
-                    
-                }).frame(maxWidth: .infinity, maxHeight: buttonSize)
-                    .padding(8)
-                    .background(Color.white)
-                    .cornerRadius(20)
-                
-                Button(action: {
-                    isShowingMapBoxMapView = true
-                }, label: {
-                    Image("Location icon")
-                        .resizable()
-                        .frame(maxWidth: buttonSize)
-                        .aspectRatio(contentMode: .fit)
-                    
-                }).frame(maxWidth: .infinity, maxHeight: buttonSize)
-                    .padding(8)
-                    .background(Color.white)
-                    .cornerRadius(20)
-                
-                Button(action: {
-                    // does nothing because we are already in this view
-                }, label: {
-                    Image("Profile icon white")
-                        .resizable()
-                        .frame(width: buttonSize, height: buttonSize)
-                }).frame(maxWidth: .infinity, maxHeight: buttonSize)
-                    .padding(8)
-                    .background(Color("UiGreen").opacity(0.7))
-                    .cornerRadius(20)
-                
-                Spacer()
-            }.frame(width: UIScreen.main.bounds.width)
-                .padding(2)*/
         }.navigationBarHidden(true)
             .environmentObject(user)
     }

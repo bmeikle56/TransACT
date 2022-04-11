@@ -57,7 +57,7 @@ struct ResetPasswordView: View {
                     .frame(width: 282, height: 50)
                 
                 Button("GET RESET EMAIL") {
-                    email = ""
+                    
                     
                     // clean previous errString
                     errString = ""
@@ -77,6 +77,8 @@ struct ResetPasswordView: View {
                     } else {
                         emailIsValid = false
                     }
+                    
+                    email = ""
                     
                 }.alert(isPresented: $showAlert) {
                     // alert user an email was sent and send them back to the login page to try again

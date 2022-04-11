@@ -80,50 +80,6 @@ struct MapBoxMapView: View {
                         .font(.system(size: 32, weight: .bold, design: .default))
                 }.frame(width: UIScreen.main.bounds.width)
             }
-            
-            /*HStack {
-                Spacer()
-                
-                Button(action: {
-                    isShowingSurveyListView = true
-                }, label: {
-                    Image("Survey icon")
-                        .resizable()
-                        .frame(width: buttonSize, height: buttonSize)
-                    
-                }).frame(maxWidth: .infinity, maxHeight: buttonSize)
-                    .padding(8)
-                    .background(Color.white)
-                    .cornerRadius(20)
-                
-                Button(action: {
-                    // does nothing because we are already in this view
-                }, label: {
-                    Image("Location icon white")
-                        .resizable()
-                        .frame(maxWidth: buttonSize)
-                        .aspectRatio(contentMode: .fit)
-                    
-                }).frame(maxWidth: .infinity, maxHeight: buttonSize)
-                    .padding(8)
-                    .background(Color("UiGreen").opacity(0.7))
-                    .cornerRadius(20)
-                
-                Button(action: {
-                    isShowingProfileView = true
-                }, label: {
-                    Image("Profile icon")
-                        .resizable()
-                        .frame(width: buttonSize, height: buttonSize)
-                }).frame(maxWidth: .infinity, maxHeight: buttonSize)
-                    .padding(8)
-                    .background(Color.white)
-                    .cornerRadius(20)
-                
-                Spacer()
-                
-            }.frame(width: UIScreen.main.bounds.width)
-                .padding(2)*/
         }.navigationBarHidden(true)
             .environmentObject(user)
     }
