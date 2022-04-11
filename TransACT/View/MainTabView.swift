@@ -15,53 +15,47 @@ struct MainTabView: View {
     @State var isShowingProfileView: Bool = false
     
     var body: some View {
-        TabView {
-            SurveyListView()
-                .tabItem {
-                    Button(action: {
-                        isShowingSurveyListView = true
-                        isShowingMapBoxMapView = false
-                        isShowingProfileView = false
-                    }, label: {
-                        Image("Survey icon")
-                            .resizable()
-                            .frame(width: buttonSize, height: buttonSize)
-                    }).frame(maxWidth: .infinity, maxHeight: buttonSize)
-                        .padding(8)
-                        .background(Color.white)
-                        .cornerRadius(20)
-                }
-            MapBoxMapView()
-                .tabItem {
-                    Button(action: {
-                        isShowingSurveyListView = false
-                        isShowingMapBoxMapView = true
-                        isShowingProfileView = false
-                    }, label: {
-                        Image("Location icon")
-                            .resizable()
-                            .frame(width: buttonSize, height: buttonSize)
-                    }).frame(maxWidth: .infinity, maxHeight: buttonSize)
-                        .padding(8)
-                        //.background(Color("UiGreen").opacity(0.7))
-                        .background(Color.white)
-                        .cornerRadius(20)
-                }
-            ProfileView()
-                .tabItem {
-                    Button(action: {
-                        isShowingSurveyListView = false
-                        isShowingMapBoxMapView = false
-                        isShowingProfileView = true
-                    }, label: {
-                        Image("Profile icon")
-                            .resizable()
-                            .frame(width: buttonSize, height: buttonSize)
-                    }).frame(maxWidth: .infinity, maxHeight: buttonSize)
-                        .padding(8)
-                        .background(Color.white)
-                        .cornerRadius(20)
-                }
+        VStack {
+            TabView {
+                SurveyListView()
+                    .tabItem {
+                        Button(action: {
+                            isShowingSurveyListView = true
+                            isShowingMapBoxMapView = false
+                            isShowingProfileView = false
+                        }, label: {
+                            Image("Survey icon")
+                                .resizable()
+                                //.frame(width: buttonSize, height:  buttonSize)
+                        })//.frame(maxWidth: .infinity, maxHeight: buttonSize)
+                    }
+                MapBoxMapView()
+                    .tabItem {
+                        Button(action: {
+                            isShowingSurveyListView = false
+                            isShowingMapBoxMapView = true
+                            isShowingProfileView = false
+                        }, label: {
+                            Image("Location icon")
+                                .resizable()
+                                .frame(width: buttonSize, height: buttonSize)
+                        }).frame(maxWidth: .infinity, maxHeight: buttonSize)
+                    }
+                ProfileView()
+                    .tabItem {
+                        Button(action: {
+                            isShowingSurveyListView = false
+                            isShowingMapBoxMapView = false
+                            isShowingProfileView = true
+                        }, label: {
+                            Image("Profile icon")
+                                .resizable()
+                                .frame(width: buttonSize, height: buttonSize)
+                        }).frame(maxWidth: .infinity, maxHeight: buttonSize)
+                    }
+                
+            }
+            Spacer(minLength: 10)
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import XCTest
 
-class VIPapplicationUITestsLaunchTests: XCTestCase {
+class TransACTUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

@@ -7,10 +7,13 @@
 
 import XCTest
 
-class VIPapplicationUITests: XCTestCase {
+class TransACTUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        // automatically launch the app every time
+        XCUIApplication().launch()
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
@@ -21,25 +24,33 @@ class VIPapplicationUITests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-                
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
     
     func testResetPassword() throws {
+        let app = XCUIApplication()
+        
+        // valid email to test the reset
+        let email = "actdrivingsim@gmail.com"
+        
+        // click email and then forgot password to navigate to that screen
+        app.buttons["Email"].tap()
+        app.buttons["Forgot password?"].tap()
+        
+        // type the valid email above and click to get the email
+        app.textFields["Email"].typeText(email)
+        app.buttons["GET RESET EMAIL"].tap()
+    }
+    
+    func testErrorsOnScreen() throws {
+        let app = XCUIApplication()
+        
+        // various emails to test the errors on the screen with
         let formatInvalidEmail1 = "abc123"
         let notExistEmail1 = "abc123@act.com"
         let formatInvalidEmail2 = "foo"
         let notExistEmail2 = "foo@act.com"
         let validAndExistEmail = "actdrivingsim@gmail.com"
         
-        let app = XCUIApplication()
-        app.launch()
+        // navigate to forgot password screen
         app.buttons["Email"].tap()
         let loginButtons = app.buttons
         XCTAssertTrue(loginButtons["Forgot password?"].waitForExistence(timeout: 2))
@@ -92,6 +103,24 @@ class VIPapplicationUITests: XCTestCase {
         XCTAssertTrue(successAlert.waitForExistence(timeout: 2))
         XCTAssertFalse(noUserWithThisEmailAddressHasBeenFoundStaticText.exists)
         XCTAssertFalse(pleaseEnterAValidEmailAddressStaticText.exists)
+    }
+    
+    func testScrollTabView() throws {
+        // launch app
+        let app = XCUIApplication()
+        
+        // first screen click email
+        app.buttons["Email"].tap()
+        
+        // type valid email and password, login
+        app.textFields["email"].typeText("bameeks56@gmail.com")
+        app.textFields["password"].typeText("123456")
+        app.buttons["LOG IN"].tap()
+        
+        // click get started
+        app.buttons["GET STARTED"].tap()
+        
+        // MainTabView
     }
 
     func testLaunchPerformance() throws {
