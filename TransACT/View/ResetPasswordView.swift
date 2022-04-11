@@ -91,7 +91,7 @@ struct ResetPasswordView: View {
                 }.font(.custom("PTMono-Bold", size: 18))
                     .foregroundColor(.white)
                 
-            }.navigationBarBackButtonHidden(true)
+            }.navigationBarBackButtonHidden(false)
                 .padding(.bottom, 10)
         }
     }
