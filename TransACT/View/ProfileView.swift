@@ -69,7 +69,7 @@ struct Profile: View {
                 
                 VStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 45, style: .continuous)
-                        .fill(Color("UiGreen").opacity(0.5))
+                        .fill(Color.green)
                     .frame(width: UIScreen.main.bounds.width, height: 260)
                     .ignoresSafeArea()
                     Spacer()
@@ -92,6 +92,7 @@ struct Profile: View {
                             .fill(Color.white)
                             .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width / 5, height: 130)
                         .shadow(color: Color.gray.opacity(0.3), radius: 3, x: 0, y: 0.5)
+                        
                         VStack(alignment: .leading) {
                             Text("Travel information")
                                 .foregroundColor(Color.black)
@@ -134,10 +135,13 @@ struct Profile: View {
                             }
                         }
                     }
+                    
                     Spacer()
+                        .frame(height: 200.0)
+                    
                     ZStack {
                         Rectangle()
-                            .fill(Color("UiGreen").opacity(0.7))
+                            .fill(Color.green)
                             .frame(width: 282, height: 50)
                         Button("LOG OUT") {
                             isLoggedOut = FirebaseManager.handleLogout()
@@ -146,7 +150,7 @@ struct Profile: View {
                             .foregroundColor(.white)
                         
                     }.navigationBarBackButtonHidden(true)
-                        .padding(.bottom, 10)
+                    
                     Spacer()
                 }
             }
@@ -164,7 +168,7 @@ struct Profile: View {
             }
             .listStyle(GroupedListStyle())
              */
-        }
+        }.padding(.bottom, 70)
     }
 }
 

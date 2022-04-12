@@ -71,7 +71,7 @@ class TransACTUITests: XCTestCase {
         emailTextField.doubleTap()
         emailTextField.typeText(notExistEmail1)
         getResetEmailButton.tap()
-        let noUserWithThisEmailAddressHasBeenFoundStaticText = app.staticTexts["No user with this email address has been found"]
+        let noUserWithThisEmailAddressHasBeenFoundStaticText = app.staticTexts["No user with this email address has been found!"]
         XCTAssertTrue(noUserWithThisEmailAddressHasBeenFoundStaticText.waitForExistence(timeout: 2))
         XCTAssertTrue(noUserWithThisEmailAddressHasBeenFoundStaticText.exists)
         XCTAssertFalse(pleaseEnterAValidEmailAddressStaticText.exists)
@@ -121,6 +121,25 @@ class TransACTUITests: XCTestCase {
         app.buttons["GET STARTED"].tap()
         
         // MainTabView
+    }
+    
+    /* navigate through the UI, enter a proper login, and verify that we get to the home page properly */
+    func testFirebaseProperLoginUI() throws {
+        let app = XCUIApplication()
+        
+        // valid email to test the Firebase login
+        let email = "actdrivingsim@gmail.com"
+        let password = "123456"
+        
+        // click email
+        app.buttons["Email"].tap()
+        
+        // enter the email and password and login, no errors should appear
+        app.textFields["email"].typeText(email)
+        app.textFields["password"].typeText(password)
+        app.buttons["LOG IN"].tap()
+        XCTAssertFalse(app.staticTexts["Incorrect email or password!"].exists)
+        XCTAssertFalse(app.staticTexts["Please enter a valid email address!"].exists)
     }
 
     func testLaunchPerformance() throws {

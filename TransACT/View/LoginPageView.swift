@@ -17,12 +17,11 @@ struct LoginPageView: View {
     @State private var successfulLogin: Bool = true
     @State private var showHomePageView: Bool = false
     
-    
     var body: some View {
         
-        NavigationLink(destination: HomePageView(), isActive: $showHomePageView, label: { EmptyView() }).environmentObject(user)
-        
         ZStack {
+            
+            NavigationLink(destination: HomePageView(), isActive: $showHomePageView, label: { EmptyView() }).environmentObject(user)
             
             VStack {
                 Text("LOG IN")
@@ -33,8 +32,6 @@ struct LoginPageView: View {
                     Text("Incorrect email or password!")
                         .font(.custom("PTMono-Regular", size: 18))
                         .foregroundColor(.red)
-                } else {
-                    // should display nothing
                 }
                 
                 ZStack {

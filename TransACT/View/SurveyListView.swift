@@ -60,8 +60,10 @@ struct SurveyListView: View {
             
             SurveyList().environmentObject(user)
             
+            
         }.navigationBarHidden(true)
             .environmentObject(user)
+            .padding(.bottom, 60)
     }
 }
 
@@ -104,7 +106,6 @@ struct SurveyList: View {
                 }
             }
         }
-        .frame(width: UIScreen.main.bounds.width)
     }
 }
 

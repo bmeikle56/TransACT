@@ -79,7 +79,7 @@ struct MapBoxMapView: View {
                         .padding(.trailing, 30)
                         .font(.system(size: 32, weight: .bold, design: .default))
                 }.frame(width: UIScreen.main.bounds.width)
-            }
+            }.padding(.bottom, 70)
         }.navigationBarHidden(true)
             .environmentObject(user)
     }
