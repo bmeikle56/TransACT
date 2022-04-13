@@ -14,8 +14,6 @@ struct MainTabView: View {
     
     var body: some View {
         
-        // in order to resize the images they must be imported in smaller size
-        
         TabView {
             SurveyListView()
                 .onTapGesture{
