@@ -111,12 +111,6 @@ extension LocationManager: CLLocationManagerDelegate {
                     self.locationBatch = [locationEntry]
                 }
             }
-            
         }
-        
-        
-        
-        
-        
     }
 }
