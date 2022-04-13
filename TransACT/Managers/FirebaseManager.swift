@@ -16,13 +16,9 @@ class FirebaseManager {
     static func handleLogin(email: String, password: String, user: User, completion: @escaping (Result<User, Error>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil {
-                // error
-                // show text on screen saying incorrect username or password
                 completion(.failure(error!))
             } else {
-                // no error
                 user.uid = Auth.auth().currentUser?.uid ?? ""
-                
                 completion(.success(user))
             }
         }
@@ -30,7 +26,7 @@ class FirebaseManager {
     
     // sign up function for Firebase
     static func handleSignup(email: String, password: String) {
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if error != nil {
                 // failure
             } else {
