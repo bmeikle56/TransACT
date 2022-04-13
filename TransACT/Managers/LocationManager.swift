@@ -28,7 +28,6 @@ class LocationManager: NSObject, ObservableObject {
      */
     let sizeOfEachBatch = 60
     
-    
     override init() {
         super.init()
         manager.delegate = self
