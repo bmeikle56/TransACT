@@ -30,6 +30,16 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>TransACTTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>TransACTUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>VIPapplication.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -42,6 +52,22 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>D25795BD27B96A3E007806E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D25795CD27B96A40007806E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D25795D727B96A40007806E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>
