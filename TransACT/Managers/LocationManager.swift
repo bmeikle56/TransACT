@@ -7,6 +7,7 @@
 
 import CoreLocation
 import FirebaseFirestore
+import Foundation
 
 class LocationManager: NSObject, ObservableObject {
     private let manager = CLLocationManager()
@@ -15,6 +16,17 @@ class LocationManager: NSObject, ObservableObject {
     // access this location manager anywhere inside the app
     static let shared = LocationManager()
     var user = User()
+    var locationBatch = [[String : Any]]()
+    /*
+     This sizeOfEachBatch indicates the number of location data entries in each
+     batch upload to firebase. Location data entry is produced every second and
+     we wait for an accumulation of 60 entries before one upload. When sizeOfEachBatch
+     is set to 60, we upload 60 location data entries to firebase every 60 seconds.
+     It can be adjusted anytime. For example, we want to upload every 2 minutes,
+     we can change it to 120. As a result, there will be 120 location data entries
+     in one batch.
+     */
+    let sizeOfEachBatch = 60
     
     override init() {
         super.init()
@@ -81,14 +93,22 @@ extension LocationManager: CLLocationManagerDelegate {
         let speedAccuracy = location.speedAccuracy
         let time = location.timestamp
         
-        let db = Firestore.firestore()
-        let currUser = db.collection("users").document(user.uid)
-        currUser.getDocument { (document, error) in
-            if let error = error {
-                print("Error getting user \(self.user.uid) : \(error)")
-            }
-            else {
-                currUser.collection("locations").document().setData(["altitude":altitude, "latitude":latitude, "longitude":longitude, "accuracy":accuracy, "speed":speed, "speedAccuracy":speedAccuracy, "time":time])
+        let locationEntry = ["altitude":altitude, "latitude":latitude, "longitude":longitude, "accuracy":accuracy, "speed":speed, "speedAccuracy":speedAccuracy, "time":time] as [String : Any]
+        
+        if self.locationBatch.count < self.sizeOfEachBatch {
+            self.locationBatch.append(locationEntry)
+        } else {
+            let db = Firestore.firestore()
+            let currUser = db.collection("users").document(user.uid)
+            currUser.getDocument { [self] (document, error) in
+                if let error = error {
+                    print("Error getting user \(self.user.uid) : \(error)")
+                }
+                else {
+                    // uploadTime is added for an easy sorting filter in firebase user interface
+                    currUser.collection("locations").document().setData(["uploadTime": time, "location": self.locationBatch])
+                    self.locationBatch = [locationEntry]
+                }
             }
         }
     }
