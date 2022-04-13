@@ -7,6 +7,7 @@
 
 import CoreLocation
 import FirebaseFirestore
+import Foundation
 
 class LocationManager: NSObject, ObservableObject {
     private let manager = CLLocationManager()
@@ -88,7 +89,10 @@ extension LocationManager: CLLocationManagerDelegate {
                 print("Error getting user \(self.user.uid) : \(error)")
             }
             else {
-                currUser.collection("locations").document().setData(["altitude":altitude, "latitude":latitude, "longitude":longitude, "accuracy":accuracy, "speed":speed, "speedAccuracy":speedAccuracy, "time":time])
+                let locationUnit = ["altitude":altitude, "latitude":latitude, "longitude":longitude, "accuracy":accuracy, "speed":speed, "speedAccuracy":speedAccuracy, "time":time] as [String : Any]
+                // print(locationUnit)
+                let locationArr = [locationUnit, locationUnit]
+                currUser.collection("locations").document().setData(["location": locationArr])
             }
         }
     }
