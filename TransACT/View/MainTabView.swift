@@ -23,8 +23,6 @@ struct MainTabView: View {
                 }
                 .tabItem {
                     Image("Survey icon")
-                        .resizable()
-                        .frame(width: buttonSize, height: buttonSize)
                 }
                 .tag("SurveyListView")
             MapBoxMapView()
@@ -33,8 +31,6 @@ struct MainTabView: View {
                 }
                 .tabItem {
                     Image("Location icon")
-                        .resizable()
-                        .frame(width: buttonSize, height: buttonSize)
                 }
                 .tag("MapBoxMapView")
             ProfileView()
@@ -43,11 +39,10 @@ struct MainTabView: View {
                 }
                 .tabItem {
                     Image("Profile icon")
-                        .resizable()
-                        .frame(width: buttonSize, height: buttonSize)
                 }
                 .tag("ProfileView")
         }.padding([.bottom], 10)
+        
     }
 }
 
