@@ -12,13 +12,8 @@ import FirebaseFirestore
 struct MapBoxMapView: View {
     
     @EnvironmentObject var user: User
-    
     var buttonSize:CGFloat = 45;
-    
     @State var survey_to_finish = [String]()
-    
-    @State var isShowingSurveyListView = false
-    @State var isShowingProfileView = false
     
     func checkSurvey() {
         let db = Firestore.firestore()
@@ -60,33 +55,11 @@ struct MapBoxMapView: View {
             ZStack(alignment: .top) {
                 MapBoxMapViewController()
                     .scaledToFill()
-                
-                RoundedRectangle(cornerRadius: 20, style: .continuous).fill(Color.white)
-                    .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 80)
-                    .shadow(radius: 5, x: 0, y: 1)
-                Rectangle()
-                    .fill(Color.white)
-                    .frame(width: UIScreen.main.bounds.width, height: 80)
-                    .ignoresSafeArea()
-                
-                HStack() {
-                    Image("SetupView image")
-                        .resizable()
-                        .frame(width: 70, height: 70)
-                        .padding(.leading, 30)
-                    Spacer()
-                    Text("TranSACT")
-                        .padding(.trailing, 30)
-                        .font(.system(size: 32, weight: .bold, design: .default))
-                }.frame(width: UIScreen.main.bounds.width)
             }.padding(.bottom, 70)
         }.navigationBarHidden(true)
             .environmentObject(user)
     }
 }
-
-
-
 
 struct MapBoxMapViewController: UIViewControllerRepresentable {
     
@@ -97,7 +70,6 @@ struct MapBoxMapViewController: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: MapViewController, context: Context) {
     }
 }
-
 
 class MapViewController: UIViewController {
     internal var mapView: MapView!

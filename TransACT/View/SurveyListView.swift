@@ -32,29 +32,6 @@ struct SurveyListView: View {
         
         VStack {
             
-            ZStack(alignment: .top) {
-                
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .fill(Color.white)
-                    .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 80)
-                    .shadow(radius: 5, x: 0, y: 2)
-                Rectangle()
-                    .fill(Color.white)
-                    .frame(width: UIScreen.main.bounds.width, height: 80)
-                    .ignoresSafeArea()
-                
-                HStack() {
-                    Image("SetupView image")
-                        .resizable()
-                        .frame(width: 70, height: 70)
-                        .padding(.leading, 30)
-                    Spacer()
-                    Text("TranSACT")
-                        .padding(.trailing, 30)
-                        .font(.system(size: 32, weight: .bold, design: .default))
-                }.frame(width: UIScreen.main.bounds.width)
-            }
-            
             Spacer()
                 .frame(height: 50)
             
