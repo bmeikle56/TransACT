@@ -7,18 +7,23 @@
 
 import SwiftUI
 
+// ObservableObject class because the object passed must be of type ObservableObject
+class ViewType: ObservableObject {
+    var type: String = "SurveyListView"
+}
+
 struct MainTabView: View {
     
-    // pass this value down to the tab bar view
-    @State var viewType: String = "SurveyListView"
+    // create the object using a StateObject tag that will be passed through views
+    @StateObject var viewType: ViewType = ViewType()
     
     var body: some View {
         
         VStack {
-            Spacer().frame(height: 30)
+            Spacer().frame(height: 40)
             TransACTBar()
             
-            switch viewType {
+            switch viewType.type {
             case "SurveyListView":
                 SurveyListView()
             case "MapBoxMapView":
@@ -27,12 +32,11 @@ struct MainTabView: View {
                 ProfileView()
             }
             
-//            SurveyListView()
-//            MapBoxMapView()
-//            ProfileView()
-            TabBarView(viewType: $viewType)
+            // pass the environment object down
+            TabBarView().environmentObject(viewType)
             Spacer().frame(height: 20)
         }.ignoresSafeArea()
+            
     }
 }
 
@@ -58,35 +62,41 @@ struct TransACTBar: View {
 }
 
 struct TabBarView: View {
-    
-    // control which view is there based on the buttons and pass that back up
-    @Binding var viewType: String
+
+    @EnvironmentObject var viewType: ViewType
     
     var body: some View {
         HStack(spacing: 50) {
-            TabBarButton(name: "Survey icon", isActive: viewType == "SurveyListView" ? true : false)
-            TabBarButton(name: "Location icon", isActive: viewType == "MapBoxMapView" ? true : false)
-            TabBarButton(name: "Profile icon", isActive: viewType == "ProfileView" ? true : false)
+            // pass down environment object again
+            TabBarButton(imageName: "Survey icon", viewName: "SurveyListView", isActive: viewType.type == "SurveyListView" ? true : false)
+                .environmentObject(viewType)
+            TabBarButton(imageName: "Location icon", viewName: "MapBoxMapView", isActive: viewType.type == "MapBoxMapView" ? true : false)
+                .environmentObject(viewType)
+            TabBarButton(imageName: "Profile icon", viewName: "ProfileView", isActive: viewType.type == "ProfileView" ? true : false)
+                .environmentObject(viewType)
         }
     }
 }
 
 struct TabBarButton: View {
     
-    let name: String
+    let imageName: String
+    let viewName: String
     @State var isActive: Bool
     
     let buttonSize: CGFloat = 60
     let circleSize: CGFloat = 10
     
+    @EnvironmentObject var viewType: ViewType
+    
     var body: some View {
         
         Button(action: {
-            //isActive = true
+            viewType.type = viewName
         }, label: {
             VStack(spacing: 10) {
                 Spacer().frame(height: 10)
-                Image(name)
+                Image(imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: buttonSize, height: buttonSize)
