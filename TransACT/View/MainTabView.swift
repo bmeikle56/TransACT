@@ -3,27 +3,22 @@
 //  TransACT
 //
 //  Created by Braeden Meikle on 4/5/22.
-//  followed the structure found on https://stackoverflow.com/questions/69068246/swiftui-custom-tab-bar-icons-not-changing-the-tab-area-is-above-it
 
 import SwiftUI
 
-// ObservableObject class because the object passed must be of type ObservableObject
-class ViewType: ObservableObject {
-    var type: String = "SurveyListView"
-}
-
 struct MainTabView: View {
     
-    // create the object using a StateObject tag that will be passed through views
-    @StateObject var viewType: ViewType = ViewType()
+    // pass through the views
+    @State var viewType: String = "SurveyListView"
     
     var body: some View {
         
         VStack {
             Spacer().frame(height: 40)
             TransACTBar()
+            Spacer().frame(height: 10)
             
-            switch viewType.type {
+            switch viewType {
             case "SurveyListView":
                 SurveyListView()
             case "MapBoxMapView":
@@ -32,8 +27,7 @@ struct MainTabView: View {
                 ProfileView()
             }
             
-            // pass the environment object down
-            TabBarView().environmentObject(viewType)
+            TabBarView(viewType: $viewType)
             Spacer().frame(height: 20)
         }.ignoresSafeArea()
             
@@ -63,17 +57,27 @@ struct TransACTBar: View {
 
 struct TabBarView: View {
 
-    @EnvironmentObject var viewType: ViewType
+    @Binding var viewType: String
     
     var body: some View {
         HStack(spacing: 50) {
-            // pass down environment object again
-            TabBarButton(imageName: "Survey icon", viewName: "SurveyListView", isActive: viewType.type == "SurveyListView" ? true : false)
-                .environmentObject(viewType)
-            TabBarButton(imageName: "Location icon", viewName: "MapBoxMapView", isActive: viewType.type == "MapBoxMapView" ? true : false)
-                .environmentObject(viewType)
-            TabBarButton(imageName: "Profile icon", viewName: "ProfileView", isActive: viewType.type == "ProfileView" ? true : false)
-                .environmentObject(viewType)
+            if viewType == "SurveyListView" {
+                TabBarButton(imageName: "Survey icon", viewName: "SurveyListView", isActive: true, viewType: $viewType)
+            } else {
+                TabBarButton(imageName: "Survey icon", viewName: "SurveyListView", isActive: false, viewType: $viewType)
+            }
+            
+            if viewType == "MapBoxMapView" {
+                TabBarButton(imageName: "Location icon", viewName: "MapBoxMapView", isActive: true, viewType: $viewType)
+            } else {
+                TabBarButton(imageName: "Location icon", viewName: "MapBoxMapView", isActive: false, viewType: $viewType)
+            }
+            
+            if viewType == "ProfileView" {
+                TabBarButton(imageName: "Profile icon", viewName: "ProfileView", isActive: true, viewType: $viewType)
+            } else {
+                TabBarButton(imageName: "Profile icon", viewName: "ProfileView", isActive: false, viewType: $viewType)
+            }
         }
     }
 }
@@ -87,12 +91,12 @@ struct TabBarButton: View {
     let buttonSize: CGFloat = 60
     let circleSize: CGFloat = 10
     
-    @EnvironmentObject var viewType: ViewType
+    @Binding var viewType: String
     
     var body: some View {
         
         Button(action: {
-            viewType.type = viewName
+            viewType = viewName
         }, label: {
             VStack(spacing: 10) {
                 Spacer().frame(height: 10)
