@@ -105,7 +105,8 @@ class TransACTUITests: XCTestCase {
         XCTAssertFalse(pleaseEnterAValidEmailAddressStaticText.exists)
     }
     
-    func testScrollTabView() throws {
+    /* test changing the views in MainTabView, verifying the buttons work as expected */
+    func testMainTabView() throws {
         // launch app
         let app = XCUIApplication()
         
@@ -120,7 +121,23 @@ class TransACTUITests: XCTestCase {
         // click get started
         app.buttons["GET STARTED"].tap()
         
-        // MainTabView
+        // MainTabView, tap profile icon -> ProfileView
+        app.images["Profile icon"].tap()
+        
+        // verify that ProfileView pops up when we click profile icon
+        XCTAssert(app.otherElements["ProfileView"].exists)
+        
+        // tap location icon -> MapBoxMapView
+        app.images["Location icon"].tap()
+        
+        // verify that MapBoxMapView pops up when we click location icon
+        XCTAssert(app.otherElements["MapBoxMapView"].exists)
+        
+        // tap survey icon -> SurveyListView
+        app.images["Survey icon"].tap()
+        
+        // verify that SurveyListView pops up when we click survey icon
+        XCTAssert(app.otherElements["SurveyListView"].exists)
     }
     
     /* navigate through the UI, enter a proper login, and verify that we get to the home page properly */
