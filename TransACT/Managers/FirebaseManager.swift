@@ -25,17 +25,20 @@ class FirebaseManager {
 //    }
     
     // new login function for Firebase
-    static func handleLogin(email: String, password: String) -> Void {
-            Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-                if error != nil {
-                    // failure
-                    print("Failed login")
-                } else {
-                    // success
-                    print("Successful login")
-                }
+    static func handleLogin(email: String, password: String) -> Bool {
+        var retVal: Bool = true
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if error != nil {
+                // failure
+                retVal = false
+                print("Failed login")
+            } else {
+                // success
+                print("Successful login")
             }
         }
+        return retVal
+    }
     
     // sign up function for Firebase
     static func handleSignup(email: String, password: String) {
