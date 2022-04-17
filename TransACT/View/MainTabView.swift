@@ -41,6 +41,10 @@ struct TransACTBar: View {
                 .fill(Color.white)
                 .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 90)
                 .shadow(radius: 5, x: 0, y: 2)
+            Rectangle()
+                .fill(Color.white)
+                .frame(width: UIScreen.main.bounds.width, height: 80)
+                .ignoresSafeArea()
             HStack {
                 Image("SetupView image")
                     .resizable()
