@@ -31,11 +31,9 @@ struct HomePageView: View {
                     Text("Get started").font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
                 }.environmentObject(user)
-
-                
-            }.navigationBarBackButtonHidden(true)
+            }
+                .navigationBarBackButtonHidden(true)
                 .padding(.bottom, 10)
-                
         }
     }
 }

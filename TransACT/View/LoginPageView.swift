@@ -105,6 +105,7 @@ struct LoginPageView: View {
                 }
             }
         }
+            .navigationBarHidden(true)
     }
 }
 

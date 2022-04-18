@@ -46,11 +46,9 @@ struct RequestPushNotifView: View {
                     Rectangle()
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
-                    NavigationLink(destination: LoginPageView()) {
-                        Text("Enable notifications")
-                            .font(.custom("PTMono-Bold", size: 18))
-                            .foregroundColor(.white)
-                    }
+                    Text("Enable notifications")
+                        .font(.custom("PTMono-Bold", size: 18))
+                        .foregroundColor(.white)
                 }
             })
             

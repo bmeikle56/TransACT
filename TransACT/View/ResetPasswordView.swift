@@ -90,12 +90,11 @@ struct ResetPasswordView: View {
                                 self.presentationMode.wrappedValue.dismiss()
                         
                     }))
-                }.font(.custom("PTMono-Bold", size: 18))
+                }
+                    .font(.custom("PTMono-Bold", size: 18))
                     .foregroundColor(.white)
-                
-            }.navigationBarBackButtonHidden(false)
-                .padding(.bottom, 10)
-        }
+            }
+        }.navigationBarHidden(true)
     }
 }
 

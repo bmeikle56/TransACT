@@ -18,12 +18,12 @@ struct RequestLocationNotifView: View {
     
     var body: some View {
         
-        if locationManager.userLocation != nil {
+        /*if locationManager.userLocation != nil {
             // if user denied -> userLocation is nil
             RequestPushNotifView().task {
                 passUserToLocationManager()
             }
-        }
+        }*/
         
         VStack {
             
@@ -56,11 +56,9 @@ struct RequestLocationNotifView: View {
                     Rectangle()
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
-                    NavigationLink(destination: LoginPageView()) {
-                        Text("Enable location")
-                            .font(.custom("PTMono-Bold", size: 18))
-                            .foregroundColor(.white)
-                    }
+                    Text("Enable location")
+                        .font(.custom("PTMono-Bold", size: 18))
+                        .foregroundColor(.white)
                 }
             })
             
@@ -84,7 +82,9 @@ struct RequestLocationNotifView: View {
                     .resizable()
                     .frame(width: 90.0, height: 90.0)
             }
-        }.environmentObject(user)
+        }
+            .navigationBarHidden(true)
+            .environmentObject(user)
     }
 }
 

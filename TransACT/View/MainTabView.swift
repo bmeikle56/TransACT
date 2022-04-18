@@ -64,7 +64,7 @@ struct TabBarView: View {
     @Binding var viewType: String
     
     var body: some View {
-        HStack(spacing: 50) {
+        HStack(spacing: 60) {
             if viewType == "SurveyListView" {
                 TabBarButton(imageName: "Survey icon", viewName: "SurveyListView", isActive: true, viewType: $viewType)
             } else {
@@ -92,8 +92,8 @@ struct TabBarButton: View {
     let viewName: String
     @State var isActive: Bool
     
-    let buttonSize: CGFloat = 60
-    let circleSize: CGFloat = 10
+    let buttonSize: CGFloat = 50
+    let circleSize: CGFloat = 8
     
     @Binding var viewType: String
     
@@ -115,7 +115,7 @@ struct TabBarButton: View {
                     .frame(width: circleSize, height: circleSize)
                 } else {
                     // take up space where circle is
-                    Spacer().frame(height: 10)
+                    Spacer().frame(height: circleSize)
                 }
             }
         })
