@@ -24,24 +24,25 @@ struct SetupView: View {
                 Image("SetupView image").padding(.bottom, 80)
                 
                 ZStack {
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    Rectangle()
                         .fill(Color.green)
-                        .frame(width: 200, height: 50)
+                        .frame(width: 282, height: 50)
                     NavigationLink(destination: LoginPageView()) {
-                        Text("Google").font(.custom("PTMono-Regular", size: 18))
-                            .foregroundColor(.black)
+                        Text("Google")
+                            .font(.custom("PTMono-Bold", size: 18))
+                            .foregroundColor(.white)
                     }
                             
                 }.navigationBarBackButtonHidden(true)
                 
                 ZStack {
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    Rectangle()
                         .fill(Color.green)
-                        .frame(width: 200, height: 50)
+                        .frame(width: 282, height: 50)
                     NavigationLink(destination: LoginPageView()) {
                         Text("Email")
-                            .font(.custom("PTMono-Regular", size: 18))
-                            .foregroundColor(.black)
+                            .font(.custom("PTMono-Bold", size: 18))
+                            .foregroundColor(.white)
                     }
                 }.padding(.bottom, 30)
                     .navigationBarBackButtonHidden(true)
