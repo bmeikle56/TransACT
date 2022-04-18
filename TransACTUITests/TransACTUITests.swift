@@ -105,7 +105,8 @@ class TransACTUITests: XCTestCase {
         XCTAssertFalse(pleaseEnterAValidEmailAddressStaticText.exists)
     }
     
-    func testScrollTabView() throws {
+    /* test changing the views in MainTabView, verifying the buttons work as expected */
+    func testMainTabView() throws {
         // launch app
         let app = XCUIApplication()
         
@@ -113,14 +114,30 @@ class TransACTUITests: XCTestCase {
         app.buttons["Email"].tap()
         
         // type valid email and password, login
-        app.textFields["email"].typeText("bameeks56@gmail.com")
-        app.textFields["password"].typeText("123456")
+        app.textFields["email"].typeText("chengkaiyao825@gmail.com")
+        app.textFields["password"].typeText("12a34b56c7")
         app.buttons["LOG IN"].tap()
         
         // click get started
         app.buttons["GET STARTED"].tap()
         
-        // MainTabView
+        // MainTabView, tap profile icon -> ProfileView
+        app.images["Profile icon"].tap()
+        
+        // verify that ProfileView pops up when we click profile icon
+        XCTAssert(app.otherElements["ProfileView"].exists)
+        
+        // tap location icon -> MapBoxMapView
+        app.images["Location icon"].tap()
+        
+        // verify that MapBoxMapView pops up when we click location icon
+        XCTAssert(app.otherElements["MapBoxMapView"].exists)
+        
+        // tap survey icon -> SurveyListView
+        app.images["Survey icon"].tap()
+        
+        // verify that SurveyListView pops up when we click survey icon
+        XCTAssert(app.otherElements["SurveyListView"].exists)
     }
     
     /* navigate through the UI, enter a proper login, and verify that we get to the home page properly */
@@ -128,8 +145,8 @@ class TransACTUITests: XCTestCase {
         let app = XCUIApplication()
         
         // valid email to test the Firebase login
-        let email = "actdrivingsim@gmail.com"
-        let password = "123456"
+        let email = "chengkaiyao825@gmail.com"
+        let password = "12a34b56c7"
         
         // click email
         app.buttons["Email"].tap()

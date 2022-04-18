@@ -12,16 +12,32 @@ import Firebase
  and duplicated code to be saved */
 class FirebaseManager {
     
-    // login function for Firebase
-    static func handleLogin(email: String, password: String, user: User, completion: @escaping (Result<User, Error>) -> Void) {
+    // old login function for Firebase
+//    static func handleLogin(email: String, password: String, user: User, completion: @escaping (Result<User, Error>) -> Void) {
+//        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+//            if error != nil {
+//                completion(.failure(error!))
+//            } else {
+//                user.uid = Auth.auth().currentUser?.uid ?? ""
+//                completion(.success(user))
+//            }
+//        }
+//    }
+    
+    // new login function for Firebase
+    static func handleLogin(email: String, password: String) -> Bool {
+        var retVal: Bool = true
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil {
-                completion(.failure(error!))
+                // failure
+                retVal = false
+                print("Failed login")
             } else {
-                user.uid = Auth.auth().currentUser?.uid ?? ""
-                completion(.success(user))
+                // success
+                print("Successful login")
             }
         }
+        return retVal
     }
     
     // sign up function for Firebase
@@ -29,8 +45,10 @@ class FirebaseManager {
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if error != nil {
                 // failure
+                print("Failed sign up")
             } else {
                 // success
+                print("Successful sign up")
             }
         }
     }
