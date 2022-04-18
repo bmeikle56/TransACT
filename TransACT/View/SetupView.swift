@@ -32,8 +32,7 @@ struct SetupView: View {
                             .font(.custom("PTMono-Bold", size: 18))
                             .foregroundColor(.white)
                     }
-                            
-                }.navigationBarBackButtonHidden(true)
+                }
                 
                 ZStack {
                     Rectangle()
@@ -45,7 +44,6 @@ struct SetupView: View {
                             .foregroundColor(.white)
                     }
                 }.padding(.bottom, 30)
-                    .navigationBarBackButtonHidden(true)
                 
                 HStack {
                     Text("Don't have an account? ")
@@ -57,7 +55,7 @@ struct SetupView: View {
                             .foregroundColor(.black)
                     }.padding(-8)
                 }
-            }.navigationBarHidden(true)
+            }
         }.navigationBarHidden(true)
         .environmentObject(user)
     }

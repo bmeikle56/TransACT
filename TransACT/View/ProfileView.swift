@@ -17,19 +17,6 @@ struct ProfileView: View {
     var body: some View {
 
         VStack {
-        
-//            HStack() {
-//                Image("SetupView image")
-//                    .resizable()
-//                    .frame(width: 70, height: 70)
-//                    .padding(.leading, 30)
-//                Spacer()
-//                Text("TranSACT")
-//                    .padding(.trailing, 30)
-//                    .font(.system(size: 32, weight: .bold, design: .default))
-//            }.frame(width: UIScreen.main.bounds.width)
-//                .padding([.bottom], 20)
-            
             Profile()
         }.environmentObject(user)
     }

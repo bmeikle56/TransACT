@@ -56,7 +56,7 @@ struct ResetPasswordView: View {
                     .fill(Color.green)
                     .frame(width: 282, height: 50)
                 
-                Button("GET RESET EMAIL") {
+                Button("Get reset email") {
                     
                     
                     // clean previous errString

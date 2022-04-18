@@ -97,7 +97,7 @@ struct SignUpView: View {
                     Rectangle()
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
-                    Button("SIGN UP") {
+                    Button("Sign up") {
                         email = ""
                         password = ""
                         confirmPassword = ""

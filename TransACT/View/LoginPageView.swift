@@ -40,7 +40,7 @@ struct LoginPageView: View {
                            text: $email
                     )
                         .autocapitalization(.none)
-                        .frame(width: 250, height: 15, alignment: .center)
+                        .frame(width: 250, height: 15)
                         .padding()
                         .background(Color(.systemGray6))
                         .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
@@ -62,7 +62,7 @@ struct LoginPageView: View {
                     Rectangle()
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
-                    Button("LOG IN") {
+                    Button("Log in") {
 //                        FirebaseManager.handleLogin(email: email, password: password, user: user) { (response) in
 //                            switch response {
 //                            case .success(let user):
@@ -78,23 +78,20 @@ struct LoginPageView: View {
                         
                         let result = FirebaseManager.handleLogin(email: email, password: password)
                         showHomePageView = result; successfulLogin = result
-                        
-                        email = ""
-                        password = ""
-                        
+                        email = ""; password = ""
                     }
                         .font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
-                    
-                }.navigationBarBackButtonHidden(true)
-                    .padding(.bottom, 10)
+                }
+                
+                Spacer()
+                    .frame(height: 20)
                 
                 NavigationLink(destination: ResetPasswordView()) {
                     Text("Forgot password?")
                         .font(.custom("PTMono-Regular", size: 18))
                         .foregroundColor(.black)
-                }.navigationBarBackButtonHidden(true)
-                    .padding(.bottom, 100)
+                }.padding(.bottom, 100)
                 
                 HStack {
                     Text("Don't have an account? ")
