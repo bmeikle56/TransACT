@@ -18,6 +18,11 @@ class TransACTTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
+    /* tests a known email and password that login correctly */
+    func testWorkingFirebaseLogin() throws {
+        XCTAssertTrue(FirebaseManager.handleLogin(email: "chengkaiyao825@gmail.com", password: "12a34b56c7"))
+    }
+    
     /* test that tries to sign up with a bad email address */
     func testSignUpBadEmail() throws {
         XCTAssertTrue(LoginManager.isValidEmailAddress(email: "failure@domain.c"))
@@ -45,7 +50,7 @@ class TransACTTests: XCTestCase {
     /* creates a new user and verifies that this user can then sign in right after */
     func testCreateNewUserSignIn() throws {
         FirebaseManager.handleSignup(email: "testemail1@gmail.com", password: "12345")
-        FirebaseManager.handleLogin(email: "testemail1@gmail.com", password: "12345")
+        XCTAssertTrue(FirebaseManager.handleLogin(email: "testemail1@gmail.com", password: "12345"))
     }
 
     func testPerformanceExample() throws {

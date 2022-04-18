@@ -114,8 +114,8 @@ class TransACTUITests: XCTestCase {
         app.buttons["Email"].tap()
         
         // type valid email and password, login
-        app.textFields["email"].typeText("bameeks56@gmail.com")
-        app.textFields["password"].typeText("123456")
+        app.textFields["email"].typeText("chengkaiyao825@gmail.com")
+        app.textFields["password"].typeText("12a34b56c7")
         app.buttons["LOG IN"].tap()
         
         // click get started
@@ -145,8 +145,8 @@ class TransACTUITests: XCTestCase {
         let app = XCUIApplication()
         
         // valid email to test the Firebase login
-        let email = "actdrivingsim@gmail.com"
-        let password = "123456"
+        let email = "chengkaiyao825@gmail.com"
+        let password = "12a34b56c7"
         
         // click email
         app.buttons["Email"].tap()
