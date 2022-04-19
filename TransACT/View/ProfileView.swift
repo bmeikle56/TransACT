@@ -44,7 +44,7 @@ struct Profile: View {
     @State private var isLoggedOut: Bool = false
     
     var body: some View {
-        NavigationLink(destination: SetupView(), isActive: $isLoggedOut, label: { EmptyView() })
+        NavigationLink(destination: LogoutView(), isActive: $isLoggedOut, label: {})
         
         // show indicators is the gray scroll bar on the right -> hide
         ScrollView(showsIndicators: false) {
@@ -123,7 +123,7 @@ struct Profile: View {
                     }
                     
                     Spacer()
-                        .frame(height: 200.0)
+                        .frame(height: 450)
                     
                     ZStack {
                         Rectangle()
@@ -134,8 +134,7 @@ struct Profile: View {
                         }
                             .font(.custom("PTMono-Bold", size: 18))
                             .foregroundColor(.white)
-                        
-                    }.navigationBarBackButtonHidden(true)
+                    }
                     
                     Spacer()
                 }

@@ -19,19 +19,19 @@ struct LogoutView: View {
             Text("LOGGED OUT")
                 .multilineTextAlignment(.center)
                 .font(.custom("PTMono-Bold", size: 36))
-            Image("HomePageView image").padding(.bottom, 100)
             
+            Spacer()
+                .frame(height: 40)
+
             ZStack {
                 Rectangle()
                     .fill(Color.green)
                     .frame(width: 282, height: 50)
-                NavigationLink(destination: RequestLocationNotifView()) {
+                NavigationLink(destination: SetupView()) {
                     Text("Return to login").font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
                 }
-            }.navigationBarBackButtonHidden(true)
-                .padding(.bottom, 10)
-                
+            }
         }
     }
 }

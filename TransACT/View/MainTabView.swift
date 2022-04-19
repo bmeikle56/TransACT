@@ -65,7 +65,7 @@ struct TabBarView: View {
     
     var body: some View {
         //UIScreen.main.bounds.size.width / 3
-        HStack(spacing: 60) {
+        HStack(spacing: UIScreen.main.bounds.size.width / 5) {
             if viewType == "SurveyListView" {
                 TabBarButton(imageName: "Survey icon", viewName: "SurveyListView", isActive: true, viewType: $viewType)
             } else {
