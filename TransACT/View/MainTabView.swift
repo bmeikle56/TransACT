@@ -64,6 +64,7 @@ struct TabBarView: View {
     @Binding var viewType: String
     
     var body: some View {
+        //UIScreen.main.bounds.size.width / 3
         HStack(spacing: 60) {
             if viewType == "SurveyListView" {
                 TabBarButton(imageName: "Survey icon", viewName: "SurveyListView", isActive: true, viewType: $viewType)
@@ -92,8 +93,8 @@ struct TabBarButton: View {
     let viewName: String
     @State var isActive: Bool
     
-    let buttonSize: CGFloat = 50
-    let circleSize: CGFloat = 8
+    let buttonSize: CGFloat = 40
+    let circleSize: CGFloat = 6
     
     @Binding var viewType: String
     
@@ -102,8 +103,8 @@ struct TabBarButton: View {
         Button(action: {
             viewType = viewName
         }, label: {
-            VStack(spacing: 10) {
-                Spacer().frame(height: 10)
+            VStack(spacing: 6) {
+                Spacer().frame(height: circleSize)
                 Image(imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
