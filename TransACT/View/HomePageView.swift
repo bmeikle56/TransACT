@@ -21,8 +21,8 @@ struct HomePageView: View {
             Text("LOGGED IN")
                 .multilineTextAlignment(.center)
                 .font(.custom("PTMono-Bold", size: 36))
-            Image("HomePageView image").padding(.bottom, 100)
-            
+            Image("HomePageView image")
+            Spacer().frame(height: 100)
             ZStack {
                 Rectangle()
                     .fill(Color.green)
@@ -31,9 +31,7 @@ struct HomePageView: View {
                     Text("Get started").font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
                 }.environmentObject(user)
-            }
-                .navigationBarBackButtonHidden(true)
-                .padding(.bottom, 10)
+            }.navigationBarBackButtonHidden(true)
         }
     }
 }

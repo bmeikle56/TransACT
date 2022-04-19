@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseAuth
-import AuthenticationServices
 
 struct ResetPasswordView: View {
     
@@ -88,7 +86,6 @@ struct ResetPasswordView: View {
                             Text("Return to login"),
                             action: {
                                 self.presentationMode.wrappedValue.dismiss()
-                        
                     }))
                 }
                     .font(.custom("PTMono-Bold", size: 18))

@@ -20,14 +20,11 @@ struct LoginPageView: View {
     var body: some View {
         
         ZStack {
-            
             NavigationLink(destination: HomePageView(), isActive: $showHomePageView, label: { EmptyView() }).environmentObject(user)
             
             VStack {
-                Text("LOG IN")
-                    .padding(.bottom, 100)
-                    .font(.custom("PTMono-Bold", size: 36))
-                
+                Text("LOG IN").font(.custom("PTMono-Bold", size: 36))
+                Spacer().frame(height: 80)
                 if !successfulLogin {
                     Text("Incorrect email or password!")
                         .font(.custom("PTMono-Regular", size: 18))
@@ -45,7 +42,6 @@ struct LoginPageView: View {
                         .background(Color(.systemGray6))
                         .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
                 }
-                
                 ZStack {
                     SecureField(
                            "Password",
@@ -57,7 +53,6 @@ struct LoginPageView: View {
                         .background(Color(.systemGray6))
                         .font(.custom("PTMono-Regular", size: 18)).multilineTextAlignment(.center)
                 }
-                
                 ZStack {
                     Rectangle()
                         .fill(Color.green)
@@ -67,28 +62,23 @@ struct LoginPageView: View {
                             switch response {
                             case .success(let user):
                                 print("User \(user.uid) Logged in.")
-                                showHomePageView = true
-                                successfulLogin = true
+                                showHomePageView = true; successfulLogin = true
                             case .failure(let error):
                                 print("Error Logining in \(error)")
-                                successfulLogin = false
-                                showHomePageView = false
+                                successfulLogin = false; showHomePageView = false
                             }
                         }
                     }
                         .font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
                 }
-                
-                Spacer()
-                    .frame(height: 20)
-                
+                Spacer().frame(height: 20)
                 NavigationLink(destination: ResetPasswordView()) {
                     Text("Forgot password?")
                         .font(.custom("PTMono-Regular", size: 18))
                         .foregroundColor(.black)
-                }.padding(.bottom, 100)
-                
+                }
+                Spacer().frame(height: 100)
                 HStack {
                     Text("Don't have an account? ")
                         .font(.custom("PTMono-Regular", size: 18))
