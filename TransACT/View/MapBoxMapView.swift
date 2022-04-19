@@ -49,7 +49,6 @@ struct MapBoxMapView: View {
     var body: some View {
         VStack {
             MapBoxMapViewController()
-                //.scaledToFill()
         }
             .ignoresSafeArea()
             .navigationBarHidden(true)
@@ -80,7 +79,7 @@ class MapViewController: UIViewController {
          let myResourceOptions = ResourceOptions(accessToken: "THE-ACCESS-CODE")
          */
         
-        let myResourceOptions = ResourceOptions(accessToken: "pk.eyJ1IjoiYm1laWtsZTMiLCJhIjoiY2t6NHlzMHBpMGxmazJvcDE1b3RudHN3ciJ9.PXL67h_JHuzUOy7f6Cqg2w")
+        let myResourceOptions = ResourceOptions(accessToken: "THE-ACCESS-CODE")
         let myMapInitOptions = MapInitOptions(resourceOptions: myResourceOptions)
         mapView = MapView(frame: view.bounds, mapInitOptions: myMapInitOptions)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
