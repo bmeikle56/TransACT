@@ -41,18 +41,17 @@ struct Route: View {
 }
 
 struct Profile: View {
+    
     @State private var isLoggedOut: Bool = false
     
     var body: some View {
-        NavigationLink(destination: LogoutView(), isActive: $isLoggedOut, label: {})
         
-        // show indicators is the gray scroll bar on the right -> hide
         ScrollView(showsIndicators: false) {
+            NavigationLink(destination: LogoutView(), isActive: $isLoggedOut, label: {})
             ZStack {
                 Rectangle()
                     .fill(Color("Profile Grey"))
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                
                 VStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 45, style: .continuous)
                         .fill(Color.green)
@@ -62,17 +61,14 @@ struct Profile: View {
                 }
                
                 VStack {
-                    Spacer()
-                        .frame(height: 20.0)
+                    Spacer().frame(height: 20.0)
                     Image("Profile Photo")
                         .resizable()
                         .frame(width: 100, height: 100)
                         .clipShape(RoundedRectangle(cornerRadius: 27.0))
-                    
                     Text("Me")
                         .foregroundColor(Color("Profile Name Color"))
                         .font(.custom("TitilliumWeb-Black", size: 24))
-
                     ZStack {
                         RoundedRectangle(cornerRadius: 20, style: .continuous)
                             .fill(Color.white)
@@ -106,7 +102,7 @@ struct Profile: View {
                                     VStack {
                                         Image("Residence")
                                             .resizable()
-                                        .frame(width: 20, height: 17)
+                                            .frame(width: 20, height: 17)
                                         Text("")
                                     }
                                     Spacer().frame(width: 10)
@@ -121,10 +117,7 @@ struct Profile: View {
                             }
                         }
                     }
-                    
-                    Spacer()
-                        .frame(height: 450)
-                    
+                    Spacer().frame(height: 450)
                     ZStack {
                         Rectangle()
                             .fill(Color.green)
@@ -135,7 +128,6 @@ struct Profile: View {
                             .font(.custom("PTMono-Bold", size: 18))
                             .foregroundColor(.white)
                     }
-                    
                     Spacer()
                 }
             }
@@ -153,7 +145,7 @@ struct Profile: View {
             }
             .listStyle(GroupedListStyle())
              */
-        }//.padding(.bottom, 70)
+        }
     }
 }
 

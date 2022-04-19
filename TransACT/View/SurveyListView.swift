@@ -13,11 +13,6 @@ struct SurveyListView: View {
     @EnvironmentObject var user: User
     var buttonSize: CGFloat = 45;
     
-    @State var isShowingMapBoxMapView = false
-    @State var isShowingProfileView = false
-    
-    
-    
     /*init() {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.shadowColor = .clear
@@ -27,20 +22,13 @@ struct SurveyListView: View {
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
     }*/
     
-    
     var body: some View {
-        
         VStack {
-            
-            Spacer()
-                .frame(height: 50)
-            
-            SurveyList().environmentObject(user)
-            
-            
-        }.navigationBarHidden(true)
+            SurveyList()
+                .environmentObject(user)
+        }
+            .navigationBarHidden(true)
             .environmentObject(user)
-            .padding(.bottom, 60)
     }
 }
 
@@ -51,18 +39,17 @@ struct SurveyList: View {
     
     var body: some View {
         
-        NavigationView {
+        //NavigationView {
+        VStack {
             List(self.surveys) {survey in
                 Survey(survey: survey)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets())
-                    
                 }
-                .navigationTitle("")
-                .navigationBarTitleDisplayMode(.inline)
-                .listStyle(.plain)
-            
-        }
+                    .navigationTitle("")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .listStyle(.plain)
+        }.background(Color(.systemGray6))
         .task {
             await SurveyManager.fetchSurveys(user: user) { (response) in
                 switch response {
@@ -92,12 +79,10 @@ struct Survey: View {
     let survey: SurveyItem
 
     var body: some View {
-        
         ZStack {
             RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.white)
                 .frame(width: UIScreen.main.bounds.width * 0.9, height: 80)
                 .shadow(radius: 5, x: 0, y: 2)
-            
             VStack {
                 if survey.finished {
                     HStack {
@@ -106,7 +91,6 @@ struct Survey: View {
                         }
                         Spacer()
                         Text("✓")
-                        
                     }.font(.system(size: 26, weight: .regular, design: .default))
                         .foregroundColor(.gray)
                 }
@@ -130,13 +114,12 @@ struct Survey: View {
                             }
                         }
                         Spacer()
-                        
                     }.font(.system(size: 26, weight: .regular, design: .default))
                 }
-                
             }.frame(maxWidth: UIScreen.main.bounds.width * 0.8)
         }
-        .frame(width: UIScreen.main.bounds.width, height: 100)
+            .frame(width: UIScreen.main.bounds.width, height: 100)
+            .background(Color(.systemGray6))
     }
 }
 
