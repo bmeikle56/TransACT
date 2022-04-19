@@ -1,13 +1,13 @@
 //
-//  RequestLocationNotif.swift
+//  UserPermissionsView.swift
 //  TransACT
 //
-//  Created by Shuangyue Cheng on 2/22/22.
+//  Created by Braeden Meikle on 4/19/22.
 //
 
 import SwiftUI
 
-struct RequestLocationNotifView: View {
+struct UserPermissionsView: View {
     
     @EnvironmentObject var user: User
     @ObservedObject var locationManager = LocationManager.shared
@@ -65,7 +65,7 @@ struct RequestLocationNotifView: View {
             Spacer()
                 .frame(height: 20)
             
-            NavigationLink(destination: RequestPushNotifView()) {
+            NavigationLink(destination: MainTabView()) {
                 Text("Skip for now")
                     .font(.custom("PTMono-Regular", size: 18))
                     .foregroundColor(.black)
@@ -88,8 +88,8 @@ struct RequestLocationNotifView: View {
     }
 }
 
-struct RequestLocationNotif_Previews: PreviewProvider {
+struct UserPermissionsView_Previews: PreviewProvider {
     static var previews: some View {
-        RequestLocationNotifView().environmentObject(User())
+        UserPermissionsView().environmentObject(User())
     }
 }

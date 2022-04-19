@@ -43,6 +43,7 @@
 		D25795F627B970F4007806E6 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25795F527B970F4007806E6 /* LoginPageView.swift */; };
 		D270B649280D00CF00ED1482 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D270B648280D00CF00ED1482 /* LogoutView.swift */; };
 		D281245527C419EA000C2BC3 /* PTMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D281245427C419EA000C2BC3 /* PTMono-Regular.ttf */; };
+		D2A0DC75280F3402008444FD /* UserPermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A0DC74280F3402008444FD /* UserPermissionsView.swift */; };
 		D2B622EA27EF64C600298489 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B622E927EF64C600298489 /* LoginManager.swift */; };
 		D2B622EC27EF66DD00298489 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B622EB27EF66DD00298489 /* FirebaseManager.swift */; };
 		D2C03A3A27FBEE3B00A8A1F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2C03A3927FBEE3B00A8A1F4 /* GoogleService-Info.plist */; };
@@ -99,6 +100,7 @@
 		D25795F527B970F4007806E6 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
 		D270B648280D00CF00ED1482 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
 		D281245427C419EA000C2BC3 /* PTMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTMono-Regular.ttf"; sourceTree = "<group>"; };
+		D2A0DC74280F3402008444FD /* UserPermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPermissionsView.swift; sourceTree = "<group>"; };
 		D2B622E927EF64C600298489 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		D2B622EB27EF66DD00298489 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		D2C03A3927FBEE3B00A8A1F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				D21146F727C2D7D200EDAD4D /* SignUpView.swift */,
 				D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */,
 				D21146F927C2F99A00EDAD4D /* HomePageView.swift */,
+				D2A0DC74280F3402008444FD /* UserPermissionsView.swift */,
 				460126D627C5378600953846 /* RequestLocationNotifView.swift */,
 				460126DA27C53D6B00953846 /* RequestPushNotifView.swift */,
 				D237010E27FD045B00B30D93 /* MainTabView.swift */,
@@ -403,6 +406,7 @@
 				46BF490027CDC67A004A2D6B /* NotificationManager.swift in Sources */,
 				D256852027D52D3F009DBC72 /* StartRouteView.swift in Sources */,
 				D21146F827C2D7D200EDAD4D /* SignUpView.swift in Sources */,
+				D2A0DC75280F3402008444FD /* UserPermissionsView.swift in Sources */,
 				D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */,
 				D270B649280D00CF00ED1482 /* LogoutView.swift in Sources */,
 				D237010F27FD045B00B30D93 /* MainTabView.swift in Sources */,

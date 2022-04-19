@@ -1,6 +1,6 @@
 //
-//  MapView.swift
-//  SwiftUIPractice
+//  MapBoxMapView.swift
+//  TransACT
 //
 //  Created by Braeden Meikle on 2/13/22.
 //

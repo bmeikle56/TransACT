@@ -1,6 +1,6 @@
 //
-//  LoginView.swift
-//  VIPapplication
+//  SetupView.swift
+//  TransACT
 //
 //  Created by Braeden Meikle on 2/13/22.
 //

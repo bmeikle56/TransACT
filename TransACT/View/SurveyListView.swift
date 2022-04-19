@@ -1,6 +1,6 @@
 //
 //  SurveyListView.swift
-//  VIPapplication
+//  TransACT
 //
 //  Created by Chengkai Yao on 2/27/22.
 //

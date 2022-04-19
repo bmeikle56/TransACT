@@ -1,6 +1,6 @@
 //
 //  ResetPasswordView.swift
-//  VIPapplication
+//  TransACT
 //
 //  Created by Braeden Meikle on 2/20/22.
 //
@@ -91,7 +91,7 @@ struct ResetPasswordView: View {
                     .font(.custom("PTMono-Bold", size: 18))
                     .foregroundColor(.white)
             }
-        }.navigationBarHidden(true)
+        }
     }
 }
 
