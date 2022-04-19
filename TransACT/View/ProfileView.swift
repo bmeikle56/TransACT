@@ -1,6 +1,6 @@
 //
 //  ProfileView.swift
-//  VIPapplication
+//  TransACT
 //
 //  Created by Braeden Meikle on 3/6/22.
 //
@@ -17,19 +17,6 @@ struct ProfileView: View {
     var body: some View {
 
         VStack {
-        
-//            HStack() {
-//                Image("SetupView image")
-//                    .resizable()
-//                    .frame(width: 70, height: 70)
-//                    .padding(.leading, 30)
-//                Spacer()
-//                Text("TranSACT")
-//                    .padding(.trailing, 30)
-//                    .font(.system(size: 32, weight: .bold, design: .default))
-//            }.frame(width: UIScreen.main.bounds.width)
-//                .padding([.bottom], 20)
-            
             Profile()
         }.environmentObject(user)
     }
@@ -54,18 +41,17 @@ struct Route: View {
 }
 
 struct Profile: View {
+    
     @State private var isLoggedOut: Bool = false
     
     var body: some View {
-        NavigationLink(destination: SetupView(), isActive: $isLoggedOut, label: { EmptyView() })
         
-        // show indicators is the gray scroll bar on the right -> hide
         ScrollView(showsIndicators: false) {
+            NavigationLink(destination: LogoutView(), isActive: $isLoggedOut, label: {})
             ZStack {
                 Rectangle()
                     .fill(Color("Profile Grey"))
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                
                 VStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 45, style: .continuous)
                         .fill(Color.green)
@@ -75,17 +61,14 @@ struct Profile: View {
                 }
                
                 VStack {
-                    Spacer()
-                        .frame(height: 20.0)
+                    Spacer().frame(height: 20.0)
                     Image("Profile Photo")
                         .resizable()
                         .frame(width: 100, height: 100)
                         .clipShape(RoundedRectangle(cornerRadius: 27.0))
-                    
                     Text("Me")
                         .foregroundColor(Color("Profile Name Color"))
                         .font(.custom("TitilliumWeb-Black", size: 24))
-
                     ZStack {
                         RoundedRectangle(cornerRadius: 20, style: .continuous)
                             .fill(Color.white)
@@ -119,7 +102,7 @@ struct Profile: View {
                                     VStack {
                                         Image("Residence")
                                             .resizable()
-                                        .frame(width: 20, height: 17)
+                                            .frame(width: 20, height: 17)
                                         Text("")
                                     }
                                     Spacer().frame(width: 10)
@@ -134,10 +117,7 @@ struct Profile: View {
                             }
                         }
                     }
-                    
-                    Spacer()
-                        .frame(height: 200.0)
-                    
+                    Spacer().frame(height: 450)
                     ZStack {
                         Rectangle()
                             .fill(Color.green)
@@ -147,9 +127,7 @@ struct Profile: View {
                         }
                             .font(.custom("PTMono-Bold", size: 18))
                             .foregroundColor(.white)
-                        
-                    }.navigationBarBackButtonHidden(true)
-                    
+                    }
                     Spacer()
                 }
             }
@@ -167,7 +145,7 @@ struct Profile: View {
             }
             .listStyle(GroupedListStyle())
              */
-        }//.padding(.bottom, 70)
+        }
     }
 }
 

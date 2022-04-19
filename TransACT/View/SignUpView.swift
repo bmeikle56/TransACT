@@ -1,6 +1,6 @@
 //
 //  SignUpView.swift
-//  VIPapplication
+//  TransACT
 //
 //  Created by Braeden Meikle on 2/20/22.
 //
@@ -97,7 +97,7 @@ struct SignUpView: View {
                     Rectangle()
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
-                    Button("SIGN UP") {
+                    Button("Sign up") {
                         email = ""
                         password = ""
                         confirmPassword = ""
@@ -128,7 +128,7 @@ struct SignUpView: View {
                         }
                     }.font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
-                }.navigationBarBackButtonHidden(false)
+                }
                     .padding(.bottom, 100)
                 
                 HStack {
@@ -142,7 +142,7 @@ struct SignUpView: View {
                     .foregroundColor(.black)
                 }
             }
-        }
+        }.navigationBarHidden(true)
     }
 }
 

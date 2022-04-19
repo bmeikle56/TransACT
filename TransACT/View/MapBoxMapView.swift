@@ -1,22 +1,20 @@
 //
-//  MapView.swift
-//  SwiftUIPractice
+//  MapBoxMapView.swift
+//  TransACT
 //
 //  Created by Braeden Meikle on 2/13/22.
 //
 
 import SwiftUI
 import MapboxMaps
-import FirebaseFirestore
 
 struct MapBoxMapView: View {
     
     @EnvironmentObject var user: User
-    var buttonSize:CGFloat = 45;
     @State var survey_to_finish = [String]()
     
     func checkSurvey() {
-        let db = Firestore.firestore()
+        let db = FirebaseManager.getFirestore()
         let currUser = db.collection("users").document(user.uid)
         currUser.getDocument { (document, error) in
             if let error = error {
@@ -49,14 +47,11 @@ struct MapBoxMapView: View {
     }
     
     var body: some View {
-        
         VStack {
-            
-            ZStack(alignment: .top) {
-                MapBoxMapViewController()
-                    .scaledToFill()
-            }.padding(.bottom, 70)
-        }.navigationBarHidden(true)
+            MapBoxMapViewController()
+        }
+            .ignoresSafeArea()
+            .navigationBarHidden(true)
             .environmentObject(user)
     }
 }
@@ -79,14 +74,16 @@ class MapViewController: UIViewController {
         /* Add in info Plist:
          MGLMapboxAccessToken      String      THE-ACCESS-TOKEN-CODE
          
-         replace the line below with the access token code */
+         replace the line below with the access token code
+         
+         let myResourceOptions = ResourceOptions(accessToken: "THE-ACCESS-CODE")
+         */
         
-        let myResourceOptions = ResourceOptions(accessToken: "THE-ACCESS-TOKEN-CODE")
+        let myResourceOptions = ResourceOptions(accessToken: "THE-ACCESS-CODE")
         let myMapInitOptions = MapInitOptions(resourceOptions: myResourceOptions)
         mapView = MapView(frame: view.bounds, mapInitOptions: myMapInitOptions)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.addSubview(mapView)
-        
     }
 }
 

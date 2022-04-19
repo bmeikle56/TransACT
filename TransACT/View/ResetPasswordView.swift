@@ -1,13 +1,11 @@
 //
 //  ResetPasswordView.swift
-//  VIPapplication
+//  TransACT
 //
 //  Created by Braeden Meikle on 2/20/22.
 //
 
 import SwiftUI
-import FirebaseAuth
-import AuthenticationServices
 
 struct ResetPasswordView: View {
     
@@ -56,7 +54,7 @@ struct ResetPasswordView: View {
                     .fill(Color.green)
                     .frame(width: 282, height: 50)
                 
-                Button("GET RESET EMAIL") {
+                Button("Get reset email") {
                     
                     
                     // clean previous errString
@@ -88,13 +86,11 @@ struct ResetPasswordView: View {
                             Text("Return to login"),
                             action: {
                                 self.presentationMode.wrappedValue.dismiss()
-                        
                     }))
-                }.font(.custom("PTMono-Bold", size: 18))
+                }
+                    .font(.custom("PTMono-Bold", size: 18))
                     .foregroundColor(.white)
-                
-            }.navigationBarBackButtonHidden(false)
-                .padding(.bottom, 10)
+            }
         }
     }
 }

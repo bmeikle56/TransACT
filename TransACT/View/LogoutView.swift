@@ -1,16 +1,14 @@
 //
-//  HomePageView.swift
+//  LogoutView.swift
 //  TransACT
 //
-//  Created by Braeden Meikle on 2/20/22.
+//  Created by Braeden Meikle on 4/17/22.
 //
 
 import SwiftUI
 
-struct HomePageView: View {
-    
-    @EnvironmentObject var user: User
-    
+struct LogoutView: View {
+        
     var body: some View {
         VStack {
             Text("YOU ARE")
@@ -18,26 +16,28 @@ struct HomePageView: View {
                 .multilineTextAlignment(.center)
                 .lineSpacing(10)
                 .font(.custom("PTMono-Bold", size: 36))
-            Text("LOGGED IN")
+            Text("LOGGED OUT")
                 .multilineTextAlignment(.center)
                 .font(.custom("PTMono-Bold", size: 36))
-            Image("HomePageView image")
-            Spacer().frame(height: 100)
+            
+            Spacer()
+                .frame(height: 40)
+
             ZStack {
                 Rectangle()
                     .fill(Color.green)
                     .frame(width: 282, height: 50)
-                NavigationLink(destination: UserPermissionsView()) {
-                    Text("Get started").font(.custom("PTMono-Bold", size: 18))
+                NavigationLink(destination: SetupView()) {
+                    Text("Return to login").font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
-                }.environmentObject(user)
-            }.navigationBarBackButtonHidden(true)
+                }
+            }
         }
     }
 }
 
-struct HomePageView_Previews: PreviewProvider {
+struct LogoutView_Previews: PreviewProvider {
     static var previews: some View {
-        HomePageView().environmentObject(User())
+        LogoutView()
     }
 }

@@ -3,6 +3,7 @@
 //  TransACT
 //
 //  Created by Braeden Meikle on 4/5/22.
+//
 
 import SwiftUI
 
@@ -64,7 +65,8 @@ struct TabBarView: View {
     @Binding var viewType: String
     
     var body: some View {
-        HStack(spacing: 50) {
+        //UIScreen.main.bounds.size.width / 3
+        HStack(spacing: UIScreen.main.bounds.size.width / 5) {
             if viewType == "SurveyListView" {
                 TabBarButton(imageName: "Survey icon", viewName: "SurveyListView", isActive: true, viewType: $viewType)
             } else {
@@ -92,8 +94,8 @@ struct TabBarButton: View {
     let viewName: String
     @State var isActive: Bool
     
-    let buttonSize: CGFloat = 60
-    let circleSize: CGFloat = 10
+    let buttonSize: CGFloat = 40
+    let circleSize: CGFloat = 6
     
     @Binding var viewType: String
     
@@ -102,8 +104,8 @@ struct TabBarButton: View {
         Button(action: {
             viewType = viewName
         }, label: {
-            VStack(spacing: 10) {
-                Spacer().frame(height: 10)
+            VStack(spacing: 6) {
+                Spacer().frame(height: circleSize)
                 Image(imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -115,7 +117,7 @@ struct TabBarButton: View {
                     .frame(width: circleSize, height: circleSize)
                 } else {
                     // take up space where circle is
-                    Spacer().frame(height: 10)
+                    Spacer().frame(height: circleSize)
                 }
             }
         })
