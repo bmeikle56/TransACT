@@ -27,7 +27,7 @@ struct HomePageView: View {
                 Rectangle()
                     .fill(Color.green)
                     .frame(width: 282, height: 50)
-                NavigationLink(destination: RequestLocationNotifView()) {
+                NavigationLink(destination: UserPermissionsView()) {
                     Text("Get started").font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
                 }.environmentObject(user)

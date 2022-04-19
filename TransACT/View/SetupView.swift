@@ -47,6 +47,7 @@ struct SetupView: View {
                             .foregroundColor(.black)
                     }
                 }
+                Spacer().frame(height: 60)
             }
         }.navigationBarHidden(true)
     }
