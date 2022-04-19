@@ -58,7 +58,7 @@ struct RequestPushNotifView: View {
             NavigationLink(destination: MainTabView()) {
                 Text("Skip for now")
                     .font(.custom("PTMono-Bold", size: 18))
-                    .foregroundColor(Color.init(UIColor.gray))
+                    .foregroundColor(.black)
             }
             
             Spacer()
@@ -68,6 +68,8 @@ struct RequestPushNotifView: View {
                 NavigationLink(destination: MainTabView(), label: {})
             }
         }
+            .navigationBarHidden(true)
+            .environmentObject(user)
     }
 }
 
