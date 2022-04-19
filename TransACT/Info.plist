@@ -14,5 +14,10 @@
 	</array>
 	<key>MBXAccessToken</key>
 	<string>ACCESS-CODE-HERE</string>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string>SetupView image</string>
+	</dict>
 </dict>
 </plist>
