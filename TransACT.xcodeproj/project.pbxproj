@@ -17,7 +17,6 @@
 		46EB2B1427F00F89008354D7 /* TitilliumWeb-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46EB2B1327F00F89008354D7 /* TitilliumWeb-Black.ttf */; };
 		46EB2B1627F01186008354D7 /* TitilliumWeb-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46EB2B1527F01186008354D7 /* TitilliumWeb-Bold.ttf */; };
 		46EB2B1827F0136A008354D7 /* TitilliumWeb-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46EB2B1727F0136A008354D7 /* TitilliumWeb-SemiBold.ttf */; };
-		532DC4B7280D606D006058D0 /* Mapbox_Token.plist in Resources */ = {isa = PBXBuildFile; fileRef = 532DC4B6280D606D006058D0 /* Mapbox_Token.plist */; };
 		5386038427C9FD5C004A3162 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5386038327C9FD5C004A3162 /* FirebaseAnalytics */; };
 		5386038627C9FD5C004A3162 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5386038527C9FD5C004A3162 /* FirebaseAuth */; };
 		5386038827C9FD5C004A3162 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5386038727C9FD5C004A3162 /* FirebaseDatabase */; };
@@ -79,7 +78,6 @@
 		46EB2B1327F00F89008354D7 /* TitilliumWeb-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Black.ttf"; sourceTree = "<group>"; };
 		46EB2B1527F01186008354D7 /* TitilliumWeb-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Bold.ttf"; sourceTree = "<group>"; };
 		46EB2B1727F0136A008354D7 /* TitilliumWeb-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-SemiBold.ttf"; sourceTree = "<group>"; };
-		532DC4B6280D606D006058D0 /* Mapbox_Token.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Mapbox_Token.plist; sourceTree = "<group>"; };
 		53B0845B27F6D91900E98792 /* SurveyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyManager.swift; sourceTree = "<group>"; };
 		53BEFFC627CC1E5700974C3C /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
 		D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 		D25795C027B96A3E007806E6 /* TransACT */ = {
 			isa = PBXGroup;
 			children = (
-				532DC4B6280D606D006058D0 /* Mapbox_Token.plist */,
 				D2C03A3927FBEE3B00A8A1F4 /* GoogleService-Info.plist */,
 				460126E827C54EDC00953846 /* Info.plist */,
 				D25795C127B96A3E007806E6 /* TransACTApp.swift */,
@@ -375,7 +372,6 @@
 				D2C03A3A27FBEE3B00A8A1F4 /* GoogleService-Info.plist in Resources */,
 				46EB2B1827F0136A008354D7 /* TitilliumWeb-SemiBold.ttf in Resources */,
 				46EB2B1427F00F89008354D7 /* TitilliumWeb-Black.ttf in Resources */,
-				532DC4B7280D606D006058D0 /* Mapbox_Token.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
