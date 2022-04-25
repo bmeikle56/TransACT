@@ -14,6 +14,8 @@ struct UserPermissionsView: View {
     //@ObservedObject var notificationManager = NotificationManager.shared
     //@AppStorage("NotificationPushInitialRequest") var initialRequestDone: Bool = false
     @State private var showPopup: Bool = false
+    @State private var enabledPushNotif: Bool = false
+    @State private var enabledLocation: Bool = false
     
     /*func passUserToLocationManager() {
         locationManager.setUser(user: user)
@@ -27,6 +29,7 @@ struct UserPermissionsView: View {
                 // Handle the error here.
             }
             
+            enabledPushNotif = true
             // Enable or disable features based on the authorization.
         }
     }
@@ -41,6 +44,12 @@ struct UserPermissionsView: View {
         }*/
         
         VStack {
+            
+            if enabledLocation && enabledPushNotif {
+                // go to MainTabView
+                NavigationLink(destination: MainTabView(), label: {})
+            }
+            
             Spacer().frame(height: 30)
             Text("Share location data and allow push notifications")
                 .font(.custom("PTMono-Bold", size: 18))
