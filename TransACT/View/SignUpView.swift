@@ -126,6 +126,9 @@ struct SignUpView: View {
                             FirebaseManager.handleSignup(email: email, password: password)
                             self.presentationMode.wrappedValue.dismiss()
                         }
+                        
+                        NavigationLink(destination: MainTabView())
+                        
                     }.font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
                 }

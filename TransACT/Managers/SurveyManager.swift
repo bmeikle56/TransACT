@@ -29,7 +29,7 @@ class SurveyManager {
                         
                         for survey in querySnapshot!.documents {
                             print(survey.data())
-                            if let name = survey.data()["name"] as? String, let url = survey.data()["url"] as? String {
+                            if let name = survey.data()["name"] as? String, let url = survey.data()["https://gatech.co1.qualtrics.com/jfe/form/SV_0rAetEdRy1iZM10"] as? String {
                                 surveys.append(SurveyItem(id: survey.documentID,
                                                           name: name,
                                                           url: url, finished: survey_finished.contains(survey.documentID)))
