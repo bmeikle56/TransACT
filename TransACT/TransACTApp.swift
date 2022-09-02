@@ -17,6 +17,7 @@ struct VIPapplicationApp: App {
     init() {
         FirebaseApp.configure()
     }
+    @StateObject var googleAuth: GoogleSignInManager =  GoogleSignInManager()
     var user = User()
     var body: some Scene {
         WindowGroup {

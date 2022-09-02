@@ -26,6 +26,9 @@
 		53B0845C27F6D91900E98792 /* SurveyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B0845B27F6D91900E98792 /* SurveyManager.swift */; };
 		53BEFFC727CC1E5700974C3C /* SurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BEFFC627CC1E5700974C3C /* SurveyListView.swift */; };
 		A12CF62F28A2D19200A6A179 /* ConsentPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12CF62E28A2D19200A6A179 /* ConsentPageView.swift */; };
+		A1C299AA28BD217E00B90D8A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = A1C299A928BD217E00B90D8A /* GoogleSignIn */; };
+		A1C299AC28BD217E00B90D8A /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A1C299AB28BD217E00B90D8A /* GoogleSignInSwift */; };
+		A1C299AE28BD234100B90D8A /* GoogleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C299AD28BD234100B90D8A /* GoogleSignInManager.swift */; };
 		D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */; };
 		D21146F827C2D7D200EDAD4D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F727C2D7D200EDAD4D /* SignUpView.swift */; };
 		D21146FA27C2F99A00EDAD4D /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F927C2F99A00EDAD4D /* HomePageView.swift */; };
@@ -82,6 +85,7 @@
 		53B0845B27F6D91900E98792 /* SurveyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyManager.swift; sourceTree = "<group>"; };
 		53BEFFC627CC1E5700974C3C /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
 		A12CF62E28A2D19200A6A179 /* ConsentPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentPageView.swift; sourceTree = "<group>"; };
+		A1C299AD28BD234100B90D8A /* GoogleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
 		D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		D21146F727C2D7D200EDAD4D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D21146F927C2F99A00EDAD4D /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
@@ -113,7 +117,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1C299AC28BD217E00B90D8A /* GoogleSignInSwift in Frameworks */,
 				5386038427C9FD5C004A3162 /* FirebaseAnalytics in Frameworks */,
+				A1C299AA28BD217E00B90D8A /* GoogleSignIn in Frameworks */,
 				5386038627C9FD5C004A3162 /* FirebaseAuth in Frameworks */,
 				5386038827C9FD5C004A3162 /* FirebaseDatabase in Frameworks */,
 				5386038C27C9FD5C004A3162 /* FirebaseFunctions in Frameworks */,
@@ -148,6 +154,7 @@
 				D2B622E927EF64C600298489 /* LoginManager.swift */,
 				D2B622EB27EF66DD00298489 /* FirebaseManager.swift */,
 				53B0845B27F6D91900E98792 /* SurveyManager.swift */,
+				A1C299AD28BD234100B90D8A /* GoogleSignInManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -272,6 +279,8 @@
 				5386038927C9FD5C004A3162 /* FirebaseFirestore */,
 				5386038B27C9FD5C004A3162 /* FirebaseFunctions */,
 				5386038D27C9FD5C004A3162 /* FirebaseStorage */,
+				A1C299A928BD217E00B90D8A /* GoogleSignIn */,
+				A1C299AB28BD217E00B90D8A /* GoogleSignInSwift */,
 			);
 			productName = VIPapplication;
 			productReference = D25795BE27B96A3E007806E6 /* TransACT.app */;
@@ -348,6 +357,7 @@
 			packageReferences = (
 				D25795EE27B96FA6007806E6 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
 				5386038227C9FD5C004A3162 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A1C299A828BD217E00B90D8A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = D25795BF27B96A3E007806E6 /* Products */;
 			projectDirPath = "";
@@ -401,6 +411,7 @@
 			files = (
 				460126DB27C53D6B00953846 /* RequestPushNotifView.swift in Sources */,
 				D25795C227B96A3E007806E6 /* TransACTApp.swift in Sources */,
+				A1C299AE28BD234100B90D8A /* GoogleSignInManager.swift in Sources */,
 				53BEFFC727CC1E5700974C3C /* SurveyListView.swift in Sources */,
 				46BF48FE27CD5373004A2D6B /* LocationManager.swift in Sources */,
 				D25795F427B970B0007806E6 /* SetupView.swift in Sources */,
@@ -595,7 +606,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.braedenmeikle.TransACT;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.gatech.actlab.transact;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -626,7 +637,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.braedenmeikle.TransACT;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.gatech.actlab.transact;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -756,6 +767,14 @@
 				kind = branch;
 			};
 		};
+		A1C299A828BD217E00B90D8A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		D25795EE27B96FA6007806E6 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
@@ -796,6 +815,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5386038227C9FD5C004A3162 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		A1C299A928BD217E00B90D8A /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1C299A828BD217E00B90D8A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		A1C299AB28BD217E00B90D8A /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1C299A828BD217E00B90D8A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 		D25795EF27B96FA6007806E6 /* MapboxMaps */ = {
 			isa = XCSwiftPackageProductDependency;

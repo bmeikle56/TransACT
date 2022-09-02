@@ -29,9 +29,11 @@ struct RequestLocationNotifView: View {
             
             Spacer()
                 .frame(height: 25.0)
-            Image("LocationSharing")
-                .resizable()
-                .frame(width: 300, height: 200)
+            
+//            Image("LocationSharing")
+//                .resizable()
+//                .frame(width: 300, height: 200)
+            
             
             Spacer()
                 .frame(height: 20.0)
@@ -42,7 +44,7 @@ struct RequestLocationNotifView: View {
                 .frame(width: 300, height: 55)
             
             // [Learn more about this requirement.](https://www.apple.com)
-            Text("This app collects location services to understand the congestion distribution. By enabling the location, you are providing access to Georgia Tech researchers to use the data for future studies. You can opt out of the study at any time.")
+            Text("Please choose 'always allow' to enable TransACT app to collect location data for 4 weeks.")
                 .font(.custom("Ramaraja", size: 19))
                 .multilineTextAlignment(.leading)
                 .frame(width: 300, height: 200, alignment: .topLeading)
@@ -56,20 +58,22 @@ struct RequestLocationNotifView: View {
                     Rectangle()
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
-                    Text("Enable location")
-                        .font(.custom("PTMono-Bold", size: 18))
-                        .foregroundColor(.white)
+                    NavigationLink(destination: RequestPushNotifView()) {
+                        Text("Enable location")
+                            .font(.custom("PTMono-Bold", size: 18))
+                            .foregroundColor(.white)
+                    }
                 }
             })
             
             Spacer()
                 .frame(height: 20)
             
-            NavigationLink(destination: RequestPushNotifView()) {
-                Text("Skip for now")
-                    .font(.custom("PTMono-Regular", size: 18))
-                    .foregroundColor(.black)
-            }
+//            NavigationLink(destination: RequestPushNotifView()) {
+//                Text("Skip for now")
+//                    .font(.custom("PTMono-Regular", size: 18))
+//                    .foregroundColor(.black)
+//            }
             
             Spacer()
                 .frame(height: 20)

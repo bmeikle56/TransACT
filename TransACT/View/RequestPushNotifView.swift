@@ -20,19 +20,19 @@ struct RequestPushNotifView: View {
         VStack {
             Spacer()
                 .frame(height: 55.0)
-            Image("LocationSharing")
-                .resizable()
-                .frame(width: 339.0, height: 241.0)
+//            Image("LocationSharing")
+//                .resizable()
+//                .frame(width: 339.0, height: 241.0)
             
             Spacer()
                 .frame(height: 50.0)
             
-            Text("Don't miss out!")
+            Text("Allow notifications")
                 .font(.custom("Ramaraja", size: 30))
                 .multilineTextAlignment(.leading)
                 .frame(width: 300, height: 55, alignment: .bottomLeading)
             
-            Text("Get push notifications for available incentives, research updates and other activities going on! [Learn more about this requirement.](https://www.apple.com)")
+            Text("Allow notifications to received updates from TransACT about the research study.")
                 .font(.custom("Ramaraja", size: 20))
                 .multilineTextAlignment(.leading)
                 .frame(width: 300, height: 140, alignment: .leading)
@@ -46,23 +46,35 @@ struct RequestPushNotifView: View {
                     Rectangle()
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
-                    Text("Enable notifications")
-                        .font(.custom("PTMono-Bold", size: 18))
-                        .foregroundColor(.white)
+                    NavigationLink(destination: MainTabView()){
+                        Text("Enable notifications")
+                            .font(.custom("PTMono-Bold", size: 18))
+                            .foregroundColor(.white)
+                    }
+                    
                 }
             })
             
             Spacer()
                 .frame(height: 20)
             
-            NavigationLink(destination: MainTabView()) {
-                Text("Skip for now")
-                    .font(.custom("PTMono-Bold", size: 18))
-                    .foregroundColor(.black)
-            }
+//            NavigationLink(destination: MainTabView()) {
+//                Text("Skip for now")
+//                    .font(.custom("PTMono-Bold", size: 18))
+//                    .foregroundColor(.black)
+//            }
             
             Spacer()
                 .frame(height: 20.0)
+            
+            HStack(spacing: 50) {
+                Image("PeachTreeCornersLogo")
+                    .resizable()
+                    .frame(width: 70.0, height: 94.5)
+                Image("GTLogo")
+                    .resizable()
+                    .frame(width: 90.0, height: 90.0)
+            }
             
             if initialRequestDone {
                 NavigationLink(destination: MainTabView(), label: {})

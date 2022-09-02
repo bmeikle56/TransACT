@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.435287998719-vs6157ohleu16oa5hnqm213q43rv7djm</string>
+			</array>
+		</dict>
+	</array>
 	<key>MBXAccessToken</key>
 	<string>pk.eyJ1Ijoidmlzd2FzcmlydXBhIiwiYSI6ImNraDN1bWp6dzAwdGkyc3BjcHB3cmhoaWEifQ.CsXNQ579ezo2IrQjKe6PLQ</string>
 	<key>UIAppFonts</key>

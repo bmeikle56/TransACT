@@ -47,11 +47,11 @@ struct Profile: View {
     var body: some View {
         
         ScrollView(showsIndicators: false) {
-            NavigationLink(destination: LogoutView(), isActive: $isLoggedOut, label: {})
+            // NavigationLink(destination: LogoutView(), isActive: $isLoggedOut, label: {})
             ZStack {
-                Rectangle()
-                    .fill(Color("Profile Grey"))
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//                Rectangle()
+//                    .fill(Color("Profile Grey"))
+//                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 VStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 45, style: .continuous)
                         .fill(Color.green)
@@ -69,54 +69,56 @@ struct Profile: View {
                     Text("Me")
                         .foregroundColor(Color("Profile Name Color"))
                         .font(.custom("TitilliumWeb-Black", size: 24))
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20, style: .continuous)
-                            .fill(Color.white)
-                            .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width / 5, height: 130)
-                        .shadow(color: Color.gray.opacity(0.3), radius: 3, x: 0, y: 0.5)
-                        
-                        VStack(alignment: .leading) {
-                            Text("Travel information")
-                                .foregroundColor(Color.black)
-                                .font(.custom("TitilliumWeb-Bold", size: 14))
-                            Spacer().frame(height: 10)
-                            HStack {
-                                HStack {
-                                    VStack {
-                                        Image("Personal Vehicle")
-                                            .resizable()
-                                        .frame(width: 18, height: 16)
-                                        Text("")
-                                    }
-                                    Spacer().frame(width: 10)
-                                    VStack(alignment: .leading) {
-                                        Text("Add Car")
-                                            .font(.custom("TitilliumWeb-SemiBold", size: 18))
-                                        Text("Personal Vehicle")
-                                            .foregroundColor(Color.gray)
-                                            .font(.custom("TitilliumWeb-SemiBold", size: 12))
-                                    }
-                                }
-                                Spacer().frame(width: UIScreen.main.bounds.width / 6)
-                                HStack {
-                                    VStack {
-                                        Image("Residence")
-                                            .resizable()
-                                            .frame(width: 20, height: 17)
-                                        Text("")
-                                    }
-                                    Spacer().frame(width: 10)
-                                    VStack(alignment: .leading) {
-                                        Text("Home")
-                                            .font(.custom("TitilliumWeb-SemiBold", size: 18))
-                                        Text("Residence")
-                                            .foregroundColor(Color.gray)
-                                            .font(.custom("TitilliumWeb-SemiBold", size: 12))
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    
+// this information is relevant in the second version of the app.
+//                    ZStack {
+//                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+//                            .fill(Color.white)
+//                            .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width / 5, height: 130)
+//                        .shadow(color: Color.gray.opacity(0.3), radius: 3, x: 0, y: 0.5)
+//
+//                        VStack(alignment: .leading) {
+//                            Text("Travel information")
+//                                .foregroundColor(Color.black)
+//                                .font(.custom("TitilliumWeb-Bold", size: 14))
+//                            Spacer().frame(height: 10)
+//                            HStack {
+//                                HStack {
+//                                    VStack {
+//                                        Image("Personal Vehicle")
+//                                            .resizable()
+//                                        .frame(width: 18, height: 16)
+//                                        Text("")
+//                                    }
+//                                    Spacer().frame(width: 10)
+//                                    VStack(alignment: .leading) {
+//                                        Text("Add Car")
+//                                            .font(.custom("TitilliumWeb-SemiBold", size: 18))
+//                                        Text("Personal Vehicle")
+//                                            .foregroundColor(Color.gray)
+//                                            .font(.custom("TitilliumWeb-SemiBold", size: 12))
+//                                    }
+//                                }
+//                                Spacer().frame(width: UIScreen.main.bounds.width / 6)
+//                                HStack {
+//                                    VStack {
+//                                        Image("Residence")
+//                                            .resizable()
+//                                            .frame(width: 20, height: 17)
+//                                        Text("")
+//                                    }
+//                                    Spacer().frame(width: 10)
+//                                    VStack(alignment: .leading) {
+//                                        Text("Home")
+//                                            .font(.custom("TitilliumWeb-SemiBold", size: 18))
+//                                        Text("Residence")
+//                                            .foregroundColor(Color.gray)
+//                                            .font(.custom("TitilliumWeb-SemiBold", size: 12))
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
                     Spacer().frame(height: 450)
                     ZStack {
                         Rectangle()

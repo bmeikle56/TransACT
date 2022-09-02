@@ -97,43 +97,83 @@ struct SignUpView: View {
                     Rectangle()
                         .fill(Color.green)
                         .frame(width: 282, height: 50)
-                    Button("Sign up") {
-                        email = ""
-                        password = ""
-                        confirmPassword = ""
-                        
-                        let result = LoginManager.isStrongPassword(password: password)
-                        if !result.0 {
-                            passwordIsStrong = false
-                            badPasswordMessage = result.1
-                        } else {
-                            passwordIsStrong = true
-                        }
-                        
-                        if password != confirmPassword {
-                            passwordsMatch = false
-                        } else {
-                            passwordsMatch = true
-                        }
-                        
-                        if !LoginManager.isValidEmailAddress(email: email) {
-                            emailAddressIsValid = false
-                        } else {
-                            emailAddressIsValid = true
-                        }
-                        
-                        if emailAddressIsValid && passwordsMatch && passwordIsStrong {
+//                    Button("Sign up") {
+//                        email = ""
+//                        password = ""
+//                        confirmPassword = ""
+//
+//                        let result = LoginManager.isStrongPassword(password: password)
+//                        if !result.0 {
+//                            passwordIsStrong = false
+//                            badPasswordMessage = result.1
+//                        } else {
+//                            passwordIsStrong = true
+//                        }
+//
+//                        if password != confirmPassword {
+//                            passwordsMatch = false
+//                        } else {
+//                            passwordsMatch = true
+//                        }
+//
+//                        if !LoginManager.isValidEmailAddress(email: email) {
+//                            emailAddressIsValid = false
+//                        } else {
+//                            emailAddressIsValid = true
+//                        }
+//
+//                        if emailAddressIsValid && passwordsMatch && passwordIsStrong {
+//                            FirebaseManager.handleSignup(email: email, password: password)
+//                            self.presentationMode.wrappedValue.dismiss()
+//                        }
+//
+//                    }.font(.custom("PTMono-Bold", size: 18))
+//                        .foregroundColor(.white)
+                    
+                    NavigationLink(destination: ConsentPageView()){
+                        Button("Sign up") {
+                            email = ""
+                            password = ""
+                            confirmPassword = ""
+                            
+                            // Verify email validity and password strength
+                            let result = LoginManager.isStrongPassword(password: password)
+                            if !result.0 {
+                                passwordIsStrong = false
+                                badPasswordMessage = result.1
+                            } else {
+                                passwordIsStrong = true
+                            }
+                            
+                            if password != confirmPassword {
+                                passwordsMatch = false
+                            } else {
+                                passwordsMatch = true
+                            }
+                            
+                            if !LoginManager.isValidEmailAddress(email: email) {
+                                emailAddressIsValid = false
+                            } else {
+                                emailAddressIsValid = true
+                            }
+                            
+                            if emailAddressIsValid && passwordsMatch && passwordIsStrong {
+                                FirebaseManager.handleSignup(email: email, password: password)
+                                self.presentationMode.wrappedValue.dismiss()
+                            }
+                            
+                            // Signup user through firebase
+                            
                             FirebaseManager.handleSignup(email: email, password: password)
-                            self.presentationMode.wrappedValue.dismiss()
-                        }
-                        
-                        NavigationLink(destination: MainTabView())
-                        
-                    }.font(.custom("PTMono-Bold", size: 18))
-                        .foregroundColor(.white)
+                            
+                        }.font(.custom("PTMono-Bold", size: 18))
+                            .foregroundColor(.white)
+                    
+                    }
                 }
                     .padding(.bottom, 100)
-                
+
+                    
                 HStack {
                     Text("Have an account? ")
                         .font(.custom("PTMono-Regular", size: 18))
