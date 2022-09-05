@@ -50,7 +50,7 @@ class GoogleSignInManager: ObservableObject {
             
            guard let presentingViewController = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController else {return}
 
-            let signInConfig = GIDConfiguration.init(clientID: "CLIENT-ID")
+            let signInConfig = GIDConfiguration.init(clientID: "435287998719-ipi4spi3annmqsqe97i3mank91ahd697.apps.googleusercontent.com")
             GIDSignIn.sharedInstance.signIn(
                 with: signInConfig,
                 presenting: presentingViewController,

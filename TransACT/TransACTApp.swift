@@ -17,11 +17,13 @@ struct VIPapplicationApp: App {
     init() {
         FirebaseApp.configure()
     }
-    @StateObject var googleAuth: GoogleSignInManager =  GoogleSignInManager()
+    @StateObject var googleSignIn: GoogleSignInManager =  GoogleSignInManager()
     var user = User()
     var body: some Scene {
         WindowGroup {
-            SetupView().environmentObject(user)
+            SetupView()
+                .environmentObject(user)
+                .environmentObject(googleSignIn)
         }
     }
 }

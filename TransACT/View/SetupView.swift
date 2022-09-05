@@ -10,6 +10,8 @@ import SwiftUI
 
 struct SetupView: View {
     
+    @EnvironmentObject var googleSignIn: GoogleSignInManager
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -42,7 +44,8 @@ struct SetupView: View {
                             .resizable()
                             .frame(width: 40, height: 40)
                         Spacer().frame(width: 70)
-                        NavigationLink(destination: LoginPageView()) {
+                        NavigationLink(destination: LoginPageView()
+                                        .environmentObject(googleSignIn)) {
                             Text("Email")
                                 .font(.custom("PTMono-Bold", size: 18))
                                 .foregroundColor(.white)
