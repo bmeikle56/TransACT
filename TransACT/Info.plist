@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>MBXAccessToken</key>
+	<string>ACCESS-CODE-HERE</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>TitilliumWeb-Regular.ttf</string>
@@ -12,8 +14,6 @@
 		<string>PTMono-Bold.ttf</string>
 		<string>Ramaraja-Regular.ttf</string>
 	</array>
-	<key>MBXAccessToken</key>
-	<string>ACCESS-CODE-HERE</string>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIImageName</key>
