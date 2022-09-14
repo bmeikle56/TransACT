@@ -127,11 +127,11 @@ class TransACTUITests: XCTestCase {
         // verify that ProfileView pops up when we click profile icon
         XCTAssert(app.otherElements["ProfileView"].exists)
         
-        // tap location icon -> MapBoxMapView
+        // tap location icon -> MapView
         app.images["Location icon"].tap()
         
-        // verify that MapBoxMapView pops up when we click location icon
-        XCTAssert(app.otherElements["MapBoxMapView"].exists)
+        // verify that MapView pops up when we click location icon
+        XCTAssert(app.otherElements["MapView"].exists)
         
         // tap survey icon -> SurveyListView
         app.images["Survey icon"].tap()
