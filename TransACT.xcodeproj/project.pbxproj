@@ -340,7 +340,6 @@
 			);
 			mainGroup = D25795B527B96A3E007806E6;
 			packageReferences = (
-				D25795EE27B96FA6007806E6 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
 				5386038227C9FD5C004A3162 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = D25795BF27B96A3E007806E6 /* Products */;
@@ -749,14 +748,6 @@
 			requirement = {
 				branch = master;
 				kind = branch;
-			};
-		};
-		D25795EE27B96FA6007806E6 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
