@@ -11,7 +11,7 @@ struct ProfileView: View {
     
     @EnvironmentObject private var user: User
     let buttonSize: CGFloat = 45;
-    @State private var isShowingMapBoxMapView: Bool = false
+    @State private var isShowingMapView: Bool = false
     @State private var isShowingSurveyListView: Bool = false
 
     var body: some View {

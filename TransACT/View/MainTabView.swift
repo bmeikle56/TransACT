@@ -22,8 +22,8 @@ struct MainTabView: View {
             switch viewType {
             case "SurveyListView":
                 SurveyListView()
-            case "MapBoxMapView":
-                MapBoxMapView()
+            case "MapView":
+                MapView()
             default:
                 ProfileView()
             }
@@ -73,10 +73,10 @@ struct TabBarView: View {
                 TabBarButton(imageName: "Survey icon", viewName: "SurveyListView", isActive: false, viewType: $viewType)
             }
             
-            if viewType == "MapBoxMapView" {
-                TabBarButton(imageName: "Location icon", viewName: "MapBoxMapView", isActive: true, viewType: $viewType)
+            if viewType == "MapView" {
+                TabBarButton(imageName: "Location icon", viewName: "MapView", isActive: true, viewType: $viewType)
             } else {
-                TabBarButton(imageName: "Location icon", viewName: "MapBoxMapView", isActive: false, viewType: $viewType)
+                TabBarButton(imageName: "Location icon", viewName: "MapView", isActive: false, viewType: $viewType)
             }
             
             if viewType == "ProfileView" {
