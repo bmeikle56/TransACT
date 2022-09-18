@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "object": {
     "pins": [
       {
@@ -181,7 +180,6 @@
           "revision": "dbc07b0a298d642414d3abec59c9eaba1fb3367f",
           "version": "2.5.0"
         }
-=======
   "pins" : [
     {
       "identity" : "abseil-cpp-swiftpm",
@@ -190,7 +188,6 @@
       "state" : {
         "revision" : "d302de612e3d57c6f4afaf087da18fba8eac72a7",
         "version" : "0.20220203.1"
->>>>>>> 32a1ee72db775edd888f9d156f63fcdd72367c01
       }
     },
     {
