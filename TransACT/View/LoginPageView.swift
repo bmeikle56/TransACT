@@ -20,7 +20,7 @@ struct LoginPageView: View {
     var body: some View {
         
         ZStack {
-            NavigationLink(destination: HomePageView(), isActive: $showHomePageView, label: { EmptyView() }).environmentObject(user)
+            NavigationLink(destination: RequestLocationNotifView(), isActive: $showHomePageView, label: { EmptyView() }).environmentObject(user)
             
             VStack {
                 Text("LOG IN").font(.custom("PTMono-Bold", size: 36))
