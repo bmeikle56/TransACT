@@ -1,6 +1,6 @@
 //
 //  LocationManager.swift
-//  VIPapplication
+//  TransACT
 //
 //  Created by Shuangyue Cheng on 2/28/22.
 //
