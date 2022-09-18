@@ -110,42 +110,6 @@
         }
       },
       {
-        "package": "MapboxCommon",
-        "repositoryURL": "https://github.com/mapbox/mapbox-common-ios.git",
-        "state": {
-          "branch": null,
-          "revision": "e39540d5e8c8709db5ca53f0fdaeea64e351548c",
-          "version": "22.1.0"
-        }
-      },
-      {
-        "package": "MapboxCoreMaps",
-        "repositoryURL": "https://github.com/mapbox/mapbox-core-maps-ios.git",
-        "state": {
-          "branch": null,
-          "revision": "2d9dc9f1fddf7e5fc14701b4d151b960c9c8745d",
-          "version": "10.7.0"
-        }
-      },
-      {
-        "package": "MapboxMobileEvents",
-        "repositoryURL": "https://github.com/mapbox/mapbox-events-ios.git",
-        "state": {
-          "branch": null,
-          "revision": "5e130fba637f5bbb0bb8bca0dec8d38a06ce07bf",
-          "version": "1.0.8"
-        }
-      },
-      {
-        "package": "MapboxMaps",
-        "repositoryURL": "https://github.com/mapbox/mapbox-maps-ios.git",
-        "state": {
-          "branch": null,
-          "revision": "e50c17c992a9b1d519b2808e4d66193ca259cd39",
-          "version": "10.7.0"
-        }
-      },
-      {
         "package": "nanopb",
         "repositoryURL": "https://github.com/firebase/nanopb.git",
         "state": {
