@@ -128,13 +128,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				A1C299AC28BD217E00B90D8A /* GoogleSignInSwift in Frameworks */,
-=======
 				D2381F6D28D1619600766870 /* FirebaseFunctions in Frameworks */,
 				D2381F6928D1619600766870 /* FirebaseDatabase in Frameworks */,
 				D2381F5828D1614800766870 /* FirebaseAnalytics in Frameworks */,
->>>>>>> 32a1ee72db775edd888f9d156f63fcdd72367c01
 				5386038427C9FD5C004A3162 /* FirebaseAnalytics in Frameworks */,
 				A1C299AA28BD217E00B90D8A /* GoogleSignIn in Frameworks */,
 				5386038627C9FD5C004A3162 /* FirebaseAuth in Frameworks */,
@@ -303,10 +300,8 @@
 				5386038927C9FD5C004A3162 /* FirebaseFirestore */,
 				5386038B27C9FD5C004A3162 /* FirebaseFunctions */,
 				5386038D27C9FD5C004A3162 /* FirebaseStorage */,
-<<<<<<< HEAD
 				A1C299A928BD217E00B90D8A /* GoogleSignIn */,
 				A1C299AB28BD217E00B90D8A /* GoogleSignInSwift */,
-=======
 				D2381F5728D1614800766870 /* FirebaseAnalytics */,
 				D2381F5928D1614800766870 /* FirebaseAuth */,
 				D2381F5B28D1614800766870 /* FirebaseDatabase */,
@@ -319,7 +314,6 @@
 				D2381F6A28D1619600766870 /* FirebaseFirestore */,
 				D2381F6C28D1619600766870 /* FirebaseFunctions */,
 				D2381F6E28D1619600766870 /* FirebaseStorage */,
->>>>>>> 32a1ee72db775edd888f9d156f63fcdd72367c01
 			);
 			productName = VIPapplication;
 			productReference = D25795BE27B96A3E007806E6 /* TransACT.app */;
@@ -807,7 +801,6 @@
 				kind = branch;
 			};
 		};
-<<<<<<< HEAD
 		A1C299A828BD217E00B90D8A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -816,16 +809,7 @@
 				minimumVersion = 6.0.0;
 			};
 		};
-		D25795EE27B96FA6007806E6 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.2.0;
-			};
-		};
-=======
->>>>>>> 32a1ee72db775edd888f9d156f63fcdd72367c01
+
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -859,7 +843,6 @@
 			package = 5386038227C9FD5C004A3162 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
-<<<<<<< HEAD
 		A1C299A928BD217E00B90D8A /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A1C299A828BD217E00B90D8A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
@@ -870,10 +853,7 @@
 			package = A1C299A828BD217E00B90D8A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
 		};
-		D25795EF27B96FA6007806E6 /* MapboxMaps */ = {
-=======
 		D2381F5728D1614800766870 /* FirebaseAnalytics */ = {
->>>>>>> 32a1ee72db775edd888f9d156f63fcdd72367c01
 			isa = XCSwiftPackageProductDependency;
 			package = 5386038227C9FD5C004A3162 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
