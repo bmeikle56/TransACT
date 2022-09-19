@@ -109,6 +109,7 @@ extension LocationManager: CLLocationManagerDelegate {
                 }
                 else {
                     // uploadTime is added for an easy sorting filter in firebase user interface
+                    currUser.setData(["email": user.getUserEmail()])
                     currUser.collection("locations").document().setData(["uploadTime": time, "location": self.locationBatch])
                     self.locationBatch = [locationEntry]
                 }
