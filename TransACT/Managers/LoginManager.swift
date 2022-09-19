@@ -35,7 +35,8 @@ class LoginManager {
          .com ; .org ; .edu ; .mil ; .int ; .gov ; .uk ; should be nothing longer than 5 or shorter than 2
          
          */
-        let emailRegex: String = #"([a-zA-Z0-9]|([\_\.\-\/][a-zA-Z0-9])*){1,64}@([A-Za-z0-9]|([\-\.][a-zA-Z0-9])?){2,253}\.[a-z]{2,5}"# // the #...# are needed in Swift to avoid double escape (\\) and keep the \
+        let emailRegex: String = #"([a-zA-Z0-9]|([\_\.\-\/][a-zA-Z0-9])*){1,64}@([A-Za-z0-9]|([\-\.][a-zA-Z0-9])?){2,253}\.[a-z]{2,5}"#
+        // the #...# are needed in Swift to avoid double escape (\\) and keep the \
         return NSPredicate(format:"SELF MATCHES %@", emailRegex).evaluate(with: email)
     }
     
@@ -114,7 +115,7 @@ class LoginManager {
             errors.append(specialCharMissing)
         }
         
-        let longEnough: Bool = NSPredicate(format:"SELF MATCHES %@", lengthReq).evaluate(with: password)
+        let longEnough: Bool = lengthReq
         if !longEnough {
             errors.append(lengthMissing)
         }
@@ -140,6 +141,8 @@ class LoginManager {
          3+ errors: Password must contain ..., ..., and ...
          */
         switch numErrors {
+        case 0:
+            message += "no error"
         case 1:
             message += errors[0]
         case 2:
