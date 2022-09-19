@@ -1,6 +1,6 @@
 //
-//  VIPapplicationApp.swift
-//  VIPapplication
+//  TransACTApp.swift
+//  TransACT
 //
 //  Created by Braeden Meikle on 2/13/22.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 class User: ObservableObject, Identifiable {
-  @Published var uid = "place holder"
+    @Published var uid = "place holder"
 }
 
 @main
