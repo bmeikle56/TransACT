@@ -53,17 +53,7 @@ struct RequestPushNotifView: View {
             })
             
             Spacer()
-                .frame(height: 20)
-            
-            NavigationLink(destination: MainTabView()) {
-                Text("Skip for now")
-                    .font(.custom("PTMono-Bold", size: 18))
-                    .foregroundColor(.black)
-            }
-            
-            Spacer()
-                .frame(height: 20.0)
-            
+                .frame(height: 40)
             if initialRequestDone {
                 NavigationLink(destination: MainTabView(), label: {})
             }
