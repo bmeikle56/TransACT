@@ -38,8 +38,6 @@ struct SurveyList: View {
     @EnvironmentObject var user: User
     
     var body: some View {
-        
-        //NavigationView {
         VStack {
             List(self.surveys) {survey in
                 Survey(survey: survey)
@@ -119,7 +117,6 @@ struct Survey: View {
             }.frame(maxWidth: UIScreen.main.bounds.width * 0.8)
         }
             .frame(width: UIScreen.main.bounds.width, height: 100)
-            .background(Color(.systemGray6))
     }
 }
 

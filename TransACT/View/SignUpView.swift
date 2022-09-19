@@ -123,8 +123,10 @@ struct SignUpView: View {
                         
                         if emailAddressIsValid && passwordsMatch && passwordIsStrong {
                             FirebaseManager.handleSignup(email: email, password: password)
-                            self.presentationMode.wrappedValue.dismiss()
-                            showConsentPageView = true
+//                            self.presentationMode.wrappedValue.dismiss()
+                            print("code been here")
+                            self.showConsentPageView = true
+                            print(showConsentPageView)
                         }
                         
                     }.font(.custom("PTMono-Bold", size: 18))

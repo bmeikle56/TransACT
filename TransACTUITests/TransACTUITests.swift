@@ -1,6 +1,6 @@
 //
-//  VIPapplicationUITests.swift
-//  VIPapplicationUITests
+//  TransACTUITests.swift
+//  TransACTUITests
 //
 //  Created by Braeden Meikle on 2/13/22.
 //

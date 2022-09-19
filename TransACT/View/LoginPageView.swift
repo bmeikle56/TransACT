@@ -11,6 +11,7 @@ import SwiftUI
 struct LoginPageView: View {
     
     @EnvironmentObject var user: User
+    @ObservedObject var locationManager = LocationManager.shared
     
     @State private var email: String = ""
     @State private var password: String = ""
@@ -20,7 +21,7 @@ struct LoginPageView: View {
     var body: some View {
         
         ZStack {
-            NavigationLink(destination: HomePageView(), isActive: $showHomePageView, label: { EmptyView() }).environmentObject(user)
+            NavigationLink(destination: RequestLocationNotifView(), isActive: $showHomePageView, label: { EmptyView() }).environmentObject(user)
             
             VStack {
                 Text("LOG IN").font(.custom("PTMono-Bold", size: 36))
@@ -62,6 +63,7 @@ struct LoginPageView: View {
                             switch response {
                             case .success(let user):
                                 print("User \(user.uid) Logged in.")
+                                user.setUserEmail(email: self.email)
                                 showHomePageView = true; successfulLogin = true
                             case .failure(let error):
                                 print("Error Logining in \(error)")

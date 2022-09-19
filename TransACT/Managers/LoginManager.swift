@@ -1,6 +1,6 @@
 //
 //  LoginManager.swift
-//  VIPapplication
+//  TransACT
 //
 //  Created by Braeden Meikle on 3/26/22.
 //

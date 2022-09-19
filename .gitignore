@@ -1,8 +1,5 @@
 # Ignore Mac system files
 *.DS_store
 
-# Ignore plist files
-GoogleService-Info.plist
-
 # Ignore Xcode workspace config files
 *.xcuserstate
