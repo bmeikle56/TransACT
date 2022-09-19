@@ -1,6 +1,6 @@
 //
-//  VIPapplicationApp.swift
-//  VIPapplication
+//  TransACTApp.swift
+//  TransACT
 //
 //  Created by Braeden Meikle on 2/13/22.
 //

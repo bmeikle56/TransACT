@@ -1,6 +1,6 @@
 //
 //  LocationManager.swift
-//  VIPapplication
+//  TransACT
 //
 //  Created by Shuangyue Cheng on 2/28/22.
 //
@@ -17,6 +17,7 @@ class LocationManager: NSObject, ObservableObject {
     static let shared = LocationManager()
     var user = User()
     var locationBatch = [[String : Any]]()
+    var locationEnabled: Bool = false
     /*
      This sizeOfEachBatch indicates the number of location data entries in each
      batch upload to firebase. Location data entry is produced every second and
@@ -61,10 +62,12 @@ extension LocationManager: CLLocationManagerDelegate {
         case .authorizedAlways:
             // results from allow in app, return as always
             print("DEBUG: auth always")
+            self.locationEnabled = true
             manager.startUpdatingLocation()
         case .authorizedWhenInUse:
             // results from allow once
             print("DEBUG: auth in use")
+            self.locationEnabled = true
             manager.startUpdatingLocation()
         @unknown default:
             print("DEBUG: default")

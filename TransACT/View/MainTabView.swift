@@ -13,25 +13,24 @@ struct MainTabView: View {
     @State var viewType: String = "SurveyListView"
     
     var body: some View {
-        
         VStack {
-            Spacer().frame(height: 40)
-            TransACTBar()
+            Spacer().frame(height: 20)
+            TransACTBar().padding([.bottom], -4)
             Spacer().frame(height: 10)
-            
             switch viewType {
             case "SurveyListView":
                 SurveyListView()
+                    .navigationBarHidden(true)
             case "MapView":
                 MapView()
+                    .navigationBarHidden(true)
             default:
                 ProfileView()
+                    .navigationBarHidden(true)
             }
-            
             TabBarView(viewType: $viewType)
             Spacer().frame(height: 20)
         }.ignoresSafeArea()
-            
     }
 }
 
@@ -49,36 +48,33 @@ struct TransACTBar: View {
             HStack {
                 Image("SetupView image")
                     .resizable()
-                    .frame(width: 70, height: 70)
+                    .frame(width: 40, height: 40)
                     .padding(.leading, 30)
                 Spacer()
                 Text("TranSACT")
                     .padding(.trailing, 30)
-                    .font(.system(size: 32, weight: .bold, design: .default))
+                    .font(.system(size: 24, weight: .bold, design: .default))
             }
         }
     }
 }
 
 struct TabBarView: View {
-
     @Binding var viewType: String
     
     var body: some View {
-        //UIScreen.main.bounds.size.width / 3
-        HStack(spacing: UIScreen.main.bounds.size.width / 5) {
+        HStack(spacing: UIScreen.main.bounds.size.width / 4.5) {
             if viewType == "SurveyListView" {
                 TabBarButton(imageName: "Survey icon", viewName: "SurveyListView", isActive: true, viewType: $viewType)
             } else {
                 TabBarButton(imageName: "Survey icon", viewName: "SurveyListView", isActive: false, viewType: $viewType)
             }
-            
             if viewType == "MapView" {
                 TabBarButton(imageName: "Location icon", viewName: "MapView", isActive: true, viewType: $viewType)
             } else {
                 TabBarButton(imageName: "Location icon", viewName: "MapView", isActive: false, viewType: $viewType)
             }
-            
+
             if viewType == "ProfileView" {
                 TabBarButton(imageName: "Profile icon", viewName: "ProfileView", isActive: true, viewType: $viewType)
             } else {
@@ -94,13 +90,12 @@ struct TabBarButton: View {
     let viewName: String
     @State var isActive: Bool
     
-    let buttonSize: CGFloat = 40
+    let buttonSize: CGFloat = 25
     let circleSize: CGFloat = 6
     
     @Binding var viewType: String
     
     var body: some View {
-        
         Button(action: {
             viewType = viewName
         }, label: {
