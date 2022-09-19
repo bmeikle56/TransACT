@@ -62,6 +62,7 @@ struct LoginPageView: View {
                             switch response {
                             case .success(let user):
                                 print("User \(user.uid) Logged in.")
+                                user.setUserEmail(email: self.email)
                                 showHomePageView = true; successfulLogin = true
                             case .failure(let error):
                                 print("Error Logining in \(error)")

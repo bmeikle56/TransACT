@@ -9,7 +9,16 @@ import SwiftUI
 import Firebase
 
 class User: ObservableObject, Identifiable {
-  @Published var uid = "place holder"
+    @Published var uid = "place holder"
+    var email = ""
+    
+    func setUserEmail(email: String) {
+        self.email = email
+    }
+    
+    func getUserEmail() -> String {
+        return self.email
+    }
 }
 
 @main

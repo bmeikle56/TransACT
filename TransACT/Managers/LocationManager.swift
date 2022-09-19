@@ -26,7 +26,7 @@ class LocationManager: NSObject, ObservableObject {
      we can change it to 120. As a result, there will be 120 location data entries
      in one batch.
      */
-    let sizeOfEachBatch = 60
+    let sizeOfEachBatch = 5
     
     override init() {
         super.init()
@@ -106,6 +106,7 @@ extension LocationManager: CLLocationManagerDelegate {
                 }
                 else {
                     // uploadTime is added for an easy sorting filter in firebase user interface
+                    currUser.setData(["email": user.getUserEmail()])
                     currUser.collection("locations").document().setData(["uploadTime": time, "location": self.locationBatch])
                     self.locationBatch = [locationEntry]
                 }
