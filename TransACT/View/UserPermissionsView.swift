@@ -75,11 +75,11 @@ struct UserPermissionsView: View {
                 }
             })
             Spacer().frame(height: 20)
-            NavigationLink(destination: MainTabView()) {
-                Text("Skip for now")
-                    .font(.custom("PTMono-Regular", size: 18))
-                    .foregroundColor(.black)
-            }
+//            NavigationLink(destination: MainTabView()) {
+//                Text("Skip for now")
+//                    .font(.custom("PTMono-Regular", size: 18))
+//                    .foregroundColor(.black)
+//            }
             Spacer().frame(height: 40)
             HStack(spacing: 50) {
                 Image("PeachTreeCornersLogo")

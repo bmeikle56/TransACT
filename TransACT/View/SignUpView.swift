@@ -16,6 +16,7 @@ struct SignUpView: View {
     @State private var passwordsMatch: Bool = true
     @State private var emailAddressIsValid: Bool = true
     
+    @State private var showConsentPageView: Bool = false
     // used for returning back to a previous view
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -39,6 +40,8 @@ struct SignUpView: View {
     
     var body: some View {
         VStack {
+            NavigationLink(destination: ConsentPageView(), isActive: $showConsentPageView, label: { EmptyView() })
+            
             Text("SIGN UP")
                 .padding(.bottom, 40)
                 .font(.custom("PTMono-Bold", size: 36))
@@ -125,7 +128,9 @@ struct SignUpView: View {
                         if emailAddressIsValid && passwordsMatch && passwordIsStrong {
                             FirebaseManager.handleSignup(email: email, password: password)
                             self.presentationMode.wrappedValue.dismiss()
+                            showConsentPageView = true
                         }
+                        
                     }.font(.custom("PTMono-Bold", size: 18))
                         .foregroundColor(.white)
                 }

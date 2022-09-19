@@ -32,7 +32,7 @@ struct RequestPushNotifView: View {
                 .multilineTextAlignment(.leading)
                 .frame(width: 300, height: 55, alignment: .bottomLeading)
             
-            Text("Get push notifications for available incentives, research updates and other activities going on! [Learn more about this requirement.](https://www.apple.com)")
+            Text("This app uses push notifications to remind users to complete research tasks such as completing survey.")
                 .font(.custom("Ramaraja", size: 20))
                 .multilineTextAlignment(.leading)
                 .frame(width: 300, height: 140, alignment: .leading)
@@ -55,11 +55,11 @@ struct RequestPushNotifView: View {
             Spacer()
                 .frame(height: 20)
             
-            NavigationLink(destination: MainTabView()) {
-                Text("Skip for now")
-                    .font(.custom("PTMono-Bold", size: 18))
-                    .foregroundColor(.black)
-            }
+//            NavigationLink(destination: MainTabView()) {
+//                Text("Skip for now")
+//                    .font(.custom("PTMono-Bold", size: 18))
+//                    .foregroundColor(.black)
+//            }
             
             Spacer()
                 .frame(height: 20.0)

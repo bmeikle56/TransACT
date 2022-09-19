@@ -76,7 +76,7 @@ struct ConsentPageView: View {
                                         .foregroundColor(.black)
                                 }
                                 
-                                NavigationLink(destination: RequestLocationNotifView()) {
+                                NavigationLink(destination: UserPermissionsView()) {
                                     Text("I agree")
                                         .font(.custom("PTMono-Regular", size: 18))
                                         .foregroundColor(.black)

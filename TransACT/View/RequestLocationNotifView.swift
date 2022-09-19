@@ -42,7 +42,7 @@ struct RequestLocationNotifView: View {
                 .frame(width: 300, height: 55)
             
             // [Learn more about this requirement.](https://www.apple.com)
-            Text("This app collects location services to understand the congestion distribution. By enabling the location, you are providing access to Georgia Tech researchers to use the data for future studies. You can opt out of the study at any time.")
+            Text("This app collects location data for four weeks. By enabling the location, you are providing access to Georgia Tech researchers to use the data for future studies. You can opt out of the study at any time.")
                 .font(.custom("Ramaraja", size: 19))
                 .multilineTextAlignment(.leading)
                 .frame(width: 300, height: 200, alignment: .topLeading)
@@ -65,11 +65,11 @@ struct RequestLocationNotifView: View {
             Spacer()
                 .frame(height: 20)
             
-            NavigationLink(destination: RequestPushNotifView()) {
-                Text("Skip for now")
-                    .font(.custom("PTMono-Regular", size: 18))
-                    .foregroundColor(.black)
-            }
+//            NavigationLink(destination: RequestPushNotifView()) {
+//                Text("Skip for now")
+//                    .font(.custom("PTMono-Regular", size: 18))
+//                    .foregroundColor(.black)
+//            }
             
             Spacer()
                 .frame(height: 20)
