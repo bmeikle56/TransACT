@@ -25,6 +25,7 @@
 		5386038E27C9FD5C004A3162 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5386038D27C9FD5C004A3162 /* FirebaseStorage */; };
 		53B0845C27F6D91900E98792 /* SurveyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B0845B27F6D91900E98792 /* SurveyManager.swift */; };
 		53BEFFC727CC1E5700974C3C /* SurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BEFFC627CC1E5700974C3C /* SurveyListView.swift */; };
+		A14C2AC328D4D2FB00F0567F /* ConsentPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14C2AC228D4D2FB00F0567F /* ConsentPageView.swift */; };
 		D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */; };
 		D21146F827C2D7D200EDAD4D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21146F727C2D7D200EDAD4D /* SignUpView.swift */; };
 		D237010F27FD045B00B30D93 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D237010E27FD045B00B30D93 /* MainTabView.swift */; };
@@ -89,6 +90,7 @@
 		46EB2B1727F0136A008354D7 /* TitilliumWeb-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-SemiBold.ttf"; sourceTree = "<group>"; };
 		53B0845B27F6D91900E98792 /* SurveyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyManager.swift; sourceTree = "<group>"; };
 		53BEFFC627CC1E5700974C3C /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
+		A14C2AC228D4D2FB00F0567F /* ConsentPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentPageView.swift; sourceTree = "<group>"; };
 		D21146F527C2D7C500EDAD4D /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		D21146F727C2D7D200EDAD4D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D237010E27FD045B00B30D93 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				D256852127D52D4F009DBC72 /* ProfileView.swift */,
 				D270B648280D00CF00ED1482 /* LogoutView.swift */,
 				D256851F27D52D3E009DBC72 /* StartRouteView.swift */,
+				A14C2AC228D4D2FB00F0567F /* ConsentPageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				D21146F827C2D7D200EDAD4D /* SignUpView.swift in Sources */,
 				D21146F627C2D7C500EDAD4D /* ResetPasswordView.swift in Sources */,
 				D270B649280D00CF00ED1482 /* LogoutView.swift in Sources */,
+				A14C2AC328D4D2FB00F0567F /* ConsentPageView.swift in Sources */,
 				D237010F27FD045B00B30D93 /* MainTabView.swift in Sources */,
 				D2B622EC27EF66DD00298489 /* FirebaseManager.swift in Sources */,
 				D256852227D52D4F009DBC72 /* ProfileView.swift in Sources */,

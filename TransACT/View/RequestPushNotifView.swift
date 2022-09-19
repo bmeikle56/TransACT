@@ -14,8 +14,6 @@ struct RequestPushNotifView: View {
     @AppStorage("NotificationPushInitialRequest") var initialRequestDone: Bool = false
     
     var body: some View {
-        
-        
         NavigationLink(destination: MainTabView(), isActive: $notificationManager.notificationEnabled, label: { EmptyView() }).navigationBarHidden(true)
             .environmentObject(user)
             .task {
@@ -44,7 +42,7 @@ struct RequestPushNotifView: View {
                     .multilineTextAlignment(.leading)
                     .frame(width: 300, height: 55, alignment: .bottomLeading)
                 
-                Text("Get push notifications for available incentives, research updates and other activities going on! [Learn more about this requirement.](https://www.apple.com)")
+                Text("This app uses push notifications to remind users to complete research tasks such as completing survey.")
                     .font(.custom("Ramaraja", size: 20))
                     .multilineTextAlignment(.leading)
                     .frame(width: 300, height: 140, alignment: .leading)
