@@ -11,6 +11,7 @@ import SwiftUI
 struct LoginPageView: View {
     
     @EnvironmentObject var user: User
+    @ObservedObject var locationManager = LocationManager.shared
     
     @State private var email: String = ""
     @State private var password: String = ""
