@@ -26,7 +26,7 @@ class LocationManager: NSObject, ObservableObject {
      we can change it to 120. As a result, there will be 120 location data entries
      in one batch.
      */
-    let sizeOfEachBatch = 5
+    let sizeOfEachBatch = 60
     
     override init() {
         super.init()
